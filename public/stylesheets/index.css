@@ -1,0 +1,52 @@
+
+body,div,ul{
+  margin: 0;
+  padding: 0;
+}
+
+ul li{
+  list-style-type:none;
+}
+
+/*head start*/
+.head{
+  background-color: #495060;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.title{
+  padding: 10px 0 10px 10px;
+}
+
+.content{
+  width: 100%;
+  overflow: hidden;
+}
+
+.padding-style{
+  padding: 0;
+}
+
+/*head end */
+
+/*nav start */
+.menuNav{
+  color: rgba(0,0,0,0.7);
+  cursor: pointer;
+}
+
+.menuNav:hover{
+  color: #ffffff;
+}
+
+.menuNav li{
+  color: rgba(0,0,0,0.7);
+  display: none;
+}
+
+.menuNav li:hover{
+  color: #ffffff;
+}
+
+/*nav end */

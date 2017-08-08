@@ -9,20 +9,21 @@ body{
 .backimg{
   width: 100%;
   position: relative;
-  overflow: hidden;
   height: 100%;
 }
 
 .login-dialog{
   width: 20%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   position: absolute;
-  top: 30%;
+  top: 0%;
   left: 0;
   margin-left: 50%;
+  margin-top: 10%;
   transform: translateX(-50%);
-  padding: 5% 3%;
+  padding: 3% 3%;
   z-index: 999;
+  box-shadow: 6px 6px 5px rgba(0,0,0,0.2);
 }
 
 .login-dialog .login-title{

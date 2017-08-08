@@ -8,6 +8,7 @@ var http = require('http');
 
 var index = require('./routes/index');
 var login = require('./routes/login');
+var article=require('./routes/article');
 // handlebars module
 var handlebars=require('express3-handlebars');
 var app = express();
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/login', login);
+app.use('/article', article);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

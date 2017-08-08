@@ -4,11 +4,10 @@ import AdminModel from '../../models/admin'
 
 class Admin {
 	constructor(){
-		super()
-		this.login = this.login.bind(this)
+		//this.login = this.login.bind(this)
 	}
 	async login(req, res, next){
-		
+
 	}
 }
 

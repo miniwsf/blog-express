@@ -1,0 +1,35 @@
+
+body,div,ul{
+  margin: 0;
+  padding: 0;
+}
+
+ul li{
+  list-style-type:none;
+}
+
+/* 标题头部 */
+.head{
+  background: #333333;
+  width: 100%;
+  color:#ffffff;
+  font-size: 32px;
+  font-weight: bold;
+  padding:0.5% 0;
+}
+
+.content-index{
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 导航 */
+.left-nav{
+  width: 10%;
+  float: left;
+}
+
+.right-nav{
+  width: 90%;
+  float: left;
+}

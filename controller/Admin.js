@@ -1,13 +1,15 @@
 'use strict';
 
-class Admin{
-	construct(){
+import AdminModel from '../../models/admin'
 
-	};
-	getInfo(req, res, next){
-		res.send({
-			title: "luffy"
-		})
-	};
+class Admin {
+	constructor(){
+		super()
+		this.login = this.login.bind(this)
+	}
+	async login(req, res, next){
+		
+	}
 }
-module.exports=new Admin();
+
+export default new Admin()

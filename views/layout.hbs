@@ -6,14 +6,40 @@
     <link rel='stylesheet' href='/css/style.css'>
     <link rel='stylesheet' href='/css/index.css'>
     <link rel='stylesheet' href='/css/bootstrap.min.css'>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <body>
     <div class="head">wsf</div>
     <div class="content-index">
       <div class="left-nav">
-        <ul class="nav nav-pills nav-stacked">
-        	<li class="active"><a href="#">内容管理</a></li>
-        	<li><a href="#">基础设置</a></li>
-        </ul>
+        <div class="panel-group" id="accordion">
+          <div >
+            <div class="panel-heading">
+              <a data-toggle="collapse" data-parent="#accordion" 
+                 href="#collapseOne" class="panel-btn">
+                <span class="glyphicon glyphicon-book font-style"></span>内容管理
+              </a>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body panel-btn panel-btn-detail">
+                <a href="/article">文章管理</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" 
+                   href="#collapseTwo" class="panel-btn">
+                  <span class="glyphicon glyphicon-cog font-style"></span>基础设置
+                </a>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+              <div class="panel-body panel-btn panel-btn-detail">
+                <a href="/article">文章管理</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="right-nav">
         {{{body}}}

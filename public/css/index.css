@@ -16,6 +16,7 @@ ul li{
   font-size: 32px;
   font-weight: bold;
   padding:0.5% 0;
+  padding-left: 2%;
 }
 
 .content-index{
@@ -27,9 +28,35 @@ ul li{
 .left-nav{
   width: 10%;
   float: left;
+  background: #495060;
+}
+
+.panel-btn{
+  color: hsla(0,0%,100%,.7) !important;
+}
+
+.panel-btn-detail a .panel-btn:hover{
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.panel-btn-detail{
+  color: #495060;
+  background: #363e4f;
+  border-top:0px !important;
+  padding-left: 32px !important;
+  cursor: pointer;
+}
+
+.panel-btn-detail a{
+  color: hsla(0,0%,100%,.7);
 }
 
 .right-nav{
   width: 90%;
   float: left;
+}
+
+.font-style{
+  padding-right: 5px;
 }

@@ -1,7 +1,7 @@
 'use strict';
 
-import mongoose from 'mongoose'
-
+//import mongoose from 'mongoose'
+var mongoose = require('../mongodb/db.js');
 var Schema = mongoose.Schema;
 
 var adminSchema = new Schema({

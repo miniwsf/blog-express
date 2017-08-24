@@ -2,6 +2,7 @@
 body,div,ul{
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 ul li{
@@ -29,6 +30,7 @@ ul li{
   width: 10%;
   float: left;
   background: #495060;
+  padding-bottom: 90%;
 }
 
 .panel-btn{

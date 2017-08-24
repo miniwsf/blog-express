@@ -5,8 +5,14 @@
 </div>
 <div class="content-article">
 	<div class="search-list">
-		<label>文章标题</label>
-		<input type="text" placeholder="请输入文章标题">
+		<label for="title" class="control-label">文章标题</label>
+		<input type="text" class="form-control lable-width" placeholder="请输入名称">
+		<label for="type" class="control-label">文章类别</label>
+		<select class="form-control lable-width">
+				<option></option>
+		</select>
+		<button type="button" class="btn btn-primary">搜索</button>
+		<a type="button" class="btn btn-primary" href="/article/articleAdd">新增文章</a>
 	</div>
 	<div class="table-responsive">
 		<table class="table">
@@ -22,12 +28,21 @@
 				</tr>
 			</thead>
 			<tbody>
+				{{#each article}}
 				<tr>
-					<td>产品1</td>
-					<td>23/11/2013</td>
-					<td>待发货</td>
+					<td>#</td>
+					<td>{{title}}</td>
+					<td>{{type}}</td>
+					<td>{{keywords}}</td>
+					<td>{{author}}</td>
+					<td>{{create_time}}</td>
+					<td>
+						<a type="button" class="btn btn-primary" href="/article/articleEdit?articleId={{_id}}">编辑</a>
+						<a type="button" class="btn btn-danger" href="/article/deleteArticle?articleId={{_id}}">删除</a>
+					</td>
 				</tr>
+				{{/each}}
 			</tbody>
 		</table>
-	</div>  	
+	</div>
 </div>

@@ -1,13 +1,18 @@
 'use strict';
 
-import AdminModel from '../../models/admin'
+import AdminModel from '../models/admin'
 
 class Admin {
 	constructor(){
-		//this.login = this.login.bind(this)
+		this.login = this.login.bind(this)
 	}
-	async login(req, res, next){
-
+	login(req, res, next){
+		if(res.body.username=="111"&&res.body.password=="111"){
+			res.render("/article");
+		}
+		else{
+			res.send({code:-1,message:"error"});
+		}
 	}
 }
 

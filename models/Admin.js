@@ -1,13 +1,13 @@
 'use strict';
 
-//import mongoose from 'mongoose'
+import mongoose from 'mongoose'
 
 var Schema = mongoose.Schema;
 
 var adminSchema = new Schema({
 	userName: String,
 	password: String,
-	id: Number,
+	id: String,
 	create_time: String,
 	admin: {type: String, default: '管理员'},
 	status: Number,  //1:普通管理、 2:超级管理员
@@ -16,4 +16,4 @@ var adminSchema = new Schema({
 
 var Admin = mongoose.model('Admin', adminSchema);
 
-//export default Admin
+export default Admin

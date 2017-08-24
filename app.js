@@ -6,9 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 
-var index = require('./routes/index');
-var login = require('./routes/login');
-var article=require('./routes/article');
+var index = require('./dist/routes/index');
+var login = require('./dist/routes/login');
+var article=require('./dist/routes/article');
 // handlebars module
 var handlebars=require('express3-handlebars');
 var app = express();
@@ -32,12 +32,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/login', login);
 app.use('/article', article);
+app.use('/articleAdd', article);
+app.use('/logincheck', login);
 
+/*检查登录信息*/
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   res.render('404',{layout:null});
 });
+
+/*router.use(function (req, res, next) {
+  console.log('Time:', Date.now());
+});*/
 
 app.use(function(err, req, res, next) {
   res.locals.message = err.message;

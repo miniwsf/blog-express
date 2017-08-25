@@ -8,6 +8,6 @@ router.get('/', function(req, res, next) {
   res.render('login', {layout:null});
 });
 
-router.post('/',Admin.login);
+router.post('/logincheck',Admin.login);
 
 module.exports = router;

@@ -17,3 +17,8 @@
 .btn-margin{
 	margin-right: 10%;
 }
+
+.table-content{
+	overflow-y: auto;
+	height: 800px;
+}

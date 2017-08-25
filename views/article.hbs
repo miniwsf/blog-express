@@ -14,7 +14,7 @@
 		<button type="button" class="btn btn-primary">搜索</button>
 		<a type="button" class="btn btn-primary" href="/article/articleAdd">新增文章</a>
 	</div>
-	<div class="table-responsive">
+	<div class="table-responsive table-content">
 		<table class="table">
 			<thead>
 				<tr>
@@ -24,6 +24,8 @@
 					<th>关键字</th>
 					<th>作者</th>
 					<th>发布时间</th>
+					<th>阅读量</th>
+					<th>点赞数</th>
 					<th>操作</th>
 				</tr>
 			</thead>
@@ -36,7 +38,10 @@
 					<td>{{keywords}}</td>
 					<td>{{author}}</td>
 					<td>{{create_time}}</td>
+					<td>{{readAmount}}</td>
+					<td>{{praiseNumber}}</td>
 					<td>
+						<a type="button" class="btn btn-primary" href="/article/deleteArticle?articleId={{_id}}">查看详情</a>
 						<a type="button" class="btn btn-primary" href="/article/articleEdit?articleId={{_id}}">编辑</a>
 						<a type="button" class="btn btn-danger" href="/article/deleteArticle?articleId={{_id}}">删除</a>
 					</td>

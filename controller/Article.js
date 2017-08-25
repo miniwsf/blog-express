@@ -8,7 +8,7 @@ class Article {
 		this.deleteArticle = this.deleteArticle.bind(this);
 		this.addArticle = this.addArticle.bind(this);
 	}
-	
+
 	getArticle(req, res, next){
 		ArticleModel.find({}, function (err, article) {
 		  if (err) {
@@ -18,6 +18,10 @@ class Article {
 				})
 			}
 		  else{
+				article.forEach(item => {
+					let time;
+
+				})
 				res.render("article",{
 					"code":"0",
 					"article":article
@@ -27,6 +31,7 @@ class Article {
 	}
 
 	deleteArticle(req,res,next){
+		let that=this;
 		ArticleModel.remove({"_id":req.query.articleId}, function (err, article) {
 			if (err) {
 					res.send({
@@ -35,13 +40,9 @@ class Article {
 					})
 			}
 			else{
-				getArticle(req,res,next);
+				that.getArticle(req, res, next);
 			}
 		})
-	}
-
-	editArticle(req,res,next){
-
 	}
 
 	addArticle(req,res,next){
@@ -50,16 +51,26 @@ class Article {
 			content: req.body.content,
 			type: req.body.type,
 			create_time: new Date().getTime(),
-			author: "11",
-			keywords: req.body.keywords
+			author: "wsf",
+			keywords: req.body.keywords,
+			readAmount:0,
+			praiseNumber:0
     });
-    article.save(function (err, res) {
+		let that=this;
+    article.save(function (err, response) {
       if(err){
-
+				res.render("article",{
+					"code":"1",
+					"msg":"数据新增失败"
+				})
       }else{
-
+			//	that.getArticle(req, res, next);
       }
     });
+	}
+
+	updateArticle(req,res,next){
+
 	}
 }
 

@@ -1,10 +1,15 @@
-var app = express();
-var router = express.Router();
+'use strict';
 
-/*检查登录信息*/
-router.use(function (req, res, next) {
-  console.log('Time:', Date.now());
-//  next();
-});
+import AdminModel from '../models/admin/admin'
 
-/**/
+class UserCheck {
+	constructor(){
+
+	}
+  //检测是否登录
+	async checkLogin(req, res, next){
+    
+	}
+}
+
+export default new Check()

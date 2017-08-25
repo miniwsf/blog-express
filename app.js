@@ -35,7 +35,7 @@ app.use('/article', article);
 app.use('/articleAdd', article);
 app.use('/logincheck', login);
 
-/*检查登录信息*/
+/*检查文件*/
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;

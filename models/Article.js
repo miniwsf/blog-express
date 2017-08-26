@@ -7,7 +7,7 @@ var articleSchema = new Schema({
 	id: String,
 	title: String,
 	content: String,
-	type: String,
+	type: { type: Schema.Types.ObjectId, ref: 'ArticleType' },
 	create_time: String,
 	author:String,
 	keywords:String,

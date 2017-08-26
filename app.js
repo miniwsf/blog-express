@@ -9,6 +9,7 @@ var http = require('http');
 var index = require('./dist/routes/index');
 var login = require('./dist/routes/login');
 var article=require('./dist/routes/article');
+var articleType=require('./dist/routes/articleType');
 // handlebars module
 var handlebars=require('express3-handlebars');
 var app = express();
@@ -34,6 +35,7 @@ app.use('/login', login);
 app.use('/article', article);
 app.use('/articleAdd', article);
 app.use('/logincheck', login);
+app.use('/articleType', articleType);
 
 /*检查文件*/
 app.use(function(req, res, next) {

@@ -7,10 +7,10 @@
 	<div class="search-list">
 		<label for="title" class="control-label">文章标题</label>
 		<input type="text" class="form-control lable-width" placeholder="请输入名称">
-		<label for="type" class="control-label">文章类别</label>
+		<!--<label for="type" class="control-label">文章类别</label>
 		<select class="form-control lable-width">
 				<option></option>
-		</select>
+		</select>-->
 		<button type="button" class="btn btn-primary">搜索</button>
 		<a type="button" class="btn btn-primary" href="/article/articleAdd">新增文章</a>
 	</div>
@@ -34,7 +34,7 @@
 				<tr>
 					<td>#</td>
 					<td>{{title}}</td>
-					<td>{{type}}</td>
+					<td>{{type.typeName}}</td>
 					<td>{{keywords}}</td>
 					<td>{{author}}</td>
 					<td>{{create_time}}</td>

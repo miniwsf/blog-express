@@ -1,5 +1,6 @@
 
 import Article from '../controller/Article'
+import ArticleType from '../controller/ArticleType'
 var express = require('express');
 var router = express.Router();
 
@@ -7,8 +8,6 @@ router.get('/', Article.getArticle);
 router.get('/deleteArticle',Article.deleteArticle);
 router.get('/articleEdit',Article.updateArticle);
 router.post('/articleAddOk',Article.addArticle);
-router.get('/articleAdd',function(req, res, next) {
-  res.render('articleAdd');
-})
+router.get('/articleAdd',ArticleType.getArticleTypeOther)
 
 module.exports = router;

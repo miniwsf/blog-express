@@ -62,3 +62,8 @@ ul li{
 .font-style{
   padding-right: 5px;
 }
+
+/* 新增类别 */
+.input-width{
+  width: 50%;
+}

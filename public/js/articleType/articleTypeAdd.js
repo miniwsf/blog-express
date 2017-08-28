@@ -1,25 +1,20 @@
 (function(){
-   var $form=$("#acticleForm");
-     //$form.on('submit',saveArticle);
-     $("#saveArticle").bind("click",saveArticleType);
+   var $form=$("#articleTypeForm");
+     $("#saveArticleType").bind("click",saveArticleType);
 
      function saveArticleType(){
        var form=$form[0];
-       var title=form.title.value;
-       var type=form.type.value;
-       var keyword=form.keywords.value;
-       var content=articleEditormd.getMarkdown();
+       var type=form.typeName.value;
+
         $.ajax({
           type:"POST",
-          url:"/article/articleTypeAddOk",
+          url:"/articleType/articleTypeAddOk",
           data:{
-            "title":title,
-            "type":type,
-            "keywords":keyword,
-            "content":content
+            "type":type
           },
           success:function(res){
             window.location.href="/articleType";
+            $('#articleTypeModel').modal("hidden");
           },
           error:function(err) {
               //console.log(err)

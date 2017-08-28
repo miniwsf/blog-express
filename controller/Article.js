@@ -1,7 +1,7 @@
 'use strict';
 
 import ArticleModel from '../models/Article'
-
+import Common from '../../public/js/common.js'
 class Article {
 	constructor(){
 		this.getArticle = this.getArticle.bind(this);
@@ -10,7 +10,7 @@ class Article {
 	}
 
 	getArticle(req, res, next){
-		ArticleModel.find({}, function (err, article) {
+		ArticleModel.find().populate({ path: 'type', select: { typeName: 1 } }).exec(function (err, article) {
 		  if (err) {
 				res.render("article",{
 					"code":"1",
@@ -19,12 +19,35 @@ class Article {
 			}
 		  else{
 				article.forEach(item => {
-					let time;
-
+				//	let time=item.create_time;
+				//	item.create_time=Common.getTimeNew(time);
 				})
 				res.render("article",{
 					"code":"0",
 					"article":article
+				})
+			}
+		})
+	}
+
+	getBlog(req, res, next){
+		ArticleModel.find().populate({ path: 'type', select: { typeName: 1 } }).exec(function (err, article) {
+		  if (err) {
+				res.render("blog",{
+					"code":"1",
+					"msg":"数据查询失败",
+					layout:"index"
+				})
+			}
+		  else{
+				article.forEach(item => {
+				//	let time=item.create_time;
+				//	item.create_time=Common.getTimeNew(time);
+				})
+				res.render("blog",{
+					"code":"0",
+					"article":article,
+					layout:"index"
 				})
 			}
 		})
@@ -56,6 +79,7 @@ class Article {
 			readAmount:0,
 			praiseNumber:0
     });
+
 		let that=this;
     article.save(function (err, response) {
       if(err){

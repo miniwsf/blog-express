@@ -12,7 +12,7 @@ class ArticleType {
 	getArticleType(req, res, next){
 		ArticleTypeModel.find({}, function (err, type) {
 		  if (err) {
-				res.render("article",{
+				res.render("articleType",{
 					"code":"1",
 					"msg":"数据查询失败"
 				})
@@ -26,9 +26,26 @@ class ArticleType {
 		})
 	}
 
+	getArticleTypeOther(req, res, next){
+		ArticleTypeModel.find({}, function (err, type) {
+		  if (err) {
+				res.render("articleAdd",{
+					"code":"1",
+					"msg":"数据查询失败"
+				})
+			}
+		  else{
+				res.render("articleAdd",{
+					"code":"0",
+					"type":type
+				})
+			}
+		})
+	}
+
 	deleteArticleType(req,res,next){
 		let that=this;
-		ArticleTypeModel.remove({"_id":req.query.articleId}, function (err, article) {
+		ArticleTypeModel.remove({"_id":req.query.articleTypeId}, function (err, article) {
 			if (err) {
 					res.send({
 						code:"1",
@@ -43,7 +60,7 @@ class ArticleType {
 
 	addArticleType(req,res,next){
     let articleType = new ArticleTypeModel({
-			typeName:  req.body.typeName
+			typeName:  req.body.type
     });
 		let that=this;
     articleType.save(function (err, response) {
@@ -53,7 +70,7 @@ class ArticleType {
 					"msg":"数据新增失败"
 				})
       }else{
-			//	that.getArticle(req, res, next);
+
       }
     });
 	}

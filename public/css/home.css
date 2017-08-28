@@ -1,0 +1,135 @@
+
+.home-back{
+  width: 100%;
+  background:url(../images/login.jpg) no-repeat;
+  background-size: auto 100%;
+  padding-top: 100%;
+  background-position: center;
+  position: relative;
+  float: left;
+}
+
+.btn-list{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  float: left;
+}
+
+.home-content{
+  width: 0%;
+  padding: 2%;
+}
+
+.transfotm-left{
+  width: 30% !important;
+	animation:left 3s;
+	-moz-animation:left 3s; /* Firefox */
+	-webkit-animation:left 3s; /* Safari and Chrome */
+	-o-animation:left 3s; /* Opera */
+}
+
+.transfotm-right{
+  width: 70% !important;
+	animation:right 3s;
+	-moz-animation:right 3s; /* Firefox */
+	-webkit-animation:right 3s; /* Safari and Chrome */
+	-o-animation:right 3s; /* Opera */
+}
+
+.transfotm-btn{
+	animation:btnAnimation 1s 3s;
+	-moz-animation:btnAnimation 1s 3s; /* Firefox */
+	-webkit-animation:btnAnimation 1s 3s; /* Safari and Chrome */
+	-o-animation:btnAnimation 1s 3s; /* Opera */
+}
+
+.blog-info{
+  float: right;
+  margin-top: 1%;
+  overflow-y: auto;
+}
+
+/* 动画 */
+@keyframes left
+{
+	0%   {width:100%;}
+	100% {width:30%;}
+}
+
+@-moz-keyframes left /* Firefox */
+{
+  0%   {width:100%;}
+	100% {width:30%;}
+}
+
+@-webkit-keyframes left /* Safari and Chrome */
+{
+  0%   {width:100%;}
+	100% {width:30%;}
+}
+
+@-o-keyframes left /* Opera */
+{
+  0%   {width:100%;}
+	100% {width:30%;}
+}
+
+@keyframes right
+{
+	0%   {width:0%;}
+	100% {width:70%;}
+}
+
+@-moz-keyframes right{
+  0%   {width:0%;}
+	100% {width:70%;}
+}
+
+@-webkit-keyframes right /* Safari and Chrome */
+{
+  0%   {width:0%;}
+  100% {width:70%;}
+}
+
+@-o-keyframes right /* Opera */
+{
+  0%   {width:0%;}
+  100% {width:70%;}
+}
+
+@keyframes btnAnimation
+{
+	0%   {margin-top: 0;}
+  25%   {margin-top: -3%;}
+  50%   {margin-top: 0;}
+  75%   {margin-top: 3%;}
+	100% {margin-top: 0;}
+}
+
+@-moz-keyframes btnAnimation{
+  0%   {margin-top: 0;}
+  25%   {margin-top: -3%;}
+  50%   {margin-top: 0;}
+  75%   {margin-top: 3%;}
+	100% {margin-top: 0;}
+}
+
+@-webkit-keyframes btnAnimation /* Safari and Chrome */
+{
+  0%   {margin-top: 0;}
+  25%   {margin-top: -3%;}
+  50%   {margin-top: 0;}
+  75%   {margin-top: 3%;}
+	100% {margin-top: 0;}
+}
+
+@-o-keyframes btnAnimation /* Opera */
+{
+  0%   {margin-top: 0;}
+  25%   {margin-top: -3%;}
+  50%   {margin-top: 0;}
+  75%   {margin-top: 3%;}
+	100% {margin-top: 0;}
+}

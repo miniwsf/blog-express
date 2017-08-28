@@ -5,14 +5,7 @@
 </div>
 <div class="content-article">
 	<div class="search-list">
-		<!--<label for="title" class="control-label">文章标题</label>
-		<input type="text" class="form-control lable-width" placeholder="请输入名称">
-		<label for="type" class="control-label">文章类别</label>
-		<select class="form-control lable-width">
-				<option></option>
-		</select>
-		<button type="button" class="btn btn-primary">搜索</button>-->
-		<a type="button" class="btn btn-primary" href="/article/articleAdd">新增文章</a>
+		<a type="button" class="btn btn-primary" data-toggle="modal" data-target="#articleTypeModel">新增类别</a>
 	</div>
 	<div class="table-responsive table-content">
 		<table class="table">
@@ -24,17 +17,43 @@
 				</tr>
 			</thead>
 			<tbody>
-				{{#each article}}
+				{{#each type}}
 				<tr>
 					<td>#</td>
-					<td>{{title}}</td>
+					<td>{{typeName}}</td>
 					<td>
-						<a type="button" class="btn btn-primary" href="/article/articleEdit?articleId={{_id}}">编辑</a>
-						<a type="button" class="btn btn-danger" href="/article/deleteArticle?articleId={{_id}}">删除</a>
+						<a type="button" class="btn btn-primary" href="/articleType/articleTypeEdit?articleTypeId={{_id}}">编辑</a>
+						<a type="button" class="btn btn-danger" href="/articleType/deleteArticleType?articleTypeId={{_id}}">删除</a>
 					</td>
 				</tr>
 				{{/each}}
 			</tbody>
 		</table>
+	</div>
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="articleTypeModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					新增类别
+				</h4>
+			</div>
+			<form id="articleTypeForm">
+				<div class="modal-body">
+					<label for="title" class="control-label">类别名称</label>
+					<input type="text" class="form-control input-width" placeholder="请输入类别名称" name="typeName">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" id="saveArticleType">确定</button>
+				</div>
+			</form>
+		</div>
 	</div>
 </div>

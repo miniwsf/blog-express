@@ -34,8 +34,8 @@ app.use('/', index);
 app.use('/login', login);
 app.use('/article', article);
 app.use('/articleAdd', article);
-app.use('/logincheck', login);
 app.use('/articleType', articleType);
+app.use('/blog', index);
 
 /*检查文件*/
 app.use(function(req, res, next) {
@@ -53,7 +53,8 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   res.status(err.status || 500);
-  res.render('error');
+  console.log(err.message);
+  res.render('error',{layout:null});
 });
 
 module.exports = app;

@@ -36,6 +36,7 @@ app.use('/article', article);
 app.use('/articleAdd', article);
 app.use('/articleType', articleType);
 app.use('/blog', index);
+app.use('/blogDeatil', index);
 
 /*检查文件*/
 app.use(function(req, res, next) {

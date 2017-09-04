@@ -30,6 +30,14 @@
 	-o-animation:left 3s; /* Opera */
 }
 
+.left-width{
+  width: 30%;
+}
+
+.right-width{
+  width: 70%;
+}
+
 .transfotm-right{
   width: 70% !important;
 	animation:right 3s;

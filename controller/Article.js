@@ -53,6 +53,29 @@ class Article {
 		})
 	}
 
+	getBlogDetail(req, res, next){
+		ArticleModel.find().populate({ path: 'type', select: { typeName: 1 } }).exec(function (err, article) {
+		  if (err) {
+				res.render("blogDetail",{
+					"code":"1",
+					"msg":"数据查询失败",
+					layout:"index"
+				})
+			}
+		  else{
+				article.forEach(item => {
+				//	let time=item.create_time;
+				//	item.create_time=Common.getTimeNew(time);
+				})
+				res.render("blogDetail",{
+					"code":"0",
+					"article":article,
+					layout:"index"
+				})
+			}
+		})
+	}
+
 	deleteArticle(req,res,next){
 		let that=this;
 		ArticleModel.remove({"_id":req.query.articleId}, function (err, article) {

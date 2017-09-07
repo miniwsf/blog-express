@@ -1,4 +1,8 @@
 
+h2{
+  text-align:center !important;
+}
+
 .home-back{
   width: 100%;
   background:url(../images/login.jpg) no-repeat;
@@ -11,7 +15,7 @@
 
 .btn-list{
   position: absolute;
-  top: 30%;
+  top: 22%;
   left: 50%;
   transform: translateX(-50%);
   float: left;

@@ -59,20 +59,18 @@ class ArticleType {
 	}
 
 	addArticleType(req,res,next){
-    let articleType = new ArticleTypeModel({
-			typeName:  req.body.type
-    });
+		let articleType = new ArticleTypeModel({
+				typeName:  req.body.type
+		});
 		let that=this;
-    articleType.save(function (err, response) {
-      if(err){
-				res.render("articleType",{
-					"code":"1",
-					"msg":"数据新增失败"
-				})
-      }else{
-
-      }
-    });
+		articleType.save(function (err, response) {
+		  if(err){
+					res.render("articleType",{
+						"code":"1",
+						"msg":"数据新增失败"
+					})
+		  }
+		});
 	}
 
 	updateArticleType(req,res,next){

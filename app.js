@@ -36,6 +36,7 @@ app.use('/article', article);
 app.use('/articleAdd', article);
 app.use('/articleType', articleType);
 app.use('/blog', index);
+app.use('/abountMe', index);
 app.use('/blogDeatil', index);
 
 /*检查文件*/
@@ -55,7 +56,7 @@ app.use(function(err, req, res, next) {
 
   res.status(err.status || 500);
   console.log(err.message);
-  res.render('error',{layout:null});
+  res.render('error',{layout:null,msg:err.message});
 });
 
 module.exports = app;

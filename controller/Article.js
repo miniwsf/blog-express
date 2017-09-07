@@ -1,6 +1,8 @@
 'use strict';
 
 import ArticleModel from '../models/Article'
+import ArticleType from '../controller/ArticleType'
+
 let marked=require("marked");
 class Article {
 	constructor(){
@@ -10,11 +12,13 @@ class Article {
         this.getBlog = this.getBlog.bind(this);
         this.getBlogDetail = this.getBlogDetail.bind(this);
 		this.addArticle = this.addArticle.bind(this);
+        this.updateArticle = this.updateArticle.bind(this);
 	}
 
 	//搜索数据  _id和title
     getArticleData(req, res, next){
 		let id=req.query.articleId;
+        let typeId=req.query.typeId;
 		let title=req.body.title;
 		let selectParam={};
 		if(id){
@@ -23,11 +27,14 @@ class Article {
 		if(title){
 			selectParam.title=title;
 		}
+		if(typeId){
+            selectParam.type=typeId;
+		}
 		let status="1";
 		let msg="数据查询失败";
 		let articleData=null;
 		return new Promise((resolve, reject) => {
-            ArticleModel.find(selectParam).populate({ path: 'type', select: { typeName: 1 } }).exec(function (err, article) {
+            ArticleModel.find(selectParam).populate({ path: 'type', select: { typeName: 1 }}).exec(function (err, article) {
                 if (err) {
                 }
                 else{
@@ -58,10 +65,14 @@ class Article {
 		});
 	}
 
+	/*获取博客信息及其分类*/
 	getBlog(req, res, next){
-        this.getArticleData(req, res, next).then(function (article,code,msg) {
-            res.render("blog",{code,msg,article,layout:"index"});
-        });
+		let that=this;
+        ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
+            that.getArticleData(req, res, next).then(function (article,code,msg) {
+                res.render("blog",{code,msg,article,type,layout:"index"});
+            });
+        })
 	}
 
 	getBlogDetail(req, res, next){
@@ -70,9 +81,11 @@ class Article {
             res.render("blogDetail",{code,msg,article:null,layout:"index"});
             return;
 		}
-        this.getArticleData(req, res, next).then(function (article,code,msg) {
-            res.render("blogDetail",{code,msg,article,layout:"index"});
-        });
+		else{
+            this.getArticleData(req, res, next).then(function (article,code,msg) {
+                res.render("blogDetail",{code,msg,article,layout:"index"});
+            });
+		}
 	}
 
 	deleteArticle(req,res,next){
@@ -102,7 +115,6 @@ class Article {
 				praiseNumber:0
 		});
 
-		let that=this;
 		article.save(function (err, response) {
 		  if(err){
 			res.render("article",{
@@ -113,8 +125,24 @@ class Article {
 		});
 	}
 
-	updateArticle(req,res,next){
-
+	/*更新数据，木有写好*/
+	updateArticle(param){
+        let article = new ArticleModel({
+            title:  req.body.title,
+            content: req.body.content,
+            type: req.body.type,
+            keywords: req.body.keywords,
+            readAmount:0,
+            praiseNumber:0
+        });
+        article.update(function (err, response) {
+            if(err){
+                res.render("article",{
+                    "code":"1",
+                    "msg":"更新数据失败"
+                })
+            }
+        });
 	}
 }
 

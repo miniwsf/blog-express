@@ -1,19 +1,31 @@
 {{#each article}}
-<div class="panel panel-default">
+<div class="panel panel-default article-content">
   <div class="panel-heading">
     <h3 class="panel-title">
       <a href="/index/blogDetail?articleId={{_id}}">{{title}}</a><span></span>
     </h3>
   </div>
   <div class="panel-body">
-    <div>{{content}}</div>
+    <div>{{{content}}}</div>
     <div class="blog-info">
-      <span class="glyphicon glyphicon-tag">{{type.typeName}}&nbsp;
+      <span class="glyphicon glyphicon-tag"></span>{{type.typeName}}&nbsp;
       <span class="glyphicon glyphicon-eye-open"></span>{{readAmount}}&nbsp;
       <span class="glyphicon glyphicon-heart"></span>{{praiseNumber}}&nbsp;
-      <span class="glyphicon glyphicon-time">{{create_time}}
+      <span class="glyphicon glyphicon-time"></span>{{create_time}}
     </div>
   </div>
 </div>
 {{/each}}
+<div class="article-type">
+    <div><span class="glyphicon glyphicon-th-list"></span></div>
+        <ul class="list-group">
+            {{#each type}}
+            <li class="list-group-item pointer-style"><a href="/index/blog?typeId={{_id}}">{{typeName}}</a></li>
+            <!--<li class="list-group-item">
+                <span class="badge">新</span>
+                24*7 支持
+            </li>-->
+         {{/each}}
+        </ul>
+</div>
 <script type="text/javascript" src="/js/home/blog.js"></script>

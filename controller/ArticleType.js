@@ -62,10 +62,10 @@ class ArticleType {
 		let that=this;
 		articleType.save(function (err, response) {
 		  if(err){
-					res.render("articleType",{
-						"code":"1",
-						"msg":"数据新增失败"
-					})
+			res.render("articleType",{
+				"code":"1",
+				"msg":"数据新增失败"
+			})
 		  }
 		});
 	}

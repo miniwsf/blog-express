@@ -6,7 +6,7 @@
     </h3>
   </div>
   <div class="panel-body">
-    <div>{{{content}}}</div>
+    <div class="blog-txt">{{{txt}}}</div>
     <div class="blog-info">
       <span class="glyphicon glyphicon-tag"></span>{{type.typeName}}&nbsp;
       <span class="glyphicon glyphicon-eye-open"></span>{{readAmount}}&nbsp;
@@ -17,7 +17,7 @@
 </div>
 {{/each}}
 <div class="article-type">
-    <div><span class="glyphicon glyphicon-th-list"></span></div>
+    <div><span class="glyphicon glyphicon-th-list" id="type-list"></span></div>
         <ul class="list-group">
             {{#each type}}
             <li class="list-group-item pointer-style"><a href="/index/blog?typeId={{_id}}">{{typeName}}</a></li>

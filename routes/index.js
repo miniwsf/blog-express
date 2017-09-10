@@ -11,5 +11,6 @@ router.get('/index/blogDetail', Article.getBlogDetail);
 router.get('/index/abountMe', function(req, res, next) {
     res.render('abountMe', {layout:"index"});
 });
+router.get('/index/blogDetail/praiseBlog', Article.praiseBlog);
 
 module.exports = router;

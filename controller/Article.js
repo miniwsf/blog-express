@@ -2,6 +2,7 @@
 
 import ArticleModel from '../models/Article'
 import ArticleType from '../controller/ArticleType'
+import checkLogin from '../middlewares/checkLogin'
 
 let marked=require("marked");
 class Article {
@@ -13,6 +14,7 @@ class Article {
         this.getBlogDetail = this.getBlogDetail.bind(this);
 		this.addArticle = this.addArticle.bind(this);
         this.updateArticle = this.updateArticle.bind(this);
+        this.praiseBlog = this.praiseBlog.bind(this);
 	}
 
 	//搜索数据  _id和title
@@ -49,6 +51,14 @@ class Article {
                         let timeStr=year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second;
                         item.create_time=timeStr;
                         item.content=marked(item.content);
+
+                        //获得纯文本
+                        let str=item.content;
+                        str = str.replace(/<\/?[^>]*>/g,''); //去除HTML tag
+            			str = str.replace(/[ | ]*\n/g,'\n'); //去除行尾空白
+            			str=str.replace(/&nbsp;/ig,'');//去掉&nbsp;
+            			str=str.replace(/\s/g,''); //将空格去掉
+            			item.txt=str;
                     })
                     articleData=article;
                     msg="成功";
@@ -60,6 +70,9 @@ class Article {
 	}
 
 	getArticle(req, res, next){
+		if(!checkLogin.checkLogin(req, res, next)){
+			return false;
+		}
 		this.getArticleData(req, res, next).then(function (article,code,msg) {
 			res.render("article",{code,msg,article});
 		});
@@ -78,10 +91,13 @@ class Article {
 	getBlogDetail(req, res, next){
         let id=req.query.articleId;
         if(!id){
-            res.render("blogDetail",{code,msg,article:null,layout:"index"});
-            return;
+            this.getBlog();
 		}
 		else{
+			//更新数据
+			let condition={_id:id};
+			let param={'$inc':{'readAmount':1}};
+			this.updateArticle(condition,param);
             this.getArticleData(req, res, next).then(function (article,code,msg) {
                 res.render("blogDetail",{code,msg,article,layout:"index"});
             });
@@ -89,6 +105,9 @@ class Article {
 	}
 
 	deleteArticle(req,res,next){
+		if(!checkLogin.checkLogin(req, res, next)){
+			return false;
+		}
 		let that=this;
 		ArticleModel.remove({"_id":req.query.articleId}, function (err, article) {
 			if (err) {
@@ -104,6 +123,9 @@ class Article {
 	}
 
 	addArticle(req,res,next){
+		if(!checkLogin.checkLogin(req, res, next)){
+			return false;
+		}
 		let article = new ArticleModel({
 				title:  req.body.title,
 				content: req.body.content,
@@ -126,23 +148,25 @@ class Article {
 	}
 
 	/*更新数据，木有写好*/
-	updateArticle(param){
-        let article = new ArticleModel({
-            title:  req.body.title,
-            content: req.body.content,
-            type: req.body.type,
-            keywords: req.body.keywords,
-            readAmount:0,
-            praiseNumber:0
-        });
-        article.update(function (err, response) {
+	updateArticle(condition,param){
+       // let article = new ArticleModel(param);
+        ArticleModel.update(condition,param,{upsert:true},function (err, response) {
             if(err){
-                res.render("article",{
+                /*res.render("article",{
                     "code":"1",
                     "msg":"更新数据失败"
-                })
+                })*/
             }
         });
+	}
+	praiseBlog(req,res,next){
+		let id=req.query.articleId;
+		let condition={_id:id};
+		let param={'$inc':{'praiseNumber':1}};
+		this.updateArticle(condition,param);
+		this.getArticleData(req, res, next).then(function (article,code,msg) {
+	        res.render("blogDetail",{code,msg,article,layout:"index"});
+	    });
 	}
 }
 

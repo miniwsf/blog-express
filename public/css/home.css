@@ -4,7 +4,8 @@ h2{
 
 .home-back{
   width: 100%;
-  background:url(../images/login.jpg) no-repeat;
+  /*background:url(../images/login.jpg) no-repeat;*/
+  background: #333333;
   background-size:cover;
   padding-top: 100%;
   background-position:center center;
@@ -19,6 +20,12 @@ h2{
   left: 50%;
   transform: translateX(-50%);
   float: left;
+  white-space: nowrap;
+  color: #333333;
+}
+
+.btn-txt-style{
+  color: #333 !important;
 }
 
 .home-content{
@@ -74,6 +81,20 @@ h2{
     padding: 2%;
 }
 
+.blog-txt{
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.detail-info{
+  text-align: center;
+}
+
+.text-color{
+  color: #ffffff;
+}
 
 /* 动画 */
 @keyframes left

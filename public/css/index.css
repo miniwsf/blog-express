@@ -57,6 +57,8 @@ ul li{
 .right-nav{
   width: 90%;
   float: left;
+  overflow-y: auto;
+  height: 600px;
 }
 
 .font-style{
@@ -66,4 +68,9 @@ ul li{
 /* 新增类别 */
 .input-width{
   width: 50%;
+}
+
+/*博客详情*/
+.heart-style{
+  margin-top: 5%;
 }

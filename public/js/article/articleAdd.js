@@ -1,6 +1,6 @@
 (function(){
   var articleEditormd;
-  $.get('example.md', function(md){
+  $.get('', function(md){
      articleEditormd = editormd("articleEditormd", {
              width: "100%",
              height: 540,

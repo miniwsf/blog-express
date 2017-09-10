@@ -4,9 +4,24 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  /*color: #333333 !important;*/
+}
+
+a:hover{
+	text-decoration: none !important;
 }
 
 .pointer-style{
   cursor: pointer;
+}
+
+.not-fount{
+	width: 50%;
+	display: block;
+	margin: 0 auto;
+	margin-top: 7%;
+}
+
+.align-style{
+	text-align: center;
 }

@@ -1,4 +1,4 @@
-
+/*
 (function(){
   $("#blogPage").bind("click",function(){
   //  window.location.href="/index/blog";
@@ -8,3 +8,4 @@
     $(".btn-list").addClass("transfotm-btn");
   })
 })()
+*/

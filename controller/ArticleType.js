@@ -67,6 +67,9 @@ class ArticleType {
 				"msg":"数据新增失败"
 			})
 		  }
+		  else{
+              that.getArticleType(req,res,next);
+		  }
 		});
 	}
 

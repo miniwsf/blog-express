@@ -5,7 +5,9 @@
      function saveArticleType(){
        var form=$form[0];
        var type=form.typeName.value;
-
+      if(!checkData()){
+        return;
+      }
         $.ajax({
           type:"POST",
           url:"/articleType/articleTypeAddOk",
@@ -13,24 +15,23 @@
             "type":type
           },
           success:function(res){
-            window.location.href="/articleType";
-            $('#articleTypeModel').modal("hidden");
+            Tips.show("新增成功");
+            //window.location.href="/articleType";
           },
           error:function(err) {
-              //console.log(err)
+            Tips.show("新增失败，请稍后重试");
           }
         })
      }
 
      //检查数据
      function checkData(){
-       var form=$("#acticleForm");
-       var title=form.title;
-       var type=form.type;
-       var keyword=form.keyword;
-       var content=form.content;
-       if(!title){
-
+       var form=$("#articleTypeForm")[0];
+       var type=form.typeName.value;
+       if(!type){
+        alert("文章类别不可为空");
+        return false;
        }
+       return true;
      }
 })()

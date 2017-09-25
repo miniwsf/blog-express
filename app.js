@@ -12,6 +12,7 @@ var article=require('./dist/routes/article');
 var articleType=require('./dist/routes/articleType');
 // handlebars module
 var handlebars=require('express3-handlebars');
+var express_handlebars_sections = require('express-handlebars-sections');
 var app = express();
 
 // view engine setup
@@ -19,11 +20,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('hbs', handlebars({
   layoutsDir: 'views',
   defaultLayout: 'layout',
-  extname: '.hbs'
+  extname: '.hbs',
+    partialsDir:__dirname + '/views/template/',
+    helpers:{
+       section: express_handlebars_sections()
+    }
+
 }));
 app.set('view engine', 'hbs');
 
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -55,9 +61,7 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   res.status(err.status || 500);
-  console.log(err.message);
   res.render('error',{layout:null,msg:err.message});
 });
-
 
 module.exports = app;

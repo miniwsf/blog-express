@@ -18,10 +18,26 @@ a:hover{
 .not-fount{
 	width: 50%;
 	display: block;
-	margin: 0 auto;
-	margin-top: 7%;
+	margin: 7% auto 0 auto;
 }
 
 .align-style{
 	text-align: center;
+}
+
+.display-hidden{
+	display: none;
+}
+
+.display-block{
+	display: block;
+}
+
+.alert-position{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-top: 20%;
+	transform: translateX(-50%);
+	width:20%;
 }

@@ -1,3 +1,6 @@
+{{#section 'head'}}
+    <link rel='stylesheet' href='/css/editormd.min.css'/>
+{{/section}}
 <div>
 	<ol class="breadcrumb">
 		<li><a href="/article" class="active">返回</a></li>
@@ -22,7 +25,7 @@
     <div class="input-group">
       <span class="input-group-addon">关键字</span>
       <input type="text" class="form-control" placeholder="请输入关键字" name="keywords" required/>
-			<span class="input-group-addon">（多个关键字之间用“,”间隔）</span>
+      <span class="input-group-addon">（多个关键字之间用“,”间隔）</span>
     </div>
 		</br>
 		<div id="articleEditormd" name="content"></div>
@@ -32,3 +35,7 @@
 		</div>
   </form>
 </div>
+{{#section 'footer'}}
+    <script src="/plugins/editor/editormd.min.js"></script>
+    <script src="/js/article/articleAdd.js"></script>
+{{/section}}

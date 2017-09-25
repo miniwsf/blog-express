@@ -7,7 +7,7 @@ class UserCheck {
 	}
   	//检测是否登录
 	checkLogin(req, res, next){
-		console.log(req.cookie)
+		/*console.log(req.cookie)
     	let cookie=window.document.cookie;
     	let cookieParam=cookie.split(";");
     	let start=cookie.indexOf("name");
@@ -26,7 +26,7 @@ class UserCheck {
     			res.render("login",{code:"1",msg:"登录失败"});
     			return true;
     		}
-    	}
+    	}*/
 	}
 }
 

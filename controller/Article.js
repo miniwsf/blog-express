@@ -70,9 +70,9 @@ class Article {
 	}
 
 	getArticle(req, res, next){
-		if(!checkLogin.checkLogin(req, res, next)){
+		/*if(!checkLogin.checkLogin(req, res, next)){
 			return false;
-		}
+		}*/
 		this.getArticleData(req, res, next).then(function (article,code,msg) {
 			res.render("article",{code,msg,article});
 		});
@@ -123,9 +123,9 @@ class Article {
 	}
 
 	addArticle(req,res,next){
-		if(!checkLogin.checkLogin(req, res, next)){
+		/*if(!checkLogin.checkLogin(req, res, next)){
 			return false;
-		}
+		}*/
 		let article = new ArticleModel({
 				title:  req.body.title,
 				content: req.body.content,

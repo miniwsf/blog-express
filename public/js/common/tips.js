@@ -3,13 +3,13 @@ var Tips={
     msg:"",
     show:function (msg) {
         var that=this;
-        $("#myAlert").removeClass("display-hidden").addClass("display-block");
         $("#tipsMsg").text(msg);
+        $("#myAlert").fadeIn("slow");
         setTimeout(function(){
             that.close();
-        },3000);
+        },2000);
     },
     close:function () {
-        $("#myAlert").removeClass("display-block").addClass("display-hidden");
+        $("#myAlert").fadeOut("slow");
     }
 };

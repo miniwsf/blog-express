@@ -17,8 +17,9 @@
 </div>
 {{/each}}
 <div class="article-type">
-    <div><span class="glyphicon glyphicon-th-list" id="type-list"></span></div>
+    <!--<div><span class="glyphicon glyphicon-th-list" id="type-list"></span></div>-->
         <ul class="list-group">
+            <li class="list-group-item pointer-style"><a href="/index/blog">全部</a></li>
             {{#each type}}
             <li class="list-group-item pointer-style"><a href="/index/blog?typeId={{_id}}">{{typeName}}</a></li>
             <!--<li class="list-group-item">
@@ -28,4 +29,6 @@
          {{/each}}
         </ul>
 </div>
-<script type="text/javascript" src="/js/home/blog.js"></script>
+{{#section 'footer'}}
+    <script type="text/javascript" src="/js/home/blog.js"></script>
+{{/section}}

@@ -1,6 +1,9 @@
+var $form=$("#acticleForm");
+var articleEditormd;
+
 (function(){
-  var articleEditormd;
-  $.get('', function(md){
+    /*markdown编辑器*/
+  $.get('example', function(md){
      articleEditormd = editormd("articleEditormd", {
              width: "100%",
              height: 540,
@@ -28,43 +31,56 @@
          });
      });
 
-     var $form=$("#acticleForm");
-     //$form.on('submit',saveArticle);
      $("#saveArticle").bind("click",saveArticle);
+})()
 
-     function saveArticle(){
-       var form=$form[0];
-       var title=form.title.value;
-       var type=form.type.value;
-       var keyword=form.keywords.value;
-       var content=articleEditormd.getMarkdown();
-        $.ajax({
-          type:"POST",
-          url:"/article/articleAddOk",
-          data:{
+function saveArticle(){
+    if(!checkData()){
+        return false;
+    }
+    var form=$form[0];
+    var title=form.title.value;
+    var type=form.type.value;
+    var keyword=form.keywords.value;
+    var content=articleEditormd.getMarkdown();
+    var contentH=articleEditormd.getHTML();
+    $.ajax({
+        type:"POST",
+        url:"/article/articleAddOk",
+        data:{
             "title":title,
             "type":type,
             "keywords":keyword,
-            "content":content
-          },
-          success:function(res){
+            "content":content,
+            "contentH":contentH
+        },
+        success:function(res){
+            Tips.show("新增成功");
             window.location.href="/article";
-          },
-          error:function(err) {
-              //console.log(err)
-          }
-        })
-     }
+        },
+        error:function(err) {
+            Tips.show("新增失败");
+        }
+    })
+}
 
-     //检查数据
-     function checkData(){
-       var form=$("#acticleForm");
-       var title=form.title;
-       var type=form.type;
-       var keyword=form.keyword;
-       var content=form.content;
-       if(!title){
-
-       }
-     }
-})()
+//检查数据
+function checkData(){
+    var form=$form[0];
+    var title=form.title.value;
+    var keyword=form.keywords.value;
+    var content=articleEditormd.getMarkdown();
+    if(!title){
+        Confirm.show("请输入文章标题");
+        return false;
+    }
+    else if(!keyword){
+        Confirm.show("请输入文章关键字");
+        return false;
+    }
+    else if(!content){
+        Confirm.show("请输入文章内容");
+        return false;
+    }
+    return true;
+}

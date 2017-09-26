@@ -58,7 +58,7 @@ ul li{
   width: 90%;
   float: left;
   overflow-y: auto;
-  height: 600px;
+  min-height: 600px;
 }
 
 .font-style{
@@ -73,4 +73,16 @@ ul li{
 /*博客详情*/
 .heart-style{
   margin-top: 5%;
+}
+
+.btn-control{
+  margin: 0 auto;
+  left: 50%;
+  display: inline-block;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.confirm-alert{
+  top:20%;
 }

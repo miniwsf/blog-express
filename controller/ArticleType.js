@@ -68,7 +68,7 @@ class ArticleType {
 			})
 		  }
 		  else{
-              that.getArticleType(req,res,next);
+              that.getArticleType(req, res, next);
 		  }
 		});
 	}

@@ -1,10 +1,9 @@
 h2{
-  text-align:center !important;
+  /*text-align:center !important;*/
 }
 
 .home-back{
   width: 100%;
-  /*background:url(../images/login.jpg) no-repeat;*/
   background: #333333;
   background-size:cover;
   padding-top: 100%;
@@ -31,7 +30,7 @@ h2{
 .home-content{
   width: 0%;
   padding: 2%;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .transfotm-left{
@@ -48,6 +47,7 @@ h2{
 
 .right-width{
   width: 75%;
+    max-height: 900px;
 }
 
 .transfotm-right{
@@ -78,7 +78,7 @@ h2{
 
 .article-type{
     width:20%;
-    padding: 2%;
+    padding: 0 2%;
 }
 
 .blog-txt{
@@ -94,6 +94,10 @@ h2{
 
 .text-color{
   color: #ffffff;
+}
+
+.blog-title{
+    text-align: center;
 }
 
 /* 动画 */
@@ -158,6 +162,7 @@ h2{
   25%   {margin-top: -3%;}
   50%   {margin-top: 0;}
   75%   {margin-top: 3%;}
+	100% {margin-top: 0;}
 	100% {margin-top: 0;}
 }
 

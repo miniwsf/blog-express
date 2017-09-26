@@ -5,6 +5,7 @@ import ArticleType from '../controller/ArticleType'
 import checkLogin from '../middlewares/checkLogin'
 
 let marked=require("marked");
+
 class Article {
 	constructor(){
 		this.getArticle = this.getArticle.bind(this);
@@ -36,7 +37,7 @@ class Article {
 		let msg="数据查询失败";
 		let articleData=null;
 		return new Promise((resolve, reject) => {
-            ArticleModel.find(selectParam).populate({ path: 'type', select: { typeName: 1 }}).exec(function (err, article) {
+            ArticleModel.find(selectParam).sort({'create_time':'desc'}).populate({ path: 'type', select: { typeName: 1 }}).exec(function (err, article) {
                 if (err) {
                 }
                 else{
@@ -59,7 +60,7 @@ class Article {
             			str=str.replace(/&nbsp;/ig,'');//去掉&nbsp;
             			str=str.replace(/\s/g,''); //将空格去掉
             			item.txt=str;
-                    })
+                    });
                     articleData=article;
                     msg="成功";
                     status="0";
@@ -105,19 +106,22 @@ class Article {
 	}
 
 	deleteArticle(req,res,next){
-		if(!checkLogin.checkLogin(req, res, next)){
+		/*if(!checkLogin.checkLogin(req, res, next)){
 			return false;
-		}
+		}*/
 		let that=this;
-		ArticleModel.remove({"_id":req.query.articleId}, function (err, article) {
+		ArticleModel.remove({"_id":req.body.articleId}, function (err, article) {
 			if (err) {
-					res.send({
-						code:"1",
-						msg:err
-					})
+				res.send({
+					code:"1",
+					msg:err
+				})
 			}
 			else{
-				that.getArticle(req, res, next);
+				//that.getArticle(req, res, next);
+                that.getArticleData(req, res, next).then(function (article,code,msg) {
+                    res.send({code,msg,article});
+                });
 			}
 		})
 	}
@@ -126,15 +130,17 @@ class Article {
 		/*if(!checkLogin.checkLogin(req, res, next)){
 			return false;
 		}*/
+        let that=this;
 		let article = new ArticleModel({
-				title:  req.body.title,
-				content: req.body.content,
-				type: req.body.type,
-				create_time: new Date().getTime(),
-				author: "wsf",
-				keywords: req.body.keywords,
-				readAmount:0,
-				praiseNumber:0
+			title:  req.body.title,
+			content: req.body.content,
+            contentHtml:req.body.contentH,
+			type: req.body.type,
+			create_time: new Date().getTime(),
+			author: "wsf",
+			keywords: req.body.keywords,
+			readAmount:0,
+			praiseNumber:0
 		});
 
 		article.save(function (err, response) {
@@ -143,6 +149,9 @@ class Article {
 				"code":"1",
 				"msg":"数据新增失败"
 			})
+		  }
+		  else{
+              that.getArticle(req, res, next);
 		  }
 		});
 	}

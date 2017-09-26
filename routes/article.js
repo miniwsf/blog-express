@@ -5,7 +5,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', Article.getArticle);
-router.get('/deleteArticle',Article.deleteArticle);
+router.post('/deleteArticle',Article.deleteArticle);
 router.get('/articleEdit',Article.updateArticle);
 router.post('/articleAddOk',Article.addArticle);
 router.get('/articleAdd',ArticleType.getArticleTypeOther)

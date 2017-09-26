@@ -52,10 +52,6 @@ app.use(function(req, res, next) {
   res.render('404',{layout:null});
 });
 
-/*router.use(function (req, res, next) {
-  console.log('Time:', Date.now());
-});*/
-
 app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

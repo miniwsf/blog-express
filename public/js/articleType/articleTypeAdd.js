@@ -15,8 +15,8 @@
             "type":type
           },
           success:function(res){
+            $('#articleTypeModel').modal('hide');
             Tips.show("新增成功");
-            //window.location.href="/articleType";
           },
           error:function(err) {
             Tips.show("新增失败，请稍后重试");
@@ -29,9 +29,10 @@
        var form=$("#articleTypeForm")[0];
        var type=form.typeName.value;
        if(!type){
-        alert("文章类别不可为空");
-        return false;
+         //alert("文章类别不可为空");
+         Confirm.show("文章类别不可为空");
+         return false;
        }
        return true;
      }
-})()
+})();

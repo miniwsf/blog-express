@@ -1,33 +1,35 @@
-{{#each article}}
-<div class="panel panel-default article-content">
-  <div class="panel-heading">
-    <h3 class="panel-title">
-      <a href="/index/blogDetail?articleId={{_id}}">{{title}}</a><span></span>
-    </h3>
-  </div>
-  <div class="panel-body">
-    <div class="blog-txt">{{{txt}}}</div>
-    <div class="blog-info">
-      <span class="glyphicon glyphicon-tag"></span>{{type.typeName}}&nbsp;
-      <span class="glyphicon glyphicon-eye-open"></span>{{readAmount}}&nbsp;
-      <span class="glyphicon glyphicon-heart"></span>{{praiseNumber}}&nbsp;
-      <span class="glyphicon glyphicon-time"></span>{{create_time}}
+<!--博客-->
+<div class="blog-content">
+    <img class="blog-back" src="/images/blog-back.png">
+    <div class="homeContent">
+        <div class="blog-left">
+            {{#each article}}
+                <div class="blog-article">
+                    <div class="blog-detail">
+                        <div class="blog-detail-title">{{title}}</div>
+                        <div class="blog-detail-image">
+                            <img src="/images/love.jpg">
+                        </div>
+                        <div class="blog-detail-text">
+                            {{{txt}}}
+                        </div>
+                    </div>
+                    <div class="blog-author">
+                        <div>wsf</div>
+                        <div></div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+        <div class="blog-right">
+            <ul class="list-group">
+                <li class="list-group-item pointer-style"><a href="/index/blog">全部</a></li>
+                {{#each type}}
+                    <li class="list-group-item pointer-style"><a href="/index/blog?typeId={{_id}}">{{typeName}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
     </div>
-  </div>
-</div>
-{{/each}}
-<div class="article-type">
-    <!--<div><span class="glyphicon glyphicon-th-list" id="type-list"></span></div>-->
-        <ul class="list-group">
-            <li class="list-group-item pointer-style"><a href="/index/blog">全部</a></li>
-            {{#each type}}
-            <li class="list-group-item pointer-style"><a href="/index/blog?typeId={{_id}}">{{typeName}}</a></li>
-            <!--<li class="list-group-item">
-                <span class="badge">新</span>
-                24*7 支持
-            </li>-->
-         {{/each}}
-        </ul>
 </div>
 {{#section 'footer'}}
     <script type="text/javascript" src="/js/home/blog.js"></script>

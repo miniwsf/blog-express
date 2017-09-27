@@ -1,0 +1,52 @@
+<!--首页内容-->
+<div class="home-recommend">
+    <img src="/images/recommond-back.png" class="home-recommend-back">
+    <div class="recommend-content">
+        <div class="recommend-title">Hello world</div>
+        <div class="recommend-detail">Hello world</div>
+    </div>
+    <div class="read-more"></div>
+</div>
+<div class="home-introduce">
+    <div class="home-columns">
+        <div class="home-columns-icon">
+            <img src="/images/Xmas_C-04.png">
+        </div>
+        <div class="home-columns-title">Blogs</div>
+        <div class="home-columns-detail">
+            不定期更新关于前端技术、关于旅行、关于日常的小“美文”哦,还会有各种小推荐，小推荐每周五更新哦~表错过
+        </div>
+    </div>
+    <div class="home-columns">
+        <div class="home-columns-icon">
+            <img src="/images/Xmas_C-06.png">
+        </div>
+        <div class="home-columns-title">Project</div>
+        <div class="home-columns-detail">
+            这里，会有各种小东西小案例哦，很多好玩的东西哦~
+        </div>
+    </div>
+    <div class="home-columns">
+        <div class="home-columns-icon">
+            <img src="/images/Xmas_C-07.png">
+        </div>
+        <div class="home-columns-title">Other</div>
+        <div class="home-columns-detail">
+            暂时还没想好哦~先等等等等
+        </div>
+    </div>
+</div>
+<div class="home-latest">
+    <div class="home-latest-title">最近博客</div>
+    <div class="home-blog-grid">
+        {{#each article}}
+            <div class="home-blog-columns">
+                <div><img src="{{image}}" class="home-blog-image"></div>
+                <div class="home-blog-title">{{title}}</div>
+                <div class="home-blog-time">{{create_time}}</div>
+                <div class="home-blog-content">{{{txt}}}</div>
+                <div class="home-more">Read More...</div>
+            </div>
+        {{/each}}
+    </div>
+</div>

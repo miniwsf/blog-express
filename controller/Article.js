@@ -60,6 +60,9 @@ class Article {
             			str=str.replace(/&nbsp;/ig,'');//去掉&nbsp;
             			str=str.replace(/\s/g,''); //将空格去掉
             			item.txt=str;
+
+            			//获取封面图
+                        item.image="/images/Xmas_C-04.png";
                     });
                     articleData=article;
                     msg="成功";

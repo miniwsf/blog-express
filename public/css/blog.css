@@ -29,6 +29,7 @@
 .blog-right{
     width:26%;
     float: left;
+    padding-left: 3%;
 }
 
 .blog-detail{
@@ -39,6 +40,7 @@
 .blog-author{
     width:17%;
     float: left;
+    padding-top: 5%;
     text-align: center;
 }
 
@@ -64,4 +66,47 @@
     position: absolute;
     top:0;
     left:0;
+}
+
+.blog-author-text{
+    font-size: 20px;
+    color: #000000;
+}
+
+.blog-author-name{
+    color: #e6618c;
+    font-size: 12px;
+}
+
+.blog-type{
+    color: #989b9f;
+    font-size: 14px;
+}
+
+.blog-detail-title{
+    font-size: 28px;
+    color: #000;
+    margin:1% 0 1% 0;
+}
+
+.blog-list-group{
+    background: #ffffff;
+    border: 1px solid #d6d6d6;
+}
+
+.blog-list-group-item{
+
+}
+
+.blog-read{
+    color: #c8c8c8;
+}
+
+.blog-read::before{
+    content: ' ',
+    background:url("../images/Xmas_C_04.png");
+    background-size: 100% 100%;
+    width: 10%;
+    display: inline-block;
+    vertical-align: middle;
 }

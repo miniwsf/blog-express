@@ -1,11 +1,12 @@
 <!--博客-->
 <div class="blog-content">
-    <img class="blog-back" src="/images/blog-back.png">
+    <!--<img class="blog-back" src="/images/blog-back.png">-->
     <div class="homeContent">
         <div class="blog-left">
             {{#each article}}
                 <div class="blog-article">
                     <div class="blog-detail">
+                        <div class="blog-type">{{type.typeName}}&nbsp;&nbsp;&nbsp;{{create_time}}</div>
                         <div class="blog-detail-title">{{title}}</div>
                         <div class="blog-detail-image">
                             <img src="/images/love.jpg">
@@ -15,17 +16,19 @@
                         </div>
                     </div>
                     <div class="blog-author">
-                        <div>wsf</div>
-                        <div></div>
+                        <div class="blog-author-text">Author</div>
+                        <div class="blog-author-name">{{author}}</div>
+                        <div class="blog-read">{{readAmount}}</div>
+                        <div class="blog-read">{{praiseNumber}}</div>
                     </div>
                 </div>
             {{/each}}
         </div>
         <div class="blog-right">
-            <ul class="list-group">
-                <li class="list-group-item pointer-style"><a href="/index/blog">全部</a></li>
+            <ul class="blog-list-group">
+                <li class="blog-list-group-item pointer-style"><a href="/index/blog">全部</a></li>
                 {{#each type}}
-                    <li class="list-group-item pointer-style"><a href="/index/blog?typeId={{_id}}">{{typeName}}</a></li>
+                    <li class="blog-list-group-item pointer-style"><a href="/index/blog?typeId={{_id}}">{{typeName}}</a></li>
                 {{/each}}
             </ul>
         </div>

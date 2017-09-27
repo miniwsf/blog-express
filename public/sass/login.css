@@ -1,0 +1,47 @@
+
+body{
+  background: url(../images/login.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment:fixed;
+  overflow: hidden;
+}
+
+.backimg{
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.login-dialog{
+  width: 20%;
+  background: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  top: 0%;
+  left: 0;
+  margin-left: 50%;
+  margin-top: 10%;
+  transform: translateX(-50%);
+  padding: 3% 3%;
+  z-index: 999;
+  box-shadow: 6px 6px 5px rgba(0,0,0,0.2);
+}
+
+.login-dialog .login-title{
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.font-color{
+  color: #ffffff;
+  border-radius: 100%;
+}
+
+#form:invalid .sub_button{
+    background: #595959;
+}
+
+.group-style{
+  margin-top: 10%;
+}

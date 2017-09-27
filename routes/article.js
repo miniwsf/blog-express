@@ -8,6 +8,7 @@ router.get('/', Article.getArticle);
 router.post('/deleteArticle',Article.deleteArticle);
 router.get('/articleEdit',Article.updateArticle);
 router.post('/articleAddOk',Article.addArticle);
-router.get('/articleAdd',ArticleType.getArticleTypeOther)
+router.post('/updateArticle',Article.updateBlog);
+router.get('/articleAdd',ArticleType.getArticleTypeOther);
 
 module.exports = router;

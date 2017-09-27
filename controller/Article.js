@@ -168,6 +168,7 @@ class Article {
             }
         });
 	}
+
 	praiseBlog(req,res,next){
 		let id=req.query.articleId;
 		let condition={_id:id};
@@ -176,6 +177,10 @@ class Article {
 		this.getArticleData(req, res, next).then(function (article,code,msg) {
 	        res.render("blogDetail",{code,msg,article,layout:"index"});
 	    });
+	}
+
+	updateBlog(req,res,next){
+
 	}
 }
 

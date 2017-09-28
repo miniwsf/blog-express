@@ -22,7 +22,7 @@
 
 .blog-right{
     width:26%;
-    float: left;
+    float: right;
     padding-left: 3%;
 }
 
@@ -40,6 +40,7 @@
 
 .top-style{
     padding-top: 3%;
+    margin-bottom:5%;
 }
 
 .blog-detail-image{
@@ -121,9 +122,15 @@
 
 .blog-list-group-item{
     padding:3% 0 3% 25%;
+}
+
+.blog-list-group-item a{
     font-family: Arial;
     font-size: 13px;
     color: #000;
+}
+.blog-list-group-item a:hover{
+    opacity:0.8;
 }
 
 .blog-icon{
@@ -133,4 +140,13 @@
 
 .blog-read{
     color: #c8c8c8;
+}
+
+.blog-no-data{
+    text-align: center;
+    font-family: yan;
+    font-size: 28px;
+    color: #000;
+    opacity: 0.8;
+    padding-top: 10%;
 }

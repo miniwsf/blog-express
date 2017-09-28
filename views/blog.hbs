@@ -29,13 +29,16 @@
                     </div>
                 </div>
             {{/each}}
+            {{#unless article}}
+                <div class="blog-no-data">暂时没有内容哦~</div>
+            {{/unless}}
         </div>
         <div class="blog-right">
             <div class="blog-list-group">
                 <div class="blog-type-title">Blog Type</div>
-                <div class="blog-list-group-item pointer-style">全部</div>
+                <div class="blog-list-group-item pointer-style"><a href="/blog">全部</a></div>
                 {{#each type}}
-                    <div class="blog-list-group-item pointer-style">{{typeName}}</div>
+                    <div class="blog-list-group-item pointer-style"><a href="/blog?typeId={{_id}}">{{typeName}}</a></div>
                 {{/each}}
             </div>
         </div>

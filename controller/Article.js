@@ -12,6 +12,7 @@ class Article {
 		this.getArticleData = this.getArticleData.bind(this);
 		this.deleteArticle = this.deleteArticle.bind(this);
         this.getBlog = this.getBlog.bind(this);
+        this.getHome = this.getHome.bind(this);
         this.getBlogDetail = this.getBlogDetail.bind(this);
 		this.addArticle = this.addArticle.bind(this);
         this.updateArticle = this.updateArticle.bind(this);
@@ -51,10 +52,9 @@ class Article {
                         let second=time.getSeconds();
                         let timeStr=year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second;
                         item.create_time=timeStr;
-                        item.content=marked(item.content);
 
                         //获得纯文本
-                        let str=item.content;
+                        let str=item.contentHtml;
                         str = str.replace(/<\/?[^>]*>/g,''); //去除HTML tag
             			str = str.replace(/[ | ]*\n/g,'\n'); //去除行尾空白
             			str=str.replace(/&nbsp;/ig,'');//去掉&nbsp;
@@ -62,7 +62,22 @@ class Article {
             			item.txt=str;
 
             			//获取封面图
-                        item.image="/images/Xmas_C-04.png";
+                        let imgReg=/.*!\[.*?\]\(.*?\).*/;
+                        let arr=item.content.match(imgReg);
+                        let image="";
+                        if(arr&&arr.length>0){
+                        	for(var info of arr){
+                        		let imgInfo=info.split("(");
+                        		if(imgInfo.length>=2){
+                                    image=imgInfo[1].split(")")[0];
+                                    break;
+								}
+								else{
+                        			break;
+								}
+							}
+						}
+                        item.image=image;
                     });
                     articleData=article;
                     msg="成功";
@@ -80,6 +95,17 @@ class Article {
 		this.getArticleData(req, res, next).then(function (article,code,msg) {
 			res.render("article",{code,msg,article});
 		});
+	}
+
+    getHome(req, res, next){
+        let that=this;
+        ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
+            that.getArticleData(req, res, next).then(function (article,code,msg) {
+                let [recommendArticle,article1=null,article2=null,article3=null]=article;
+                let articleLatest=[article1,article2,article3];
+                res.render("home",{code,msg,recommendArticle,articleLatest,type,layout:"index"});
+            });
+        })
 	}
 
 	/*获取博客信息及其分类*/

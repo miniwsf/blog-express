@@ -1,18 +1,21 @@
-<p>
-	<a href="/index/blog">返回>></a>
-</p>
-{{#each article}}
-<div class="page-header">
-    <h2 class="blog-title">{{title}}</h2>
-    <div class="detail-info">
-		{{create_time}}&nbsp;阅读({{readAmount}})
-	</div>
+<div class="homeContent">
+   <!-- <p>
+        <a href="/blog">返回>></a>
+    </p>-->
+    {{#each article}}
+        <div class="page-header">
+            <h2 class="blog-title">{{title}}</h2>
+            <div class="detail-info">
+                {{create_time}}&nbsp;阅读({{readAmount}})
+            </div>
+        </div>
+        <p>{{{contentHtml}}}</p>
+        <div class="align-style heart-style">
+            <a href="/blogDetail/praiseBlog?articleId={{_id}}" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-heart"></span> {{praiseNumber}}
+            </a>
+        </div>
+    {{/each}}
+    <script type="text/javascript" src="/js/home/blog.js"></script>
 </div>
-<p>{{{contentHtml}}}</p>
-<div class="align-style heart-style">
-	<a href="/index/blogDetail/praiseBlog?articleId={{_id}}" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-heart"></span> {{praiseNumber}}
-    </a>
-</div>
-{{/each}}
-<script type="text/javascript" src="/js/home/blog.js"></script>
+

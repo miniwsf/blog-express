@@ -4,4 +4,5 @@
     $(".home-content").addClass("right-width");
     
    // $("#type-list")
-})()
+})();
+

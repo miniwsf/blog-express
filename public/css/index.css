@@ -1,5 +1,5 @@
 
-body,div,ul{
+div,ul{
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -73,6 +73,7 @@ ul li{
 /*博客详情*/
 .heart-style{
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .btn-control{

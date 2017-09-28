@@ -1,7 +1,10 @@
+{{#section 'head'}}
+    <link rel='stylesheet' href='/css/blog.css'/>
+{{/section}}
 <!--博客-->
 <div class="blog-content">
     <!--<img class="blog-back" src="/images/blog-back.png">-->
-    <div class="homeContent">
+    <div class="homeContent top-style">
         <div class="blog-left">
             {{#each article}}
                 <div class="blog-article">
@@ -9,28 +12,32 @@
                         <div class="blog-type">{{type.typeName}}&nbsp;&nbsp;&nbsp;{{create_time}}</div>
                         <div class="blog-detail-title">{{title}}</div>
                         <div class="blog-detail-image">
-                            <img src="/images/love.jpg">
+                            <img src="{{image}}">
                         </div>
                         <div class="blog-detail-text">
-                            {{{txt}}}
+                            <div class="blog-detail-txt">
+                                {{{txt}}}
+                            </div>
+                            <div class=""><a href="/blogDetail?articleId={{_id}}">Read More...</a></div>
                         </div>
                     </div>
                     <div class="blog-author">
                         <div class="blog-author-text">Author</div>
                         <div class="blog-author-name">{{author}}</div>
-                        <div class="blog-read">{{readAmount}}</div>
-                        <div class="blog-read">{{praiseNumber}}</div>
+                        <div class="blog-read" title="阅读量"><img src="/images/Xmas_C-01.png" class="blog-icon">{{readAmount}}</div>
+                        <div class="blog-read" title="点赞量"><img src="/images/Xmas_C-03.png" class="blog-icon">{{praiseNumber}}</div>
                     </div>
                 </div>
             {{/each}}
         </div>
         <div class="blog-right">
-            <ul class="blog-list-group">
-                <li class="blog-list-group-item pointer-style"><a href="/index/blog">全部</a></li>
+            <div class="blog-list-group">
+                <div class="blog-type-title">Blog Type</div>
+                <div class="blog-list-group-item pointer-style">全部</div>
                 {{#each type}}
-                    <li class="blog-list-group-item pointer-style"><a href="/index/blog?typeId={{_id}}">{{typeName}}</a></li>
+                    <div class="blog-list-group-item pointer-style">{{typeName}}</div>
                 {{/each}}
-            </ul>
+            </div>
         </div>
     </div>
 </div>

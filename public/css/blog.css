@@ -1,10 +1,4 @@
 
-.blog-content{
-    width:100%;
-    overflow: hidden;
-    background: #e2e2e0;
-}
-
 .blog-back{
     width:100%;
     display: block;
@@ -44,19 +38,37 @@
     text-align: center;
 }
 
+.top-style{
+    padding-top: 3%;
+}
+
 .blog-detail-image{
     width:31%;
     padding-top: 31%;
     border: 5px solid #f0f0f0;
     position: relative;
     float: left;
+    background: url("../images/no-image.png") no-repeat;
+    background-size: 100% 100%;
 }
 
 .blog-detail-text{
     width:65%;
     float: left;
-    max-height: 100px;
     padding-left: 3%;
+    font-family: Arial;
+    position: relative;
+}
+
+.blog-detail-txt{
+    width:100%;
+    color: #636060;
+    font-size: 14px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
 }
 
 .blog-detail-image img{
@@ -66,16 +78,19 @@
     position: absolute;
     top:0;
     left:0;
+    object-fit: cover;
 }
 
 .blog-author-text{
     font-size: 20px;
     color: #000000;
+    font-family: yan;
 }
 
 .blog-author-name{
     color: #e6618c;
     font-size: 12px;
+    margin-bottom: 42%;
 }
 
 .blog-type{
@@ -83,30 +98,39 @@
     font-size: 14px;
 }
 
+.blog-type-title{
+    font-family: yan;
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    padding: 10% 0 8% 0;
+}
+
 .blog-detail-title{
     font-size: 28px;
     color: #000;
     margin:1% 0 1% 0;
+    font-family: yan;
 }
 
 .blog-list-group{
     background: #ffffff;
     border: 1px solid #d6d6d6;
+    padding-bottom: 20%;
 }
 
 .blog-list-group-item{
+    padding:3% 0 3% 25%;
+    font-family: Arial;
+    font-size: 13px;
+    color: #000;
+}
 
+.blog-icon{
+    width:20%;
+    vertical-align: middle;
 }
 
 .blog-read{
     color: #c8c8c8;
-}
-
-.blog-read::before{
-    content: ' ',
-    background:url("../images/Xmas_C_04.png");
-    background-size: 100% 100%;
-    width: 10%;
-    display: inline-block;
-    vertical-align: middle;
 }

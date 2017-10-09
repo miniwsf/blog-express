@@ -8,7 +8,6 @@ class UserCheck {
 	checkLogin(req, res, next){
 		let username=req.cookies.userName;
 		let psd=req.cookies.psd;
-        console.log(username);
 		if(!username||!psd){
             res.render('login',{layout:null});
             return false;
@@ -18,10 +17,7 @@ class UserCheck {
                 res.render('login',{layout:null});
             }
             else{
-                if(user.length>0){
-
-                }
-                else{
+                if(user.length<=0){
                     res.render('login',{layout:null});
                     return false;
                 }

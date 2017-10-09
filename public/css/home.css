@@ -81,16 +81,23 @@
 */
 
 /*自适应屏幕大小*/
-@media (max-width: 1300px) {
+@media (min-width: 1300px) {
+    .homeContent{
+        width:60%;
+        margin:0 auto;
+    }
+}
+
+@media (min-width: 768px)and (max-width: 1300px){
     .homeContent{
         width:80%;
         margin:0 auto;
     }
 }
 
-@media (min-width: 1300px) {
+@media (max-width: 768px) {
     .homeContent{
-        width:60%;
+        width:95%;
         margin:0 auto;
     }
 }
@@ -258,7 +265,6 @@
     grid-template-columns: repeat(3, 33%);
     width:100%;
     text-align: center;
-    padding-bottom: 6%;
 }
 
 .home-blog-image{
@@ -297,7 +303,7 @@
 }
 
 .home-blog-columns{
-    padding: 0 2%;
+    padding: 0 2% 18% 2%;
 }
 
 .home-blog-content{

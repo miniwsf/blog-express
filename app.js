@@ -14,6 +14,9 @@ var articleType=require('./dist/routes/articleType');
 var handlebars=require('express3-handlebars');
 var express_handlebars_sections = require('express-handlebars-sections');
 var app = express();
+//session
+var session = require('express-session');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,6 +48,12 @@ app.use('/blog', index);
 app.use('/home', index);
 app.use('/abountMe', index);
 app.use('/blogDeatil', index);
+
+app.use(session({
+    resave: false, // don't save session if unmodified
+    saveUninitialized: false, // don't create session until something stored
+    secret: 'keyboard cat'
+}));
 
 /*检查文件*/
 app.use(function(req, res, next) {

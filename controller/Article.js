@@ -89,9 +89,7 @@ class Article {
 	}
 
 	getArticle(req, res, next){
-		/*if(!checkLogin.checkLogin(req, res, next)){
-			return false;
-		}*/
+		checkLogin.checkLogin(req, res, next);
 		this.getArticleData(req, res, next).then(function (article,code,msg) {
 			res.render("article",{code,msg,article});
 		});
@@ -135,9 +133,7 @@ class Article {
 	}
 
 	deleteArticle(req,res,next){
-		/*if(!checkLogin.checkLogin(req, res, next)){
-			return false;
-		}*/
+        checkLogin.checkLogin(req, res, next);
 		let that=this;
 		ArticleModel.remove({"_id":req.body.articleId}, function (err, article) {
 			if (err) {
@@ -156,9 +152,7 @@ class Article {
 	}
 
 	addArticle(req,res,next){
-		/*if(!checkLogin.checkLogin(req, res, next)){
-			return false;
-		}*/
+        checkLogin.checkLogin(req, res, next);
         let that=this;
 		let article = new ArticleModel({
 			title:  req.body.title,

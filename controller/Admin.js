@@ -1,35 +1,41 @@
 'use strict';
 
 import AdminModel from '../models/Admin'
-import Article from '../controller/Article'
+let crypto = require('crypto');
+let hash = crypto.createHash("md5");
+
 class Admin {
 	constructor(){
 		this.login = this.login.bind(this);
 	}
 
 	login(req, res, next){
-		let username=req.body.username;
+        let username=req.body.username;
 		let password=req.body.password;
 		if(!username||!password){
-			//res.render("blog",{code:"1",msg:"请输入用户名或密码"});
 			res.send({code:"1",msg:"请输入用户名或密码"});
 			return;
 		}
-		AdminModel.find({userName:username,password:password}, function (err, user) {
+        hash.update(new Buffer(password, "binary"));
+        let encodepsd = hash.digest('hex');
+        console.log(encodepsd);
+        console.log(username);
+
+		AdminModel.find({userName:username,password:encodepsd}, function (err, user) {
+			console.log(user);
 			if(err){
-				//es.render("blog",{code:"1",msg:"登录失败"});
-				res.send({code:"1",msg:"网络错误"});
+				res.render("login",{code:"1",msg:"网络错误"});
 			}
 			else{
 				if(user.length>0){
-					//Article.getArticle();
+                    console.log("登录4");
+                    res.cookie('userName',username);
+                    res.cookie('psd',password);
 					res.send({code:"0",msg:"登陆成功"});
 				}
 				else{
-					//res.render("blog",{code:"1",msg:"登录失败"});
-					document.cookie="name="+userName;
-					document.cookie="psd="+password;
-					res.send({code:"1",msg:"用户名或密码不正确"});
+                    console.log("登录5");
+					res.render("login",{code:"1",msg:"用户名或密码不正确"});
 				}
 			}
 		})

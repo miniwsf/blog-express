@@ -5,13 +5,13 @@
 	object-fit: cover;
 }
 .abountMe{
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-family: book;
 	padding: 2% 0;
 }
 
 .me-content{
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-family: Arial;
 	margin-top:3%;
 	margin-bottom: 5%;

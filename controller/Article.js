@@ -50,7 +50,7 @@ class Article {
                         let hour=time.getHours();
                         let minute=time.getMinutes();
                         let second=time.getSeconds();
-                        let timeStr=year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second;
+                        let timeStr=year+"-"+month+"-"+day+" "+hour+":"+minute;
                         item.create_time=timeStr;
 
                         //获得纯文本

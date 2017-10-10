@@ -64,7 +64,7 @@
 .blog-detail-txt{
     width:100%;
     color: #636060;
-    font-size: 14px;
+    font-size: 0.875rem;
     overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -83,32 +83,32 @@
 }
 
 .blog-author-text{
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #000000;
     font-family: yan;
 }
 
 .blog-author-name{
     color: #e6618c;
-    font-size: 12px;
+    font-size: 0.75rem;
     margin-bottom: 42%;
 }
 
 .blog-type{
     color: #989b9f;
-    font-size: 14px;
+    font-size: 0.875rem
 }
 
 .blog-type-title{
     font-family: yan;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #000;
     text-align: center;
     padding: 10% 0 8% 0;
 }
 
 .blog-detail-title{
-    font-size: 28px;
+    font-size: 1.75rem;
     color: #000;
     margin:1% 0 1% 0;
     font-family: yan;
@@ -126,7 +126,7 @@
 
 .blog-list-group-item a{
     font-family: Arial;
-    font-size: 13px;
+    font-size: 0.8125rem;
     color: #000;
 }
 .blog-list-group-item a:hover{
@@ -145,7 +145,7 @@
 .blog-no-data{
     text-align: center;
     font-family: yan;
-    font-size: 28px;
+    font-size: 1.75rem;
     color: #000;
     opacity: 0.8;
     padding-top: 10%;

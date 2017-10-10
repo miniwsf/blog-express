@@ -1,6 +1,5 @@
 
 body{
-  background: url(../images/login.jpg) no-repeat;
   background-size: cover;
   background-position: center center;
   background-attachment:fixed;
@@ -29,7 +28,7 @@ body{
 
 .login-dialog .login-title{
   text-align: center;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: bold;
 }
 

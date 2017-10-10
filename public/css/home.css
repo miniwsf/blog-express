@@ -30,7 +30,7 @@
 
 .right-width{
   width: 75%;
-    max-height: 900px;
+  max-height: 900px;
 }
 
 .blog-info{
@@ -66,6 +66,7 @@
 
 .blog-title{
     text-align: center;
+    font-size: 1.875rem;
 }
 
 /*新版*/
@@ -73,18 +74,15 @@
     width: 100%;
     height: 100%;
 }
-/*
-.homeContent{
-    width:80%;
-    margin:0 auto;
-}
-*/
 
 /*自适应屏幕大小*/
 @media (min-width: 1300px) {
     .homeContent{
         width:60%;
         margin:0 auto;
+    }
+    .home-columns-icon img{
+        width:20%;
     }
 }
 
@@ -93,12 +91,18 @@
         width:80%;
         margin:0 auto;
     }
+    .home-columns-icon img{
+        width:40%;
+    }
 }
 
 @media (max-width: 768px) {
     .homeContent{
-        width:95%;
+        width:92%;
         margin:0 auto;
+    }
+    .home-columns-icon img{
+        width:50%;
     }
 }
 
@@ -123,7 +127,7 @@
 }
 
 .home-title{
-    font-size: 36px;
+    font-size: 2.25rem;
     font-family: coco;
     color: #000;
     line-height:1.2;
@@ -134,7 +138,7 @@
     top:50%;
     transform: translateY(-50%);
     right:0;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-family: book;
     font-weight: bold;
 }
@@ -169,7 +173,7 @@
 
 .recommend-title{
     color: #eceae0;
-    font-size: 45px;
+    font-size: 2.8125rem;
     width: 60%;
     overflow: hidden;
     white-space: nowrap;
@@ -178,7 +182,7 @@
 
 .recommend-detail{
     color: #ece2e0;
-    font-size: 14px;
+    font-size: 0.875rem;
     width:40%;
     overflow : hidden;
     text-overflow: ellipsis;
@@ -211,60 +215,77 @@
 }
 
 .home-introduce{
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
     width:100%;
     text-align: center;
+    overflow: hidden;
 }
 
 .home-columns{
-    padding: 0 5%;
-}
-
-.home-columns-icon img{
-    width:20%;
+    width:33%;
+    float: left;
+    padding: 0 3%;
 }
 
 .home-columns-title{
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #221e1d;
 }
 
 .home-columns-detail{
-    font-size: 12px;
+    font-size: 0.75rem;
     color: #363636;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 /*最近博客*/
 .home-latest-title{
-    color: #221e1d;
-    font-size: 24px;
-    text-align: center;
+    padding-top: 1px;
+    width: 100%;
+    position: relative;
     margin:6% 0 5% 0;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height:1.5rem;
+    color: #221e1d;
+}
+
+.home-latest{
+    position: relative;
 }
 
 .home-latest-title:before{
     content: ' ';
-    background: #221e1d;
-    padding-top: 1%;
-    vertical-align: middle;
+    background:#221e1d repeat-x;
+    font-size: 0;
+    padding-top: 1px;
+    position: absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
     width:40%;
 }
 
 .home-latest-title:after{
     content: ' ';
-    background: #221e1d;
-    padding-top: 1%;
-    vertical-align: middle;
+    background:#221e1d repeat-x;
+    font-size: 0;
+    padding-top: 1px;
+    position: absolute;
+    right:0;
+    top:50%;
+    transform: translateY(-50%);
     width:40%;
 }
 
+
 .home-blog-grid{
     width:100%;
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
-    width:100%;
     text-align: center;
+    overflow: hidden;
 }
 
 .home-blog-image{
@@ -292,18 +313,20 @@
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #000;
     margin:6% 0 2% 0;
 }
 
 .home-blog-time{
     color: #969494;
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .home-blog-columns{
-    padding: 0 2% 18% 2%;
+    width:33%;
+    float: left;
+    padding: 0 2% 6% 2%;
 }
 
 .home-blog-content{
@@ -313,13 +336,13 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     color: #221e1d;
-    font-size: 12px;
+    font-size: 0.75rem;
     margin:4% 0 2% 0;
 }
 
 .home-more{
     color: #78958e;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .home-bottom{
@@ -331,7 +354,7 @@
 .home-list-other{
     color: #000000;
     right:0;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-family: book;
     font-weight: bold;
     float: left;
@@ -340,7 +363,7 @@
 .blog-editor{
     color: #000000;
     right:0;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-family: book;
     font-weight: bold;
     float: right;

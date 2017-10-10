@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1016c0e2-3c6b-4c00-ba5a-287cbc173f47" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/blog.css" afterPath="$PROJECT_DIR$/public/css/blog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/home.css" afterPath="$PROJECT_DIR$/public/css/home.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,21 +40,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="blog.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/blog.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="147" column="23" lean-forward="true" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+            <state relative-caret-position="685">
+              <caret line="64" column="14" lean-forward="true" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="166" column="18" lean-forward="true" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="18" />
+            <state relative-caret-position="419">
+              <caret line="182" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -135,7 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>blog-list-group</find>
       <find>home-bottom</find>
       <find>blog-author-name</find>
       <find>coco</find>
@@ -151,7 +148,6 @@
       <find>.home-recommend-back</find>
       <find>home-back</find>
       <find>blog-detail-image</find>
-      <find>blog-right</find>
       <find>blog-list-group-item</find>
       <find>top-style</find>
       <find>home-blog-columns</find>
@@ -165,6 +161,8 @@
       <find>home-blog-latest-title</find>
       <find>blog-detail-txt</find>
       <find>.home-recommend</find>
+      <find>blog-right</find>
+      <find>recommend-title</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -217,8 +215,8 @@
         <option value="$PROJECT_DIR$/views/home.hbs" />
         <option value="$PROJECT_DIR$/views/blogDetail.hbs" />
         <option value="$PROJECT_DIR$/views/index.hbs" />
-        <option value="$PROJECT_DIR$/public/css/blog.css" />
         <option value="$PROJECT_DIR$/public/css/home.css" />
+        <option value="$PROJECT_DIR$/public/css/blog.css" />
       </list>
     </option>
   </component>
@@ -502,12 +500,12 @@
       <workItem from="1506509661332" duration="66000" />
       <workItem from="1506562358402" duration="22275000" />
       <workItem from="1507512427560" duration="14239000" />
-      <workItem from="1507598622127" duration="10898000" />
+      <workItem from="1507598622127" duration="11495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128702000" />
+    <option name="totallyTimeSpent" value="129299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -917,18 +915,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/blog.css">
+    <entry file="file://$PROJECT_DIR$/public/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="147" column="23" lean-forward="true" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+        <state relative-caret-position="419">
+          <caret line="182" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/home.css">
+    <entry file="file://$PROJECT_DIR$/public/css/blog.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="166" column="18" lean-forward="true" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="18" />
+        <state relative-caret-position="685">
+          <caret line="64" column="14" lean-forward="true" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
           <folding />
         </state>
       </provider>

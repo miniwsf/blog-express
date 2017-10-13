@@ -71,6 +71,6 @@ app.use(function(err, req, res, next) {
   res.render('error',{layout:null,msg:err.message});
 });
 
-app.listen(80);
+/*app.listen(80);*/
 
 module.exports = app;

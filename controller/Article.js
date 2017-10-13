@@ -94,13 +94,13 @@ class Article {
                             praiseNumber:item.praiseNumber,
                             readAmount:item.readAmount,
 							title:item.title,
-							type:item.type
+							type:item.type,
+							_id:item._id
 						};
                         articleData.push(itemNew);
                     });
 					msg="成功";
 					status="0";
-					console.log(articleData)
 					resolve(articleData,status,msg);
                 }
             })
@@ -185,7 +185,6 @@ class Article {
 				})
 			}
 			else{
-				//that.getArticle(req, res, next);
                 that.getArticleData(req, res, next).then(function (article,code,msg) {
                     res.send({code,msg,article});
                 });

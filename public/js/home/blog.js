@@ -32,10 +32,11 @@ function getBlogData(){
             "page":currentPage
         },
         success:function(res){
+            console.log(res.article);
             appendData(res.article);
         },
         error:function(err) {
-            Tips.show("数据拉取失败，请稍后重试");
+
         }
     })
 }
@@ -47,7 +48,7 @@ function appendData(data) {
         "<div class='blog-type'>\{{type.typeName}}\&nbsp;&nbsp;&nbsp;\{{create_time}}\</div>"+
         "<div class='blog-detail-title'>\{{title}}\</div>"+
         "<div class=blog-detail-image><img src='\{{image}}\'></div>"+
-        "<div class='blog-detail-text'><div class='blog-detail-txt'>\{{{txt}}}}\</div>"+
+        "<div class='blog-detail-text'><div class='blog-detail-txt'>\{{{txt}}}\</div>"+
         "<div><a href='/blogDetail?articleId={{_id}}'>Read More...</a></div>"+
         "</div>"+
         "</div>"+

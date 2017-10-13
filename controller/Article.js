@@ -40,13 +40,12 @@ class Article {
 		//获取分页数据
 		let status="1";
 		let msg="数据查询失败";
-		let articleData=null;
+		let articleData=[];
 		return new Promise((resolve, reject) => {
             ArticleModel.find(selectParam).skip(page*5).limit(5).sort({'create_time':'desc'}).populate({ path: 'type', select: { typeName: 1 }}).exec(function (err, article) {
                 if (err) {
                 }
                 else{
-                	console.log(article.length)
                     article.forEach(item => {
                         let time = new Date(parseInt(item.create_time));
                         let year=time.getFullYear();
@@ -83,11 +82,26 @@ class Article {
 							}
 						}
                         item.image=image;
+
+                        let itemNew={
+                            author:item.author,
+                            content:item.content,
+                            contentHtml:item.contentHtml,
+                            create_time:item.create_time,
+                            keywords:item.keywords,
+							txt:item.txt,
+							image:item.image,
+                            praiseNumber:item.praiseNumber,
+                            readAmount:item.readAmount,
+							title:item.title,
+							type:item.type
+						};
+                        articleData.push(itemNew);
                     });
-                    articleData=article;
-                    msg="成功";
-                    status="0";
-                    resolve(article,status,msg);
+					msg="成功";
+					status="0";
+					console.log(articleData)
+					resolve(articleData,status,msg);
                 }
             })
         });

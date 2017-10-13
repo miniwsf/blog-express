@@ -1,10 +1,11 @@
 {{#section 'head'}}
     <link rel='stylesheet' href='/css/blog.css'/>
+    <script src="/js/handlebars-v4.0.10.js"></script>
 {{/section}}
 <!--博客-->
 <div class="blog-content">
     <div class="homeContent top-style">
-        <div class="blog-left">
+        <div class="blog-left" id="tableList">
             {{#each article}}
                 <div class="blog-article">
                     <div class="blog-detail">
@@ -43,3 +44,6 @@
         </div>
     </div>
 </div>
+{{#section 'footer'}}
+    <script src="/js/home/blog.js"></script>
+{{/section}}

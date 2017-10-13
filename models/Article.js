@@ -12,6 +12,7 @@ var articleSchema = new Schema({
 	create_time: String,
 	author:String,
 	keywords:String,
+	latestTime:String,
 	readAmount:{type: Number, default: 0},
 	praiseNumber:{type: Number, default: 0}
 })

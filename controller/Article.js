@@ -12,10 +12,12 @@ class Article {
 		this.getArticleData = this.getArticleData.bind(this);
 		this.deleteArticle = this.deleteArticle.bind(this);
         this.getBlog = this.getBlog.bind(this);
+        this.getBlogMore = this.getBlogMore.bind(this);
         this.getHome = this.getHome.bind(this);
         this.getBlogDetail = this.getBlogDetail.bind(this);
 		this.addArticle = this.addArticle.bind(this);
         this.updateArticle = this.updateArticle.bind(this);
+        this.updateArticleNew = this.updateArticleNew.bind(this);
         this.praiseBlog = this.praiseBlog.bind(this);
 	}
 
@@ -24,6 +26,7 @@ class Article {
 		let id=req.query.articleId;
         let typeId=req.query.typeId;
 		let title=req.body.title;
+		let page=req.body.page?req.body.page-1:0;
 		let selectParam={};
 		if(id){
 			selectParam._id=id;
@@ -34,11 +37,12 @@ class Article {
 		if(typeId){
             selectParam.type=typeId;
 		}
+		//获取分页数据
 		let status="1";
 		let msg="数据查询失败";
 		let articleData=null;
 		return new Promise((resolve, reject) => {
-            ArticleModel.find(selectParam).sort({'create_time':'desc'}).populate({ path: 'type', select: { typeName: 1 }}).exec(function (err, article) {
+            ArticleModel.find(selectParam).skip(page*5).limit(5).sort({'create_time':'desc'}).populate({ path: 'type', select: { typeName: 1 }}).exec(function (err, article) {
                 if (err) {
                 }
                 else{
@@ -116,6 +120,15 @@ class Article {
         })
 	}
 
+    getBlogMore(req, res, next){
+        let that=this;
+        ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
+            that.getArticleData(req, res, next).then(function (article,code,msg) {
+                res.send({code,msg,article,type});
+            });
+        })
+    }
+
 	getBlogDetail(req, res, next){
         let id=req.query.articleId;
         if(!id){
@@ -130,6 +143,20 @@ class Article {
                 res.render("blogDetail",{code,msg,article,layout:"index"});
             });
 		}
+	}
+
+	//数据更新
+	updateArticleNew(req, res, next){
+        let id=req.query.articleId;
+        if(id){
+            //更新数据
+            let condition={_id:id};
+            let param={'$inc':{'readAmount':1}};
+            this.updateArticle(condition,param);
+            this.getArticleData(req, res, next).then(function (article,code,msg) {
+                res.render("article",{code,msg,article});
+            });
+        }
 	}
 
 	deleteArticle(req,res,next){

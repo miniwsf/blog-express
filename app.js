@@ -45,6 +45,7 @@ app.use('/articleAdd', article);
 app.use('/articleType', articleType);
 app.use('/', index);
 app.use('/blog', index);
+app.use('/blogMore', index);
 app.use('/home', index);
 app.use('/abountMe', index);
 app.use('/blogDeatil', index);

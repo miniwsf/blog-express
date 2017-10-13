@@ -5,6 +5,7 @@ var router = express.Router();
 
 router.get('/', Article.getHome);
 router.get('/blog', Article.getBlog);
+router.post('/blogMore', Article.getBlogMore);
 router.get('/blogDetail', Article.getBlogDetail);
 router.get('/abountMe', function(req, res, next) {
     res.render('abountMe', {layout:"index"});

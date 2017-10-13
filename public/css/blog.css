@@ -29,35 +29,6 @@
 
 
 /*自适应屏幕大小*/
-/*
-@media (min-width: 1300px) {
-    .blog-right{
-        width:13.5%;
-        right: 0;
-        margin-right:20%;
-        position: fixed;
-    }
-}
-
-@media (min-width: 768px)and (max-width: 1300px){
-    .blog-right{
-        width:18%;
-        right: 0;
-        margin-right:10%;
-        position: fixed;
-    }
-}
-
-@media (max-width: 768px) {
-    .blog-right{
-        width:22%;
-        right: 0;
-        margin-right:4%;
-        position: fixed;
-    }
-}
-*/
-
 .blog-detail{
     width:83%;
     float: left;
@@ -210,7 +181,7 @@
 
 .blog-read{
     color: #c8c8c8;
-    text-align: left;
+    text-align: center;
 }
 
 .blog-no-data{

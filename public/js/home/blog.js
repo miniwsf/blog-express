@@ -1,6 +1,6 @@
 
 var currentPage=1;
-var lastScrollY=window.scrollY;
+var lastScrollY=document.body.scrollTop;
 
 (function(){
     setInterval(handleScroll, 100);

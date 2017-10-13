@@ -46,6 +46,7 @@ class Article {
                 if (err) {
                 }
                 else{
+                	console.log(article.length)
                     article.forEach(item => {
                         let time = new Date(parseInt(item.create_time));
                         let year=time.getFullYear();

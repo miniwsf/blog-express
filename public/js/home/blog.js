@@ -1,6 +1,7 @@
 
 var currentPage=1;
 var lastScrollY=document.body.scrollTop;
+var typeId=0;
 
 (function(){
     setInterval(handleScroll, 100);
@@ -29,7 +30,8 @@ function getBlogData(){
         type:"post",
         url:"/blogMore",
         data:{
-            "page":currentPage
+            "page":currentPage,
+            "typeId":typeId==0?'':typeId
         },
         success:function(res){
             console.log(res.article);
@@ -61,4 +63,11 @@ function appendData(data) {
         "</div>\{{/each}}";
     var myTemplate = Handlebars.compile(source);
     $('#tableList').append(myTemplate(data));
+}
+
+function getTypeId(id) {
+    typeId=id;
+    currentPage=0;
+    $('#tableList').html("");
+    getBlogData();
 }

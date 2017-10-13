@@ -184,6 +184,11 @@
     text-align: center;
 }
 
+.blog-num{
+    color: #e6618c;
+    text-decoration:underline
+}
+
 .blog-no-data{
     text-align: center;
     font-family: yan;

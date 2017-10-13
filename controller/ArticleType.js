@@ -1,6 +1,7 @@
 'use strict';
 
 import ArticleTypeModel from '../models/ArticleType'
+import Article from '../controller/Article'
 import checkLogin from '../middlewares/checkLogin'
 
 class ArticleType {
@@ -19,8 +20,19 @@ class ArticleType {
     	return new Promise((resolve, reject) => {
             ArticleTypeModel.find({}, function (err, type) {
                 if (err) {
+                    status="-1";
+                    msg="数据查询失败";
+                    resolve(type,status,msg);
                 }
                 else {
+                	//查询文章数目
+                    type.forEach(item=>{
+                    	let typeid=item._id;
+                        req.query.typeId=typeid;
+                        Article.getArticleData(req, res, next).then(function (article,code,msg) {
+                            item.num=article.length;
+                        });
+					});
                     status="0";
                     msg="数据查询成功";
                     resolve(type,status,msg);

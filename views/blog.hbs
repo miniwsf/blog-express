@@ -38,7 +38,7 @@
                 <div class="blog-type-title">Blog Type</div>
                 <div class="blog-list-group-item pointer-style"><a href="/blog">全部</a></div>
                 {{#each type}}
-                    <div class="blog-list-group-item pointer-style"><a href="/blog?typeId={{_id}}">{{typeName}}</a></div>
+                    <div class="blog-list-group-item pointer-style"><a onclick="getTypeId('{{_id}}')">{{typeName}}&nbsp;&nbsp;(<span class="blog-num">{{num}}</span>)</a></div>
                 {{/each}}
             </div>
         </div>

@@ -23,8 +23,10 @@ class Article {
 
 	//搜索数据  _id和title
     getArticleData(req, res, next){
+		console.log(req);
 		let id=req.query.articleId;
-        let typeId=req.query.typeId;
+        let typeId=req.body.typeId?req.body.typeId:req.query.typeId;
+        let queryType=req.query.queryType;
 		let title=req.body.title;
 		let page=req.body.page?req.body.page-1:0;
 		let selectParam={};
@@ -128,8 +130,8 @@ class Article {
 	/*获取博客信息及其分类*/
 	getBlog(req, res, next){
 		let that=this;
-        ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
-            that.getArticleData(req, res, next).then(function (article,code,msg) {
+		that.getArticleData(req, res, next).then(function (article,code,msg) {
+			ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
                 res.render("blog",{code,msg,article,type,layout:"index"});
             });
         })
@@ -137,11 +139,9 @@ class Article {
 
     getBlogMore(req, res, next){
         let that=this;
-        ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
-            that.getArticleData(req, res, next).then(function (article,code,msg) {
-                res.send({code,msg,article,type});
-            });
-        })
+        that.getArticleData(req, res, next).then(function (article,code,msg) {
+            res.send({code,msg,article});
+        });
     }
 
 	getBlogDetail(req, res, next){

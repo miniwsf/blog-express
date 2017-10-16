@@ -150,7 +150,6 @@ class Article {
             that.getArticleData(req, res, next).then(function (article,code,msg) {
                 let [recommendArticle,article1=null,article2=null,article3=null]=article;
                 let articleLatest=[article1,article2,article3];
-                console.log(req.query);
                 res.render("home",{code,msg,recommendArticle,articleLatest,type,layout:"index"});
             });
         })

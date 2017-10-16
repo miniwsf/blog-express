@@ -28,11 +28,12 @@ class ArticleType {
                 	//查询文章数目
                     type.forEach(item=>{
                     	let typeid=item._id;
-                        req.query.typeId=typeid;
+                        req.body.typeId=typeid;
                         Article.getArticleNum(req, res, next).then(function (article,code,msg) {
                             item.num=article;
                         });
 					});
+                    req.body.typeId="";
                     status="0";
                     msg="数据查询成功";
                     resolve(type,status,msg);

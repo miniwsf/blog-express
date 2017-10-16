@@ -18,6 +18,7 @@ function handleScroll () { // 如果时间间隔内，没有发生滚动，且�
     }
     scrollY =scroll;
     innerHeight = window.innerHeight;        // 浏览器视口高度，包括滚动条
+   // console.log(lastScrollY+" "+innerHeight+" "+document.body.offsetHeight);
     if (lastScrollY + innerHeight + 200 > document.body.offsetHeight) {
         getBlogData();
     }
@@ -34,7 +35,6 @@ function getBlogData(){
             "typeId":typeId==0?'':typeId
         },
         success:function(res){
-            console.log(res.article);
             appendData(res.article);
         },
         error:function(err) {
@@ -69,5 +69,6 @@ function getTypeId(id) {
     typeId=id;
     currentPage=0;
     $('#tableList').html("");
+    lastScrollY=0;
     getBlogData();
 }

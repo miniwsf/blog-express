@@ -13,6 +13,7 @@ class Article {
 		this.deleteArticle = this.deleteArticle.bind(this);
         this.getBlog = this.getBlog.bind(this);
         this.getBlogMore = this.getBlogMore.bind(this);
+        this.getArticleNum = this.getArticleNum.bind(this);
         this.getHome = this.getHome.bind(this);
         this.getBlogDetail = this.getBlogDetail.bind(this);
 		this.addArticle = this.addArticle.bind(this);
@@ -21,11 +22,39 @@ class Article {
         this.praiseBlog = this.praiseBlog.bind(this);
 	}
 
+	/*查询文章数量*/
+	getArticleNum(req, res, next){
+        let id=req.query.articleId;
+        let typeId=req.body.typeId;
+        let title=req.body.title;
+        let selectParam={};
+        if(id){
+            selectParam._id=id;
+        }
+        if(title){
+            selectParam.title=title;
+        }
+        if(typeId){
+            selectParam.type=typeId;
+        }
+        //获取分页数据
+        let status="1";
+        let msg="数据查询失败";
+        return new Promise((resolve, reject) => {
+            ArticleModel.find(selectParam).exec(function (err, article) {
+                if (err) {
+                }
+                else{
+                    resolve(article.length,status,msg);
+                }
+            })
+        });
+    }
+
 	//搜索数据  _id和title
     getArticleData(req, res, next){
 		let id=req.query.articleId;
-        let typeId=req.body.typeId?req.body.typeId:req.query.typeId;
-        let queryType=req.query.queryType;
+        let typeId=req.body.typeId;
 		let title=req.body.title;
 		let page=req.body.page?req.body.page-1:0;
 		let selectParam={};
@@ -121,6 +150,7 @@ class Article {
             that.getArticleData(req, res, next).then(function (article,code,msg) {
                 let [recommendArticle,article1=null,article2=null,article3=null]=article;
                 let articleLatest=[article1,article2,article3];
+                console.log(req.query);
                 res.render("home",{code,msg,recommendArticle,articleLatest,type,layout:"index"});
             });
         })

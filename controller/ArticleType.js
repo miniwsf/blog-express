@@ -29,8 +29,8 @@ class ArticleType {
                     type.forEach(item=>{
                     	let typeid=item._id;
                         req.query.typeId=typeid;
-                        Article.getArticleData(req, res, next).then(function (article,code,msg) {
-                            item.num=article.length;
+                        Article.getArticleNum(req, res, next).then(function (article,code,msg) {
+                            item.num=article;
                         });
 					});
                     status="0";

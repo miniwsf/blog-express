@@ -1,3 +1,3 @@
 #!/bin/bash
-gulp
+sudo gulp
 sudo npm start

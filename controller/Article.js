@@ -23,7 +23,6 @@ class Article {
 
 	//搜索数据  _id和title
     getArticleData(req, res, next){
-		console.log(req);
 		let id=req.query.articleId;
         let typeId=req.body.typeId?req.body.typeId:req.query.typeId;
         let queryType=req.query.queryType;

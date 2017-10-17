@@ -48,8 +48,10 @@ app.use('/', index);
 app.use('/blog', index);
 app.use('/blogMore', index);
 app.use('/home', index);
+app.use('/demo', index);
 app.use('/abountMe', index);
 app.use('/blogDeatil', index);
+app.use('/file', file);
 
 app.use(session({
     resave: false, // don't save session if unmodified

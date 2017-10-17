@@ -1,0 +1,55 @@
+{{#section 'head'}}
+    <link rel='stylesheet' href='/css/article.css'/>
+{{/section}}
+<div>
+	<ol class="breadcrumb">
+		<li><a href="#" class="active">用户管理</a></li>
+	</ol>
+</div>
+<div class="content-article">
+	<div class="search-list">
+		<label for="title" class="control-label">文章标题</label>
+		<input type="text" class="form-control lable-width" placeholder="请输入名称" id="title">
+		<button type="button" class="btn btn-primary">搜索</button>
+		<a type="button" class="btn btn-primary" href="/article/articleAdd">新增文章</a>
+	</div>
+	<div class="table-responsive table-content">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>用户名</th>
+					<th>创建时间</th>
+					<th>关键字</th>
+					<th>作者</th>
+					<th>发布时间</th>
+					<th>阅读量</th>
+					<th>点赞数</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each article}}
+				<tr>
+					<td>#</td>
+					<td>{{title}}</td>
+					<td>{{type.typeName}}</td>
+					<td>{{keywords}}</td>
+					<td>{{author}}</td>
+					<td>{{create_time}}</td>
+					<td>{{readAmount}}</td>
+					<td>{{praiseNumber}}</td>
+					<td>
+						<a type="button" class="btn btn-primary" href="/blogDetail?articleId={{_id}}">查看详情</a>
+						<a type="button" class="btn btn-primary" href="/article/articleEdit?={{_id}}">编辑</a>
+						<a type="button" class="btn btn-danger" onclick="deleteArticle('{{_id}}')">删除</a>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</div>
+{{#section 'footer'}}
+    <script src="/js/article/article.js"></script>
+{{/section}}

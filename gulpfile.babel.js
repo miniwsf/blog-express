@@ -8,29 +8,29 @@ gulp.task('default',() => {
 });
 
 /*babel*/
-gulp.task('babel',() => {
-    return gulp.src(['**/*.js','!app.js','!dist/**/*.js','!gulpfile.babel.js','!public/**/*.min.js','!node_modules/**/*.js'])
+/*gulp.task('babel',() => {
+    return gulp.src(['**!/!*.js','!app.js','!dist/!**!/!*.js','!gulpfile.babel.js','!public/!**!/!*.min.js','!node_modules/!**!/!*.js'])
         .pipe(babel())
         .pipe(gulp.dest('dist'));
 });
 
-/*压缩*/
+/!*压缩*!/
 gulp.task('uglify',() => {
-    return gulp.src(['dist/**/*.js'])
+    return gulp.src(['dist/!**!/!*.js'])
         .pipe(babel())
         .pipe(gulp.dest('dist'));
 });
 
-/*测试*/
+/!*测试*!/
 gulp.task('dev',['babel'],() => {
-    return gulp.src(['**/*.js','!app.js','!dist/**/*.js','!gulpfile.babel.js','!public/**/*.js','!node_modules/**/*.js'])
+    return gulp.src(['**!/!*.js','!app.js','!dist/!**!/!*.js','!gulpfile.babel.js','!public/!**!/!*.js','!node_modules/!**!/!*.js'])
         .pipe(babel())
         .pipe(gulp.dest('dist'));
 });
 
-/*上线*/
+/!*上线*!/
 gulp.task('dist',() => {
-    return gulp.src(['**/*.js','!app.js','!dist/**/*.js','!gulpfile.babel.js','!public/**/*.js','!node_modules/**/*.js'])
+    return gulp.src(['**!/!*.js','!app.js','!dist/!**!/!*.js','!gulpfile.babel.js','!public/!**!/!*.js','!node_modules/!**!/!*.js'])
         .pipe(babel())
         .pipe(gulp.dest('dist'));
-});
+});*/

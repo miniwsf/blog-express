@@ -5,131 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1016c0e2-3c6b-4c00-ba5a-287cbc173f47" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/editor/php/upload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/file.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/blog-back.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/editormd.js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Bold-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Bold-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Bold-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-BoldItalic-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-BoldItalic-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-BoldItalic-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Italic-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Italic-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Italic-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Light-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Light-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Light-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-LightItalic-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-LightItalic-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-LightItalic-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Regular-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Regular-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/fonts/OpenSans-Regular-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/scripts/linenumber.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/scripts/prettify/Apache-License-2.0.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/scripts/prettify/lang-css.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/scripts/prettify/prettify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/styles/jsdoc-default.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/styles/prettify-jsdoc.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/docs/styles/prettify-tomorrow.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/@links.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/auto-height.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/change-mode.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/code-fold.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/custom-keyboard-shortcuts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/custom-toolbar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/define-plugin.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/delay-renderer-preview.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/dynamic-create-editormd.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/emoji.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/extends.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/external-use.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/flowchart.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/form-get-value.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/full.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/goto-line.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/html-preview-markdown-to-html-custom-toc-container.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/html-preview-markdown-to-html.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/html-tags-decode.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/image-cross-domain-upload.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/image-upload.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/images/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/images/7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/images/8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/images/editormd-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/js/require.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/js/sea.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/js/seajs-main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/js/zepto.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/katex.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/manually-load-modules.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/multi-editormd.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/multi-languages.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/on-off.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/onchange.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/onfullscreen.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/onload.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/onpreviewing-onpreviewed.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/onresize.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/onscroll-onpreviewscroll.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/onwatch-onunwatch.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/page-break.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/php/cross-domain-upload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/php/editormd.uploader.class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/php/post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/php/upload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/php/upload_callback.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/readonly.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/resettings.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/search-replace.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/sequence-diagram.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/set-get-replace-selection.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/simple.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/sync-scrolling.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/task-lists.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/test.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/themes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/toc.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/toolbar-auto-fixed.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/use-requirejs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/use-seajs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/plugins/editor/examples/use-zepto.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/404.png" afterPath="$PROJECT_DIR$/public/images/404.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-01.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-01.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-02.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-02.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-03.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-03.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-04.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-04.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-05.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-05.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-06.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-06.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-07.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-07.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-08.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-08.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-09.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-09.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-10.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-11.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-11.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/Xmas_C-12.png" afterPath="$PROJECT_DIR$/public/images/Xmas_C-12.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/love.jpg" afterPath="$PROJECT_DIR$/public/images/love.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/more.png" afterPath="$PROJECT_DIR$/public/images/more.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/no-image.jpg" afterPath="$PROJECT_DIR$/public/images/no-image.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/no-image.png" afterPath="$PROJECT_DIR$/public/images/no-image.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/recommond-back.png" afterPath="$PROJECT_DIR$/public/images/recommond-back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/Demo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/Qiniu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/Demo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/Qiniu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/file/file.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/demo.hbs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/file.hbs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/user.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/Admin.js" afterPath="$PROJECT_DIR$/controller/Admin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.babel.js" afterPath="$PROJECT_DIR$/gulpfile.babel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/home.css" afterPath="$PROJECT_DIR$/public/css/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/index.css" afterPath="$PROJECT_DIR$/public/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/handlebars-v4.0.10.js" afterPath="$PROJECT_DIR$/public/js/handlebars-v4.0.10.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/article/articleAdd.js" afterPath="$PROJECT_DIR$/public/js/article/articleAdd.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/editor/example.md" afterPath="$PROJECT_DIR$/public/plugins/editor/example.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/editor/plugins/image-dialog/image-dialog.js" afterPath="$PROJECT_DIR$/public/plugins/editor/plugins/image-dialog/image-dialog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/articleAdd.hbs" afterPath="$PROJECT_DIR$/views/articleAdd.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home.hbs" afterPath="$PROJECT_DIR$/views/home.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/file.js" afterPath="$PROJECT_DIR$/routes/file.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.hbs" afterPath="$PROJECT_DIR$/views/layout.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -144,21 +38,103 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="articleAdd.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/articleAdd.hbs">
+      <file leaf-file-name="Qiniu.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/Qiniu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            <state relative-caret-position="95">
+              <caret line="59" column="8" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+              <folding>
+                <element signature="e#15#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/file/file.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="articleAdd.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/article/articleAdd.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="example.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/plugins/editor/example.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Article.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/Article.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="260" column="11" lean-forward="false" selection-start-line="253" selection-start-column="8" selection-end-line="260" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Demo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/Demo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Qiniu.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/Qiniu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/file.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/file.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -168,11 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>top-style</find>
-      <find>home-blog-columns</find>
-      <find>home-introduce</find>
-      <find>home-blog-grid</find>
-      <find>home-latest-title</find>
       <find>home-columns-icon</find>
       <find>home-columns-de</find>
       <find>blog-title</find>
@@ -183,7 +154,6 @@
       <find>blog-right</find>
       <find>recommend-title</find>
       <find>blog-read</find>
-      <find>updateArticle</find>
       <find>updateArticleNew</find>
       <find>txt</find>
       <find>.recommend-content</find>
@@ -198,6 +168,12 @@
       <find>file</find>
       <find>input</find>
       <find>editormd-file-input</find>
+      <find>Qiniu</find>
+      <find>imageDialog</find>
+      <find>updateArticle</find>
+      <find>saveFileInfo</find>
+      <find>saveInfo</find>
+      <find>getData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -206,16 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/error.hbs" />
-        <option value="$PROJECT_DIR$/views/template/confirm/confirm.hbs" />
-        <option value="$PROJECT_DIR$/views/template/tips/tips.hbs" />
-        <option value="$PROJECT_DIR$/views/template/tips.hbs" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/.babelrc" />
-        <option value="$PROJECT_DIR$/views/articleType.hbs" />
-        <option value="$PROJECT_DIR$/public/js/common/tips.js" />
-        <option value="$PROJECT_DIR$/public/plugins/editor/lib/codemirror/codemirror.min.css" />
-        <option value="$PROJECT_DIR$/public/js/articleType/articleTypeAdd.js" />
         <option value="$PROJECT_DIR$/views/example.hbs" />
         <option value="$PROJECT_DIR$/example.md" />
         <option value="$PROJECT_DIR$/views/template/confirm.hbs" />
@@ -232,9 +198,6 @@
         <option value="$PROJECT_DIR$/views/article.hbs" />
         <option value="$PROJECT_DIR$/views/blogDetail.hbs" />
         <option value="$PROJECT_DIR$/models/Article.js" />
-        <option value="$PROJECT_DIR$/views/layout.hbs" />
-        <option value="$PROJECT_DIR$/views/index.hbs" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/public/css/blog.css" />
         <option value="$PROJECT_DIR$/views/blog.hbs" />
         <option value="$PROJECT_DIR$/run.sh" />
@@ -247,14 +210,29 @@
         <option value="$PROJECT_DIR$/views/login.hbs" />
         <option value="$PROJECT_DIR$/public/js/login/login.js" />
         <option value="$PROJECT_DIR$/controller/Admin.js" />
-        <option value="$PROJECT_DIR$/public/js/article/articleAdd.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/articleType.js" />
-        <option value="$PROJECT_DIR$/routes/file.js" />
-        <option value="$PROJECT_DIR$/views/articleAdd.hbs" />
-        <option value="$PROJECT_DIR$/public/plugins/editor/plugins/image-dialog/image-dialog.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/gulpfile.babel.js" />
+        <option value="$PROJECT_DIR$/views/user.hbs" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/controller/Demo.js" />
+        <option value="$PROJECT_DIR$/views/index.hbs" />
+        <option value="$PROJECT_DIR$/views/demo.hbs" />
+        <option value="$PROJECT_DIR$/public/plugins/plupload/plupload.dev.js" />
+        <option value="$PROJECT_DIR$/public/js/common/uploadImg.js" />
+        <option value="$PROJECT_DIR$/public/plugins/plupload/qiniu.min.js" />
+        <option value="$PROJECT_DIR$/public/plugins/editor/example.md" />
+        <option value="$PROJECT_DIR$/public/js/article/articleAdd.js" />
+        <option value="$PROJECT_DIR$/models/Qiniu.js" />
+        <option value="$PROJECT_DIR$/models/Demo.js" />
+        <option value="$PROJECT_DIR$/public/plugins/editor/plugins/image-dialog/image-dialog.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/layout.hbs" />
+        <option value="$PROJECT_DIR$/views/articleAdd.hbs" />
+        <option value="$PROJECT_DIR$/views/file.hbs" />
+        <option value="$PROJECT_DIR$/public/js/file/file.js" />
+        <option value="$PROJECT_DIR$/routes/file.js" />
+        <option value="$PROJECT_DIR$/controller/Qiniu.js" />
       </list>
     </option>
   </component>
@@ -331,11 +309,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
+              <option name="myItemId" value="routes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -350,6 +324,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -381,6 +377,116 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="articleType" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="article" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blogFan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -427,43 +533,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blogFan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blogFan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="middlewares" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blogFan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blogFan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
+              <option name="myItemId" value="routes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -494,16 +564,16 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code\blogFan\public\plugins\editor\php" />
-      <recent name="D:\code\blogFan\public\js" />
-      <recent name="D:\code\blogFan\public\images" />
-      <recent name="D:\code\blogFan\public\fonts" />
-      <recent name="D:\code\blogFan\public\sass" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\code\blogFan\public\plugins\editor" />
       <recent name="D:\code\blogFan\public\plugins" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\blogFan\views" />
+      <recent name="D:\code\blogFan\models" />
+      <recent name="D:\code\blogFan\controller" />
+      <recent name="D:\code\blogFan\public\plugins\editor\php" />
+      <recent name="D:\code\blogFan\public\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -611,23 +681,24 @@
       <workItem from="1507713662137" duration="34000" />
       <workItem from="1507874295242" duration="14646000" />
       <workItem from="1508118541711" duration="1130000" />
-      <workItem from="1508203519800" duration="4350000" />
+      <workItem from="1508203519800" duration="17880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186071000" />
+    <option name="totallyTimeSpent" value="199601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20073763" sideWeight="0.8849077" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13540569" sideWeight="0.8849077" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0010845987" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0010845987" sideWeight="0.50632244" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.49367756" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20073763" sideWeight="0.11509229" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13540569" sideWeight="0.11509229" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -638,7 +709,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.49578503" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -655,150 +725,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/article/article.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="6" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/home/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/blog.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="189" column="1" lean-forward="false" selection-start-line="189" selection-start-column="1" selection-end-line="189" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/blog.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="50" column="57" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Article.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/articleType.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="64" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/home/blog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="41" column="9" lean-forward="false" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/ArticleType.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/Article.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="40" column="70" lean-forward="false" selection-start-line="40" selection-start-column="70" selection-end-line="40" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="77" column="11" lean-forward="false" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/example.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/error.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/blogDetail.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="2" lean-forward="false" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/article.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="737">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="54" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/plugins/editor/editormd.amd.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1482">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <marker date="1463323853000" expanded="true" signature="10851:10884" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="11035:11067" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="20603:20617" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="51303:51307" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="51626:51648" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="51809:51827" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="51840:51846" ph="©" />
+            <marker date="1463323853000" expanded="true" signature="124259:124283" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="127134:127151" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -806,13 +748,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-627">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/editor/example.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -827,6 +763,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1463323853000" expanded="true" signature="7557:7590" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="7741:7773" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="17309:17323" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="48009:48013" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="48332:48354" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="48515:48533" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="48546:48552" ph="©" />
+            <marker date="1463323853000" expanded="true" signature="121414:121438" ph="..." />
+            <marker date="1463323853000" expanded="true" signature="124289:124306" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -836,6 +783,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -847,14 +795,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/fileUploads.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/article/articleAdd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/File.js" />
     <entry file="file://$PROJECT_DIR$/routes/article.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -867,6 +807,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -877,24 +818,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/Admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="25" column="34" lean-forward="false" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/plugins/editor/editormd.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="674">
           <caret line="1733" column="0" lean-forward="true" selection-start-line="1733" selection-start-column="0" selection-end-line="1733" selection-end-column="0" />
+          <folding>
+            <marker date="1503574619671" expanded="true" signature="7722:7755" ph="..." />
+            <marker date="1503574619671" expanded="true" signature="7906:7938" ph="..." />
+            <marker date="1503574619671" expanded="true" signature="17201:17215" ph="..." />
+            <marker date="1503574619671" expanded="true" signature="45685:45689" ph="..." />
+            <marker date="1503574619671" expanded="true" signature="46008:46030" ph="..." />
+            <marker date="1503574619671" expanded="true" signature="46191:46209" ph="..." />
+            <marker date="1503574619671" expanded="true" signature="46222:46228" ph="©" />
+            <marker date="1503574619671" expanded="true" signature="114428:114452" ph="..." />
+            <marker date="1503574619671" expanded="true" signature="117234:117251" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -902,21 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/file.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/editor/plugins/image-dialog/image-dialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1421">
-          <caret line="192" column="21" lean-forward="false" selection-start-line="192" selection-start-column="21" selection-end-line="192" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -932,14 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="633">
           <caret line="58" column="6" lean-forward="false" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="76" column="5" lean-forward="false" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -968,16 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.babel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/template/confirm.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -986,19 +891,245 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/articleAdd.hbs">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        <state relative-caret-position="532">
+          <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/models/Admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/user.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="31" lean-forward="false" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/routes/article.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/routes/articleType.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/routes/file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/plupload/qiniu.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1135">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/plupload/plupload.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="854">
+          <caret line="2475" column="4" lean-forward="false" selection-start-line="2475" selection-start-column="4" selection-end-line="2475" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/common/uploadImg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="797">
+          <caret line="255" column="7" lean-forward="false" selection-start-line="255" selection-start-column="7" selection-end-line="255" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/editor/plugins/image-dialog/image-dialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/article.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="34" column="38" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.babel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="28" column="3" lean-forward="false" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="53" column="23" lean-forward="true" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/demo.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="63" column="12" lean-forward="false" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Demo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/articleAdd.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="39" column="53" lean-forward="false" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/ArticleType.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/Admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="34" lean-forward="false" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/Demo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/article/articleAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/editor/example.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/file.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/Article.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="260" column="11" lean-forward="false" selection-start-line="253" selection-start-column="8" selection-end-line="260" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Qiniu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/file/file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/Qiniu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="59" column="8" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+          <folding>
+            <element signature="e#15#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

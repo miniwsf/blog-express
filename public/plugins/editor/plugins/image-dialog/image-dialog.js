@@ -13,197 +13,174 @@
 
     var factory = function (exports) {
 
-		var pluginName   = "image-dialog";
+        var pluginName = "image-dialog";
 
-		exports.fn.imageDialog = function() {
-
-            var _this       = this;
-            var cm          = this.cm;
-            var lang        = this.lang;
-            var editor      = this.editor;
-            var settings    = this.settings;
-            var cursor      = cm.getCursor();
-            var selection   = cm.getSelection();
-            var imageLang   = lang.dialog.image;
+        exports.fn.imageDialog = function () {
+            var cm = this.cm;
+            var lang = this.lang;
+            var editor = this.editor;
+            var settings = this.settings;
+            var cursor = cm.getCursor();
+            var selection = cm.getSelection();
+            var imageLang = lang.dialog.image;
             var classPrefix = this.classPrefix;
-            var iframeName  = classPrefix + "image-iframe";
-			var dialogName  = classPrefix + pluginName, dialog;
-
-			cm.focus();
-
-            var loading = function(show) {
-                var _loading = dialog.find("." + classPrefix + "dialog-mask");
-                _loading[(show) ? "show" : "hide"]();
-            };
-
-            if (editor.find("." + dialogName).length < 1)
-            {
-                var guid   = (new Date).getTime();
-                var action = settings.imageUploadURL + (settings.imageUploadURL.indexOf("?") >= 0 ? "&" : "?") + "guid=" + guid;
-
-                if (settings.crossDomainUpload)
-                {
-                    action += "&callback=" + settings.uploadCallbackURL + "&dialog_id=editormd-image-dialog-" + guid;
+            var iframeName = classPrefix + 'image-iframe';
+            var dialogName = classPrefix + pluginName,
+                dialog;
+            cm.focus();
+            var loading = function (show) {
+                var _loading = dialog.find('.' + classPrefix + 'dialog-mask');
+                _loading[(show) ? 'show' : 'hide']()
+            }
+            if (editor.find('.' + dialogName).length < 1) {
+                var guid = new Date().getTime();
+                var action = settings.imageUploadURL + (settings.imageUploadURL.indexOf('?') >= 0 ? '&' : '?') + 'guid=' + guid;
+                if (settings.crossDomainUpload) {
+                    action += '&callback=' + settings.uploadCallbackURL + '&dialog_id=editormd-image-dialog-' + guid
                 }
-
-                var dialogContent = ( (settings.imageUpload) ? "<form action=\"" + action +"\" target=\"" + iframeName + "\" method=\"post\" enctype=\"multipart/form-data\" class=\"" + classPrefix + "form\">" : "<div class=\"" + classPrefix + "form\">" ) +
-                                        ( (settings.imageUpload) ? "<iframe name=\"" + iframeName + "\" id=\"" + iframeName + "\" guid=\"" + guid + "\"></iframe>" : "" ) +
-                                        "<label>" + imageLang.url + "</label>" +
-                                        "<input type=\"text\" data-url />" + (function(){
-                                            return (settings.imageUpload) ? "<form class=\"" + classPrefix + "file-input\" id='fileUpload'action='/uploadFile'>" +
-                                                                                "<input type=\"file\" name=\"" + classPrefix + "image-file\" accept=\"image/*\" />" +
-                                                                                "<input type=\"submit\" value=\"" + imageLang.uploadButton + "\" />" +
-                                                                            "</form>" : "";
-                                        })() +
-                                        "<br/>" +
-                                        "<label>" + imageLang.alt + "</label>" +
-                                        "<input type=\"text\" value=\"" + selection + "\" data-alt />" +
-                                        "<br/>" +
-                                        "<label>" + imageLang.link + "</label>" +
-                                        "<input type=\"text\" value=\"http://\" data-link />" +
-                                        "<br/>" +
-                                    ( (settings.imageUpload) ? "</form>" : "</div>");
-
-                //var imageFooterHTML = "<button class=\"" + classPrefix + "btn " + classPrefix + "image-manager-btn\" style=\"float:left;\">" + imageLang.managerButton + "</button>";
-
+                var dialogContent = ((settings.imageUpload) ? '<form action="' + action + '" id="images-upload" method="post" enctype="multipart/form-data" class="' + classPrefix + 'form">' : '<div class="' + classPrefix + 'form">') +
+                    '<label>' + imageLang.url + '</label>' +
+                    '<input type="text" data-url />' + (function () {
+                        return (settings.imageUpload) ? '<div class="' + classPrefix + 'file-input">' +
+                            '<input type="file" id="file" name="file" accept="image/*" multiple />' +
+                            '<input type="submit" value="' + imageLang.uploadButton + '" />' +
+                            '</div>' : ''
+                    })() +
+                    '<br/>' +
+                    '<label>' + imageLang.alt + '</label>' +
+                    '<input type="text" value="' + selection + '" data-alt />' +
+                    '<br/>' +
+                    '<label>' + imageLang.link + '</label>' +
+                    '<input type="text" value="http://" data-link />' +
+                    '<br/>' +
+                    ((settings.imageUpload) ? '</form>' : '</div>');
                 dialog = this.createDialog({
-                    title      : imageLang.title,
-                    width      : (settings.imageUpload) ? 465 : 380,
-                    height     : 254,
-                    name       : dialogName,
-                    content    : dialogContent,
-                    mask       : settings.dialogShowMask,
-                    drag       : settings.dialogDraggable,
-                    lockScreen : settings.dialogLockScreen,
-                    maskStyle  : {
-                        opacity         : settings.dialogMaskOpacity,
-                        backgroundColor : settings.dialogMaskBgColor
+                    title: imageLang.title,
+                    width: (settings.imageUpload) ? 465 : 380,
+                    height: 254,
+                    name: dialogName,
+                    content: dialogContent,
+                    mask: settings.dialogShowMask,
+                    drag: settings.dialogDraggable,
+                    lockScreen: settings.dialogLockScreen,
+                    maskStyle: {
+                        opacity: settings.dialogMaskOpacity,
+                        backgroundColor: settings.dialogMaskBgColor
                     },
-                    buttons : {
-                        enter : [lang.buttons.enter, function() {
-                            var url  = this.find("[data-url]").val();
-                            var alt  = this.find("[data-alt]").val();
-                            var link = this.find("[data-link]").val();
-
-                            if (url === "")
-                            {
+                    buttons: {
+                        enter: [lang.buttons.enter, function () {
+                            var url = this.find('[data-url]').val();
+                            var alt = this.find('[data-alt]').val();
+                            var link = this.find('[data-link]').val();
+                            if (url === '') {
                                 alert(imageLang.imageURLEmpty);
-                                return false;
+                                return false
                             }
-
-							var altAttr = (alt !== "") ? " \"" + alt + "\"" : "";
-
-                            if (link === "" || link === "http://")
-                            {
-                                cm.replaceSelection("![" + alt + "](" + url + altAttr + ")");
+                            var altAttr = (alt !== '') ? ' "' + alt + '"' : '';
+                            var arr_url = url.split('$$');
+                            var text = '';
+                            for (var i = 0, length = arr_url.length; i < length; i++) {
+                                if (link === '' || link === 'http://') {
+                                    text = text + '![' + alt + '](' + arr_url[i] + altAttr + ')\r\n\r\n'
+                                } else {
+                                    text = text + '[![' + alt + '](' + arr_url[i] + altAttr + ')](' + link + altAttr + ')\r\n\r\n'
+                                }
                             }
-                            else
-                            {
-                                cm.replaceSelection("[![" + alt + "](" + url + altAttr + ")](" + link + altAttr + ")");
+                            cm.replaceSelection(text);
+                            if (alt === '') {
+                                // cm.setCursor(cursor.line, cursor.ch + 2)
                             }
-
-                            if (alt === "") {
-                                cm.setCursor(cursor.line, cursor.ch + 2);
-                            }
-
                             this.hide().lockScreen(false).hideMask();
-
-                            return false;
+                            return false
                         }],
-
-                        cancel : [lang.buttons.cancel, function() {
+                        cancel: [lang.buttons.cancel, function () {
                             this.hide().lockScreen(false).hideMask();
-
-                            return false;
+                            return false
                         }]
                     }
                 });
-
-                dialog.attr("id", classPrefix + "image-dialog-" + guid);
-
-				if (!settings.imageUpload) {
-                    return ;
+                dialog.attr('id', classPrefix + 'image-dialog-' + guid);
+                if (!settings.imageUpload) {
+                    return
                 }
+                /*获取token*/
+                $.ajax({
+                    type:"POST",
+                    url:"/token",
+                    data:{
 
-				var fileInput  = dialog.find("[name=\"" + classPrefix + "image-file\"]");
+                    },
+                    success:function(res){
 
-				/*fileInput.bind("change", function() {
-					var fileName  = fileInput.val();
-					var isImage   = new RegExp("(\\.(" + settings.imageFormats.join("|") + "))$"); // /(\.(webp|jpg|jpeg|gif|bmp|png))$/
+                    },
+                    error:function(err) {
 
-					if (fileName === "")
-					{
-						alert(imageLang.uploadFileEmpty);
+                    }
+                })
 
-                        return false;
-					}
-
-                    if (!isImage.test(fileName))
-					{
-						alert(imageLang.formatNotAllowed + settings.imageFormats.join(", "));
-
-                        return false;
-					}
-
-                    loading(true);
-
-                    var submitHandler = function() {
+                var Qiniu_upload = function (files, length, i) {
+                    if (length > i) {
+                        var formdata = new FormData();
+                        formdata.append('file', files[i]);
+                        formdata.append('key', new Date().getTime() + '.jpg');
+                        formdata.append('token', 'ygc3XKaKAK0Vb7aLEZTBQvpEwQ4APKrNCyAsJCmt:5xco_TChpj6Znu4p1P94GSuKT9o=:eyJzY29wZSI6ImJsb2ciLCJkZWFkbGluZSI6MTUwODIzMDE5MH0=');
                         $.ajax({
-                            type:"POST",
-                            url:"/uploadFile",
-                            data:{
-                                "file":'111.png',
-                            },
-                            success:function(res){
-                                console.log("新增成功");
-                            },
-                            error:function(err) {
-                                console.log("新增成功");
+                            type: 'POST',
+                            url: 'http://up-z1.qiniu.com/',
+                            data: formdata,
+                            dataType: 'json',
+                            contentType: false,
+                            processData: false
+                        }).then(function (json) {
+                            var oldurl = $('[data-url]').val();
+                            if (oldurl === '') {
+                                $('[data-url]').val('http://oxyg3rfge.bkt.clouddn.com/' + json.key)
+                            } else {
+                                oldurl = oldurl + '$$http://oxyg3rfge.bkt.clouddn.com/' + json.key;
+                                $('[data-url]').val(oldurl)
                             }
+                            i++;
+                            Qiniu_upload(files, length, i)
+                        }, function (err) {
+                            console.log(err)
                         })
-                        /!*上传文件*!/
-                        /!*var uploadIframe = document.getElementById(iframeName);
-
-                        uploadIframe.onload = function() {
-
-                            loading(false);
-
-                            var body = (uploadIframe.contentWindow ? uploadIframe.contentWindow : uploadIframe.contentDocument).document.body;
-                            var json = (body.innerText) ? body.innerText : ( (body.textContent) ? body.textContent : null);
-
-                            json = (typeof JSON.parse !== "undefined") ? JSON.parse(json) : eval("(" + json + ")");
-
-                            if(!settings.crossDomainUpload)
-                            {
-                              if (json.success === 1)
-                              {
-                                  dialog.find("[data-url]").val(json.url);
-                              }
-                              else
-                              {
-                                  alert(json.message);
-                              }
-                            }
-
-                            return false;
-                        };*!/
-                    };
-
-                    dialog.find("[type=\"submit\"]").bind("click", submitHandler).trigger("click");
-				});*/
+                    } else {
+                        $('[name="file"]').val('');
+                        loading(false)
+                    }
+                };
+                var submitHandler = function () {
+                    var files = $('[name="file"]')[0].files;
+                    if (files.length > 0) {
+                        Qiniu_upload(files, files.length, 0)
+                    }
+                    return false
+                };
+                var fileInput = dialog.find('[name="file"]');
+                fileInput.off('change').on('change', function () {
+                    var fileName = fileInput.val();
+                    var isImage = new RegExp('(\\.(' + settings.imageFormats.join('|') + '))$');// /(\.(webp|jpg|jpeg|gif|bmp|png))$/
+                    if (fileName === '') {
+                        alert(imageLang.uploadFileEmpty);
+                        return false
+                    }
+                    if (!isImage.test(fileName)) {
+                        alert(imageLang.formatNotAllowed + settings.imageFormats.join(', '));
+                        return false
+                    }
+                    loading(true);
+                    dialog.find('[type="submit"]').off('click').on('click', submitHandler).trigger('click')
+                })
             }
-
-			dialog = editor.find("." + dialogName);
-			dialog.find("[type=\"text\"]").val("");
-			dialog.find("[type=\"file\"]").val("");
-			dialog.find("[data-link]").val("http://");
-
-			this.dialogShowMask(dialog);
-			this.dialogLockScreen();
-			dialog.show();
-		};
-
-	};
+            dialog = editor.find('.' + dialogName);
+            dialog.find('[type="text"]').val('');
+            dialog.find('[type="file"]').val('');
+            dialog.find('[data-link]').val('http://');
+            this.dialogShowMask(dialog);
+            this.dialogLockScreen();
+            dialog.show()
+        }
+    };
 
 	// CommonJS/Node.js
 	if (typeof require === "function" && typeof exports === "object" && typeof module === "object")

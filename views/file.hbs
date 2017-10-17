@@ -1,0 +1,45 @@
+{{#section 'head'}}
+    <link rel='stylesheet' href='/css/article.css'/>
+{{/section}}
+<div>
+    <ol class="breadcrumb">
+        <li><a href="#" class="active">图片上传设置</a></li>
+    </ol>
+</div>
+<div class="content-article">
+    <form class="bs-example bs-example-form" id="acticleForm">
+        <div class="input-group">
+            <span class="input-group-addon" for="accessKey">AccessKey</span>
+            <input type="text" class="form-control" placeholder="请填写您七牛账户的AccessKey" name="accessKey" value="{{accessKey}}"/>
+        </div>
+        </br>
+        <div class="input-group">
+            <span class="input-group-addon" for="secretKey">SecretKey</span>
+            <input type="text" class="form-control" placeholder="请填写您七牛账户的SecretKey" name="secretKey" value="{{secretKey}}"/>
+        </div>
+        </br>
+        <div class="input-group">
+            <span class="input-group-addon" for="scope">Scope</span>
+            <input type="text" class="form-control" placeholder="上传策略中的scope,即上传的目标空间名" name="scope" value="{{scope}}"/>
+        </div>
+        </br>
+        <div class="input-group">
+            <span class="input-group-addon" for="deadline">有效时间</span>
+            <input type="text" class="form-control" placeholder="token有效时间,一般为当前时间+3600s,1970年时间戳" name="deadline" value="{{deadline}}"/>
+        </div>
+        </br>
+        <div class="btn-control">
+            <button class="btn btn-primary btn-margin" id="saveArticle">保存</button>
+        </div>
+        </br>
+    </form>
+    <div>
+        <p>注意：</p>
+        <p>项目的图片均上传在七牛云服务器存储</p>
+        <p>以上内容请勿随意修改！</p>
+        <p>否则会导致token验证失败，图片无法上传</p>
+    </div>
+</div>
+{{#section 'footer'}}
+    <script src="/js/file/file.js"></script>
+{{/section}}

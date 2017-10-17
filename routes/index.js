@@ -10,6 +10,9 @@ router.get('/blogDetail', Article.getBlogDetail);
 router.get('/abountMe', function(req, res, next) {
     res.render('abountMe', {layout:"index"});
 });
+router.get('/demo', function(req, res, next) {
+    res.render('demo', {layout:"index"});
+});
 router.get('/blogDetail/praiseBlog', Article.praiseBlog);
 
 module.exports = router;

@@ -3,7 +3,7 @@ var articleEditormd;
 
 (function(){
     /*markdown编辑器*/
-  $.get('example', function(md){
+  $.get('../plugins/editor/example.md', function(md){
      articleEditormd = editormd("articleEditormd", {
              width: "100%",
              height: 540,

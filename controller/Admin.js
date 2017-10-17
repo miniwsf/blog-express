@@ -18,7 +18,6 @@ class Admin {
 		}
         hash.update(new Buffer(password, "binary"));
         let encodepsd = hash.digest('hex');
-
 		AdminModel.find({userName:username,password:encodepsd}, function (err, user) {
 			if(err){
 				res.render("login",{code:"1",msg:"网络错误"});

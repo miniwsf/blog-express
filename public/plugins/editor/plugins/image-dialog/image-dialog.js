@@ -50,10 +50,10 @@
                                         ( (settings.imageUpload) ? "<iframe name=\"" + iframeName + "\" id=\"" + iframeName + "\" guid=\"" + guid + "\"></iframe>" : "" ) +
                                         "<label>" + imageLang.url + "</label>" +
                                         "<input type=\"text\" data-url />" + (function(){
-                                            return (settings.imageUpload) ? "<div class=\"" + classPrefix + "file-input\">" +
+                                            return (settings.imageUpload) ? "<form class=\"" + classPrefix + "file-input\" id='fileUpload'action='/uploadFile'>" +
                                                                                 "<input type=\"file\" name=\"" + classPrefix + "image-file\" accept=\"image/*\" />" +
                                                                                 "<input type=\"submit\" value=\"" + imageLang.uploadButton + "\" />" +
-                                                                            "</div>" : "";
+                                                                            "</form>" : "";
                                         })() +
                                         "<br/>" +
                                         "<label>" + imageLang.alt + "</label>" +
@@ -127,7 +127,7 @@
 
 				var fileInput  = dialog.find("[name=\"" + classPrefix + "image-file\"]");
 
-				fileInput.bind("change", function() {
+				/*fileInput.bind("change", function() {
 					var fileName  = fileInput.val();
 					var isImage   = new RegExp("(\\.(" + settings.imageFormats.join("|") + "))$"); // /(\.(webp|jpg|jpeg|gif|bmp|png))$/
 
@@ -148,8 +148,21 @@
                     loading(true);
 
                     var submitHandler = function() {
-
-                        var uploadIframe = document.getElementById(iframeName);
+                        $.ajax({
+                            type:"POST",
+                            url:"/uploadFile",
+                            data:{
+                                "file":'111.png',
+                            },
+                            success:function(res){
+                                console.log("新增成功");
+                            },
+                            error:function(err) {
+                                console.log("新增成功");
+                            }
+                        })
+                        /!*上传文件*!/
+                        /!*var uploadIframe = document.getElementById(iframeName);
 
                         uploadIframe.onload = function() {
 
@@ -173,11 +186,11 @@
                             }
 
                             return false;
-                        };
+                        };*!/
                     };
 
                     dialog.find("[type=\"submit\"]").bind("click", submitHandler).trigger("click");
-				});
+				});*/
             }
 
 			dialog = editor.find("." + dialogName);
@@ -188,7 +201,6 @@
 			this.dialogShowMask(dialog);
 			this.dialogLockScreen();
 			dialog.show();
-
 		};
 
 	};

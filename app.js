@@ -8,6 +8,7 @@ var http = require('http');
 
 var index = require('./dist/routes/index');
 var login = require('./dist/routes/login');
+var file = require('./dist/routes/file');
 var article=require('./dist/routes/article');
 var articleType=require('./dist/routes/articleType');
 // handlebars module
@@ -16,7 +17,6 @@ var express_handlebars_sections = require('express-handlebars-sections');
 var app = express();
 //session
 var session = require('express-session');
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,6 +43,7 @@ app.use('/login', login);
 app.use('/article', article);
 app.use('/articleAdd', article);
 app.use('/articleType', articleType);
+app.use('/uploadFile', file);
 app.use('/', index);
 app.use('/blog', index);
 app.use('/blogMore', index);

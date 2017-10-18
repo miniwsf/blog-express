@@ -28,7 +28,7 @@
 					<th>操作</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="tableList">
 				{{#each article}}
 				<tr>
 					<td>#</td>
@@ -41,15 +41,18 @@
 					<td>{{praiseNumber}}</td>
 					<td>
 						<a type="button" class="btn btn-primary" href="/blogDetail?articleId={{_id}}">查看详情</a>
-						<a type="button" class="btn btn-primary" href="/article/articleEdit?={{_id}}">编辑</a>
+						<a type="button" class="btn btn-primary" href="/article/articleAdd?articleId={{_id}}">编辑</a>
 						<a type="button" class="btn btn-danger" onclick="deleteArticle('{{_id}}')">删除</a>
 					</td>
 				</tr>
 				{{/each}}
 			</tbody>
 		</table>
+        <div class="more-btn" onclick="getBlogData()" id="moreData">点击查看更多>></div>
+        <div class="more-btn" id="noData" style="display: none">没有更多数据了哦~</div>
 	</div>
 </div>
 {{#section 'footer'}}
+    <script src="/js/handlebars-v4.0.10.js"></script>
     <script src="/js/article/article.js"></script>
 {{/section}}

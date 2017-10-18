@@ -7,8 +7,7 @@ var router = express.Router();
 router.get('/', Article.getArticle);
 router.post('/deleteArticle',Article.deleteArticle);
 router.get('/articleEdit',Article.updateArticle);
-router.post('/articleAddOk',Article.addArticle);
-router.post('/updateArticle',Article.updateBlog);
-router.get('/articleAdd',ArticleType.getArticleTypeOther);
+router.post('/articleAddOk',Article.updateAndSave);
+router.get('/articleAdd',Article.getArticleDataById);
 
 module.exports = router;

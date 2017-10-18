@@ -20,6 +20,8 @@ class Article {
         this.updateArticle = this.updateArticle.bind(this);
         this.updateArticleNew = this.updateArticleNew.bind(this);
         this.praiseBlog = this.praiseBlog.bind(this);
+        this.getArticleDataById=this.getArticleDataById.bind(this);
+        this.updateAndSave=this.updateAndSave.bind(this);
 	}
 
 	/*查询文章数量*/
@@ -53,10 +55,11 @@ class Article {
 
 	//搜索数据  _id和title
     getArticleData(req, res, next){
-		let id=req.query.articleId;
+		let id=req.query.articleId?req.query.articleId:req.body.articleId;
         let typeId=req.body.typeId;
 		let title=req.body.title;
 		let page=req.body.page?req.body.page-1:0;
+		let limit=req.body.limit?req.body.limit:5;
 		let selectParam={};
 		if(id){
 			selectParam._id=id;
@@ -72,7 +75,7 @@ class Article {
 		let msg="数据查询失败";
 		let articleData=[];
 		return new Promise((resolve, reject) => {
-            ArticleModel.find(selectParam).skip(page*5).limit(5).sort({'create_time':'desc'}).populate({ path: 'type', select: { typeName: 1 }}).exec(function (err, article) {
+            ArticleModel.find(selectParam).skip(page*limit).limit(limit).sort({'create_time':'desc'}).populate({ path: 'type', select: { typeName: 1 }}).exec(function (err, article) {
                 if (err) {
                 }
                 else{
@@ -219,38 +222,83 @@ class Article {
 			}
 		})
 	}
+    //更新或保存
+	updateAndSave(req,res,next){
+	    let that=this;
+	    if(!req.body.articleId){
+	        let code="0";
+	        let msg="成功";
+            that.addArticle(req,res,next);
+            res.send({code,msg});
+        }
+        else{
+            that.getArticleData(req, res, next).then(function (article,code,msg) {
+                if(!article||article.length<=0){
+                    that.addArticle(req,res,next)
+                }
+                else{
+                    let condition={_id:req.body.articleId};
+                    let param={
+                        title:  req.body.titleAdd,
+                        content: req.body.contentAdd,
+                        contentHtml:req.body.contentHAdd,
+                        type: req.body.typeAdd,
+                        latestTime: new Date().getTime(),
+                        author: "wsf",
+                        keywords: req.body.keywordsAdd
+                    };
+                    that.updateArticle(condition,param);
+                }
+                res.send({code,msg});
+            });
+        }
+    }
 
 	addArticle(req,res,next){
         checkLogin.checkLogin(req, res, next);
         let that=this;
 		let article = new ArticleModel({
-			title:  req.body.title,
-			content: req.body.content,
-            contentHtml:req.body.contentH,
-			type: req.body.type,
+			title:  req.body.titleAdd,
+			content: req.body.contentAdd,
+            contentHtml:req.body.contentHAdd,
+			type: req.body.typeAdd,
 			create_time: new Date().getTime(),
 			author: "wsf",
-			keywords: req.body.keywords,
+			keywords: req.body.keywordsAdd,
 			readAmount:0,
 			praiseNumber:0
 		});
 
 		article.save(function (err, response) {
 		  if(err){
-			res.render("article",{
+			/*res.render("article",{
 				"code":"1",
 				"msg":"数据新增失败"
-			})
+			})*/
 		  }
 		  else{
-              that.getArticle(req, res, next);
+              //that.getArticle(req, res, next);
 		  }
 		});
 	}
-
+	getArticleDataById(req,res,next){
+        checkLogin.checkLogin(req, res, next);
+        let that=this;
+        ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
+            let data={};
+            if(req.query.articleId){
+                that.getArticleData(req, res, next).then(function (article, code, msg) {
+                    data=article.length>0?article[0]:null;
+                    res.render("articleAdd", {code, msg, data,type});
+                });
+            }
+            else{
+                res.render("articleAdd", {code, msg, data,type});
+            }
+        });
+    }
 	/*更新数据，木有写好*/
 	updateArticle(condition,param){
-       // let article = new ArticleModel(param);
         ArticleModel.update(condition,param,{upsert:true},function (err, response) {
             if(err){
                 /*res.render("article",{
@@ -260,7 +308,6 @@ class Article {
             }
         });
 	}
-
 	praiseBlog(req,res,next){
 		let id=req.query.articleId;
 		let condition={_id:id};
@@ -269,10 +316,6 @@ class Article {
 		this.getArticleData(req, res, next).then(function (article,code,msg) {
 	        res.render("blogDetail",{code,msg,article,layout:"index"});
 	    });
-	}
-
-	updateBlog(req,res,next){
-
 	}
 }
 

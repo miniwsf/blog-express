@@ -22,3 +22,8 @@
 	overflow-y: auto;
 	height: 800px;
 }
+
+.more-btn{
+	text-align: center;
+	cursor: pointer;
+}

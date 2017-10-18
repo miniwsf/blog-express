@@ -30,7 +30,7 @@ ul li{
   width: 10%;
   float: left;
   background: #495060;
-  padding-bottom: 60%;
+  padding-bottom: 40%;
 }
 
 .panel-btn{
@@ -46,7 +46,7 @@ ul li{
   color: #495060;
   background: #363e4f;
   border-top:0px !important;
-  padding-left: 2rem !important;
+  padding-left: 1.5rem !important;
   cursor: pointer;
 }
 

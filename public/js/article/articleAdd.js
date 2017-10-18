@@ -32,7 +32,7 @@ var articleEditormd;
      });
 
      $("#saveArticle").bind("click",saveArticle);
-})()
+})();
 
 function saveArticle(){
     if(!checkData()){
@@ -44,15 +44,18 @@ function saveArticle(){
     var keyword=form.keywords.value;
     var content=articleEditormd.getMarkdown();
     var contentH=articleEditormd.getHTML();
+    var id=form.id.value;
     $.ajax({
         type:"POST",
         url:"/article/articleAddOk",
         data:{
-            "title":title,
-            "type":type,
-            "keywords":keyword,
-            "content":content,
-            "contentH":contentH
+            "titleAdd":title,
+            "typeAdd":type,
+            "keywordsAdd":keyword,
+            "contentAdd":content,
+            "contentHAdd":contentH,
+            "articleId":id,
+            "page":""
         },
         success:function(res){
             Tips.show("新增成功");

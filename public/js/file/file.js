@@ -10,7 +10,6 @@ function saveFile(){
     var secretKey=form.secretKey.value;
     var scope=form.scope.value;
     var deadline=form.deadline.value;
-
     $.ajax({
         type:"POST",
         url:"/file/saveFile",
@@ -21,11 +20,11 @@ function saveFile(){
             "deadline":deadline
         },
         success:function(res){
-            Tips.show("新增成功");
-            window.location.href="/article";
+            //window.location.reload();
+            Tips.show("保存成功");
         },
         error:function(err) {
-            Tips.show("新增失败");
+            Tips.show("保存失败");
         }
     })
 }

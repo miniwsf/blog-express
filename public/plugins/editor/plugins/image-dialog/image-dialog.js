@@ -123,27 +123,38 @@
                         var formdata = new FormData();
                         formdata.append('file', files[i]);
                         formdata.append('key', new Date().getTime() + '.jpg');
-                        formdata.append('token', 'ygc3XKaKAK0Vb7aLEZTBQvpEwQ4APKrNCyAsJCmt:5xco_TChpj6Znu4p1P94GSuKT9o=:eyJzY29wZSI6ImJsb2ciLCJkZWFkbGluZSI6MTUwODIzMDE5MH0=');
+                        //formdata.append('token', 'ygc3XKaKAK0Vb7aLEZTBQvpEwQ4APKrNCyAsJCmt:5xco_TChpj6Znu4p1P94GSuKT9o=:eyJzY29wZSI6ImJsb2ciLCJkZWFkbGluZSI6MTUwODIzMDE5MH0=');
+                        //获取信息
                         $.ajax({
-                            type: 'POST',
-                            url: 'http://up-z1.qiniu.com/',
-                            data: formdata,
-                            dataType: 'json',
-                            contentType: false,
-                            processData: false
-                        }).then(function (json) {
-                            var oldurl = $('[data-url]').val();
-                            if (oldurl === '') {
-                                $('[data-url]').val('http://oxyg3rfge.bkt.clouddn.com/' + json.key)
-                            } else {
-                                oldurl = oldurl + '$$http://oxyg3rfge.bkt.clouddn.com/' + json.key;
-                                $('[data-url]').val(oldurl)
+                            type:"get",
+                            url:"/file/token",
+                            success:function(res){
+                                formdata.append('token', res.uploadToken);
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'http://up-z1.qiniu.com/',
+                                    data: formdata,
+                                    dataType: 'json',
+                                    contentType: false,
+                                    processData: false
+                                }).then(function (json) {
+                                    var oldurl = $('[data-url]').val();
+                                    if (oldurl === '') {
+                                        $('[data-url]').val('http://oxyg3rfge.bkt.clouddn.com/' + json.key)
+                                    } else {
+                                        oldurl = oldurl + '$$http://oxyg3rfge.bkt.clouddn.com/' + json.key;
+                                        $('[data-url]').val(oldurl)
+                                    }
+                                    i++;
+                                    Qiniu_upload(files, length, i)
+                                }, function (err) {
+                                    console.log(err)
+                                })
+                            },
+                            error:function(err) {
+                                console.log(err)
                             }
-                            i++;
-                            Qiniu_upload(files, length, i)
-                        }, function (err) {
-                            console.log(err)
-                        })
+                        });
                     } else {
                         $('[name="file"]').val('');
                         loading(false)

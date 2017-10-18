@@ -2,6 +2,7 @@
 
 import QiniuModel from '../models/Qiniu'
 import checkLogin from '../middlewares/checkLogin'
+const qinius = require("qiniu");
 
 class Qiniu {
 	constructor(){
@@ -24,6 +25,7 @@ class Qiniu {
         return new Promise((resolve, reject) => {
             QiniuModel.find(selectParam).exec(function (err, qiniu) {
                 if (err) {
+                    resolve(null,"1","查询失败");
                 }
                 else {
                     resolve(qiniu,"0","查询成功");
@@ -31,19 +33,23 @@ class Qiniu {
             })
         })
 	}
+	/*获取数据*/
 	getToken(req, res, next){
         checkLogin.checkLogin(req, res, next);
-        this.getToken(req, res, next).then(function (qiniu,code,msg) {
-        	if(qiniu.length>0){
-        		let token=qiniu[0].token;
-        		if(token){
-        			//res.send({token});
-				}
-				else{
-        			//获取token
-				}
-			}
-            res.send();
+        this.getData(req, res, next).then(function (qiniu,code,msg) {
+            let data=null;
+            let uploadToken="";
+            if(qiniu.length>0){
+                data=qiniu[0];
+                /*生成token*/
+                let mac = new qinius.auth.digest.Mac(data.accessKey, data.secretKey);
+                let putPolicy = new qinius.rs.PutPolicy({
+                    scope: data.scope,
+                   // expires: data.deadline
+                });
+                uploadToken = putPolicy.uploadToken(mac);
+            }
+            res.send({code,msg,uploadToken});
         });
 	}
 	/*渲染文件设置界面*/
@@ -54,22 +60,22 @@ class Qiniu {
             if(qiniu.length>0){
                 data=qiniu[0];
             }
-            res.render("file",{code,msg,data});
+            let {accessKey=null,secretKey=null,scope=null,deadline=null}=data;
+            res.render("file",{code,msg,accessKey,secretKey,scope,deadline});
         });
     }
     /*保存*/
     saveFileInfo(req, res, next){
         checkLogin.checkLogin(req, res, next);
 	    let that=this;
-        that.getData(req, res, next).then(function (qiniu,code,msg) {
-            console.log(qiniu);
-            if(qiniu.length>0){
-                that.updateInfo(req, res, next,qiniu[0]._id);
-            }
-            else{
-                console.log("进来没");
+        that.getData(req, res, next).then(function(qiniu,code,msg) {
+            if(!qiniu||qiniu.length==0){
                 that.saveInfo(req, res, next);
             }
+            else{
+                that.updateInfo(req, res, next,qiniu[0]._id);
+            }
+            res.send("0","保存成功");
         });
     }
     /*更新数据*/
@@ -90,7 +96,7 @@ class Qiniu {
             });
         }
     }
-	/*保存信息*/
+	/*保存数据*/
 	saveInfo(req, res, next){
         let that=this;
         let qiuniu = new QiniuModel({
@@ -99,7 +105,6 @@ class Qiniu {
             scope:req.body.scope,
             deadline: req.body.deadline
         });
-        console.log(qiuniu)
         qiuniu.save(function (err, response) {
             if(err){
                 res.render("file",{

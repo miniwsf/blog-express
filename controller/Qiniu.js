@@ -56,7 +56,7 @@ class Qiniu {
 	getFile(req, res, next){
         checkLogin.checkLogin(req, res, next);
         this.getData(req, res, next).then(function (qiniu,code,msg) {
-            let data=null;
+            let data={};
             if(qiniu.length>0){
                 data=qiniu[0];
             }

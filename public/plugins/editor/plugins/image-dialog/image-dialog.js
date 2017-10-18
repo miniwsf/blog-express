@@ -104,7 +104,7 @@
                     return
                 }
                 /*获取token*/
-                $.ajax({
+                /*$.ajax({
                     type:"POST",
                     url:"/token",
                     data:{
@@ -117,7 +117,7 @@
 
                     }
                 })
-
+*/
                 var Qiniu_upload = function (files, length, i) {
                     if (length > i) {
                         var formdata = new FormData();

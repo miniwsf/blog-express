@@ -87,3 +87,8 @@ ul li{
 .confirm-alert{
   top:20%;
 }
+
+.blog-body{
+  height: 100%;
+  overflow: hidden;
+}

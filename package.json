@@ -30,6 +30,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-uglify": "^3.0.0",
-    "qiniu": "^7.0.9"
+    "qiniu": "^7.0.9",
+    "webpack": "^3.8.1"
   }
 }

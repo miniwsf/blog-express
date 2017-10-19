@@ -55,6 +55,18 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <div class="panel-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="panel-btn">
+                        <span class="glyphicon glyphicon-cog font-style"></span>个人中心
+                    </a>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse in"  aria-expanded="true">
+                    <div class="panel-body panel-btn panel-btn-detail">
+                        <a href="/file">我的信息</a>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
       <div class="right-nav">
@@ -67,6 +79,9 @@
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script src="/js/common/tips.js"></script>
     <script src="/js/common/confirm.js"></script>
+    <script type="text/javascript">
+        var tokenVal=window.localStorage.getItem("token");
+    </script>
     {{{_sections.footer}}}
   </body>
 </html>

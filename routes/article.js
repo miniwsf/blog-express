@@ -1,13 +1,14 @@
 
 import Article from '../controller/Article'
-import ArticleType from '../controller/ArticleType'
+import CheckToken from '../middlewares/checkToken'
+
 var express = require('express');
 var router = express.Router();
 
-router.get('/', Article.getArticle);
-router.post('/deleteArticle',Article.deleteArticle);
-router.get('/articleEdit',Article.updateArticle);
-router.post('/articleAddOk',Article.updateAndSave);
-router.get('/articleAdd',Article.getArticleDataById);
+router.get('/',CheckToken,Article.getArticle);
+router.post('/deleteArticle',CheckToken,Article.deleteArticle);
+router.get('/articleEdit',CheckToken,Article.updateArticle);
+router.post('/articleAddOk',CheckToken,Article.updateAndSave);
+router.get('/articleAdd',CheckToken,Article.getArticleDataById);
 
 module.exports = router;

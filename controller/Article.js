@@ -141,7 +141,6 @@ class Article {
 	}
 
 	getArticle(req, res, next){
-		checkLogin.checkLogin(req, res, next);
 		this.getArticleData(req, res, next).then(function (article,code,msg) {
 			res.render("article",{code,msg,article});
 		});
@@ -206,7 +205,6 @@ class Article {
 	}
 
 	deleteArticle(req,res,next){
-        checkLogin.checkLogin(req, res, next);
 		let that=this;
 		ArticleModel.remove({"_id":req.body.articleId}, function (err, article) {
 			if (err) {
@@ -255,8 +253,6 @@ class Article {
     }
 
 	addArticle(req,res,next){
-        checkLogin.checkLogin(req, res, next);
-        let that=this;
 		let article = new ArticleModel({
 			title:  req.body.titleAdd,
 			content: req.body.contentAdd,
@@ -282,7 +278,6 @@ class Article {
 		});
 	}
 	getArticleDataById(req,res,next){
-        checkLogin.checkLogin(req, res, next);
         let that=this;
         ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
             let data={};
@@ -308,6 +303,7 @@ class Article {
             }
         });
 	}
+	/*点赞*/
 	praiseBlog(req,res,next){
 		let id=req.query.articleId;
 		let condition={_id:id};

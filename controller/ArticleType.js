@@ -43,21 +43,18 @@ class ArticleType {
     }
 
 	getArticleType(req, res, next){
-        checkLogin.checkLogin(req, res, next);
         this.getArticleTypeData(req, res, next).then(function (type,code,msg) {
             res.render("articleType",{code,msg,type});
         });
 	}
 
 	getArticleTypeOther(req, res, next){
-        checkLogin.checkLogin(req, res, next);
         this.getArticleTypeData(req, res, next).then(function (type,code,msg) {
             res.render("articleAdd",{code,msg,type});
         });
 	}
 
 	deleteArticleType(req,res,next){
-        checkLogin.checkLogin(req, res, next);
 		let that=this;
 		ArticleTypeModel.remove({"_id":req.query.articleTypeId}, function (err, article) {
 			if (err) {
@@ -73,7 +70,6 @@ class ArticleType {
 	}
 
 	addArticleType(req,res,next){
-        checkLogin.checkLogin(req, res, next);
 		let articleType = new ArticleTypeModel({
 				typeName:  req.body.type
 		});

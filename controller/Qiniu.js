@@ -35,7 +35,6 @@ class Qiniu {
 	}
 	/*获取数据*/
 	getToken(req, res, next){
-        checkLogin.checkLogin(req, res, next);
         this.getData(req, res, next).then(function (qiniu,code,msg) {
             let data=null;
             let uploadToken="";
@@ -54,7 +53,6 @@ class Qiniu {
 	}
 	/*渲染文件设置界面*/
 	getFile(req, res, next){
-        checkLogin.checkLogin(req, res, next);
         this.getData(req, res, next).then(function (qiniu,code,msg) {
             let data={};
             if(qiniu.length>0){
@@ -66,7 +64,6 @@ class Qiniu {
     }
     /*保存*/
     saveFileInfo(req, res, next){
-        checkLogin.checkLogin(req, res, next);
 	    let that=this;
         that.getData(req, res, next).then(function(qiniu,code,msg) {
             if(!qiniu||qiniu.length==0){

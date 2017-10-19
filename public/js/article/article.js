@@ -24,12 +24,19 @@ function deleteArticleById(articleId) {
 
 /*获取更多数据*/
 function getBlogData(){
+    if(!tokenVal){
+        window.location.href="/login";
+        return false;
+    }
     currentPage+=1;
     $.ajax({
         type:"post",
         url:"/blogMore",
         data:{
             "page":currentPage,
+        },
+        headers: {
+            'x-access-token': tokenVal
         },
         success:function(res){
             if(res.article.length>0){

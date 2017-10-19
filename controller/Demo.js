@@ -6,8 +6,6 @@ class Demo {
 	constructor(){
 
 	}
-
-
 }
 
 export default new Demo()

@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
+var jwt = require('jwt-simple');
 
 var index = require('./dist/routes/index');
 var login = require('./dist/routes/login');
@@ -30,6 +31,7 @@ app.engine('hbs', handlebars({
     }
 
 }));
+app.set('jwtTokenSecret', 'SECRET_TOKEN');
 app.set('view engine', 'hbs');
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -53,27 +55,35 @@ app.use('/aboutMe', index);
 app.use('/blogDeatil', index);
 app.use('/file', file);
 
-app.use(session({
-    resave: false, // don't save session if unmodified
-    saveUninitialized: false, // don't create session until something stored
-    secret: 'keyboard cat'
-}));
-
-/*检查文件*/
+/*检查路由是否存在*/
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   res.render('404',{layout:null});
 });
 
+/*检测是否出错*/
 app.use(function(err, req, res, next) {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    let status=err.status;
+    if(status=="401"){    /*没有认证*/
+        res.status(status);
+        res.render('login',{layout:null});
+    }
+    else{
+        res.locals.message = err.message;
+        res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  res.status(err.status || 500);
-  res.render('error',{layout:null,msg:err.message});
+        res.status(status || 500);
+        res.render('error',{layout:null,msg:err.message});
+    }
 });
-
 /*app.listen(80);*/
+
+process.on('uncaughtException', function (err) {
+    //打印出错误
+    console.log(err);
+    //打印出错误的调用栈方便调试
+    console.log(err.stack);
+});
 
 module.exports = app;

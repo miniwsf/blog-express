@@ -1,9 +1,6 @@
-var $form=$("#form");
-
 function login(){
-    var form=$form[0];
-    var username=form.username.value;
-    var password=form.password.value;
+    var username=$("#username").val();
+    var password=$("#password").val();
     if(!username){
         Tips.show("请输入用户名");
         return;
@@ -21,6 +18,8 @@ function login(){
         },
         success:function(res){
             if(res.code==0){
+                /*本地存储token*/
+                window.localStorage.setItem("token",res.token);
                 window.location.href="/article";
             }
             else{

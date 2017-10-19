@@ -1,17 +1,19 @@
 'use strict';
 
-var mongoose = require('../mongodb/db.js');
-var Schema = mongoose.Schema;
+let mongoose = require('../mongodb/db.js');
+let Schema = mongoose.Schema;
 
-var adminSchema = new Schema({
+let adminSchema = new Schema({
 	userName: String,
 	password: String,
 	create_time: String,
 	admin: {type: String, default: '管理员'},
-	status: Number  
+	status: Number,
+	nickName:String,
+	avatar:String
 	//_token:String
-})
+});
 
-var Admin = mongoose.model('Admin', adminSchema);
+let Admin = mongoose.model('Admin', adminSchema);
 
 export default Admin

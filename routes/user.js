@@ -1,6 +1,7 @@
 
-import Qiniu from '../controller/Qiniu'
+import Admin from '../controller/Admin'
 import CheckToken from '../middlewares/checkToken'
+
 var express = require('express');
 var router = express.Router();
 

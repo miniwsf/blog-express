@@ -30,11 +30,13 @@ var articleEditormd;
              }
          });
      });
-
-     $("#saveArticle").bind("click",saveArticle);
 })();
 
 function saveArticle(){
+    if(!tokenVal){
+        window.location.href="/login";
+        return false;
+    }
     if(!checkData()){
         return false;
     }
@@ -56,6 +58,9 @@ function saveArticle(){
             "contentHAdd":contentH,
             "articleId":id,
             "page":""
+        },
+        headers: {
+            'x-access-token': tokenVal
         },
         success:function(res){
             Tips.show("新增成功");

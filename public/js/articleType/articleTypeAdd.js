@@ -1,4 +1,8 @@
 (function(){
+    if(!tokenVal){
+        window.location.href="/login";
+        return false;
+    }
    var $form=$("#articleTypeForm");
      $("#saveArticleType").bind("click",saveArticleType);
 
@@ -14,6 +18,9 @@
           data:{
             "type":type
           },
+            headers: {
+                'x-access-token': tokenVal
+            },
           success:function(res){
             $('#articleTypeModel').modal('hide');
             Tips.show("新增成功");

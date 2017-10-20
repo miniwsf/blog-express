@@ -44,13 +44,13 @@ class Admin {
 					// 创建token
 					let userToken={
                         userName:userNew.userName,
-						password:userNew.password
+						password:userNew.password,
+						id:userNew._id
 					};
 					let token = jwt.sign(userToken, 'app.get(superSecret)', {
 						'expiresIn': 1440 // 设置过期时间
 					});
                     res.cookie('token',token);
-                    res.cookie('userId',userNew._id);
 					res.send({
 						code: "0",
 						message: 'Enjoy your token!',
@@ -63,7 +63,7 @@ class Admin {
 	/*获取登录用户个人信息*/
 	getPersonal(req, res, next){
 		let that=this;
-        let id=req.cookies.userId;  //用户id
+        let id=req.api_user.id;  //用户id
 		if(!id){
             res.render("user",{user:{}});
 		}
@@ -76,7 +76,7 @@ class Admin {
 	}
 	/*获取数据*/
 	getData(req, res, next){
-		let id=req.cookies.userId;  //用户id
+		let id=req.api_user.id;  //用户id
 		let selectParam={};
 		if(id){
             selectParam._id=id;

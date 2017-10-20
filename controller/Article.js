@@ -253,23 +253,26 @@ class Article {
     }
 
 	addArticle(req,res,next){
-		let article = new ArticleModel({
-			title:  req.body.titleAdd,
-			content: req.body.contentAdd,
-            contentHtml:req.body.contentHAdd,
-			type: req.body.typeAdd,
-			create_time: new Date().getTime(),
-			author: req.cookie.userId,
-			keywords: req.body.keywordsAdd,
-			readAmount:0,
-			praiseNumber:0
-		});
-
-		article.save(function (err, response) {
-		  if(err){
-			throw err;
-		  }
-		});
+	    try {
+            let article = new ArticleModel({
+                title: req.body.titleAdd,
+                content: req.body.contentAdd,
+                contentHtml: req.body.contentHAdd,
+                type: req.body.typeAdd,
+                create_time: new Date().getTime(),
+                author: req.api_user.id,
+                keywords: req.body.keywordsAdd,
+                readAmount: 0,
+                praiseNumber: 0
+            });
+            article.save(function (err, response) {
+                if (err) {
+                    throw err;
+                }
+            });
+        }catch (e){
+	        console.log(e)
+        }
 	}
 	getArticleDataById(req,res,next){
         let that=this;

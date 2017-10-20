@@ -1,5 +1,14 @@
-var $form=$("#acticleForm");
+
 var articleEditormd;
+var formData={
+    titleAdd:'',
+    typeAdd:'',
+    keywordsAdd:'',
+    articleId:'',
+    contentAdd:'',
+    contentHAdd:'',
+    page:""
+};
 
 (function(){
     /*markdown编辑器*/
@@ -40,25 +49,10 @@ function saveArticle(){
     if(!checkData()){
         return false;
     }
-    var form=$form[0];
-    var title=form.title.value;
-    var type=form.type.value;
-    var keyword=form.keywords.value;
-    var content=articleEditormd.getMarkdown();
-    var contentH=articleEditormd.getHTML();
-    var id=form.id.value;
     $.ajax({
         type:"POST",
         url:"/article/articleAddOk",
-        data:{
-            "titleAdd":title,
-            "typeAdd":type,
-            "keywordsAdd":keyword,
-            "contentAdd":content,
-            "contentHAdd":contentH,
-            "articleId":id,
-            "page":""
-        },
+        data:formData,
         headers: {
             'x-access-token': tokenVal
         },
@@ -74,19 +68,24 @@ function saveArticle(){
 
 //检查数据
 function checkData(){
-    var form=$form[0];
-    var title=form.title.value;
-    var keyword=form.keywords.value;
-    var content=articleEditormd.getMarkdown();
-    if(!title){
+    formData={
+        titleAdd:$("#title").val(),
+        typeAdd:$("#disabledSelect option:selected").val(),
+        keywordsAdd:$("#keywords").val(),
+        articleId:$("#articleId").val(),
+        contentAdd:articleEditormd.getMarkdown(),
+        contentHAdd:articleEditormd.getHTML(),
+        page:""
+    };
+    if(!formData.titleAdd){
         Confirm.show("请输入文章标题");
         return false;
     }
-    else if(!keyword){
+    else if(!formData.keywordsAdd){
         Confirm.show("请输入文章关键字");
         return false;
     }
-    else if(!content){
+    else if(!formData.contentAdd){
         Confirm.show("请输入文章内容");
         return false;
     }

@@ -7,16 +7,16 @@
 	</ol>
 </div>
 <div class="content-article">
-  <form class="bs-example bs-example-form" id="acticleForm">
-      <input class="form-control" name="id" value="{{data._id}}" type="hidden"/>
+  <div class="bs-example bs-example-form" id="acticleForm">
+      <input class="form-control" id="articleId" value="{{data._id}}" type="hidden"/>
     <div class="input-group">
       <span class="input-group-addon">标题</span>
-      <input type="text" class="form-control" placeholder="请输入文章标题" name="title" value="{{data.title}}"/>
+      <input type="text" class="form-control" placeholder="请输入文章标题" id="title" value="{{data.title}}"/>
     </div>
 	  </br>
     <div class="input-group">
       <span class="input-group-addon">分类</span>
-			<select id="disabledSelect" class="form-control" name="type" value="{{data._id}}">
+			<select id="disabledSelect" class="form-control">
 				{{#each type}}
 					<option value="{{_id}}">{{typeName}}</option>
 				{{/each}}
@@ -25,7 +25,7 @@
 	  </br>
     <div class="input-group">
       <span class="input-group-addon">关键字</span>
-      <input type="text" class="form-control" placeholder="请输入关键字" name="keywords" value="{{data.keywords}}"/>
+      <input type="text" class="form-control" placeholder="请输入关键字" id="keywords" value="{{data.keywords}}"/>
       <span class="input-group-addon">（多个关键字之间用“,”间隔）</span>
     </div>
 		</br>
@@ -35,7 +35,7 @@
 			<button class="btn btn-primary btn-margin" id="saveArticle" onclick="saveArticle()">保存</button>
 			<a type="button" class="btn btn-primary" href="/article">取消</a>
 		</div>
-  </form>
+  </div>
 </div>
 {{#section 'footer'}}
     <script src="/plugins/editor/editormd.js"></script>

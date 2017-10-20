@@ -225,15 +225,14 @@ class Article {
 	updateAndSave(req,res,next){
 	    let that=this;
 	    if(!req.body.articleId){
-	        console.log("进来没")
 	        let code="0";
 	        let msg="成功";
             that.addArticle(req,res,next);
             res.send({code,msg});
         }
         else{
-	        console.log("haha")
             that.getArticleData(req, res, next).then(function (article,code,msg) {
+                console.log(req.body.articleId);
                 if(!article||article.length<=0){
                     that.addArticle(req,res,next)
                 }
@@ -245,7 +244,6 @@ class Article {
                         contentHtml:req.body.contentHAdd,
                         type: req.body.typeAdd,
                         latestTime: new Date().getTime(),
-                        author: "wsf",
                         keywords: req.body.keywordsAdd
                     };
                     that.updateArticle(condition,param);
@@ -270,13 +268,7 @@ class Article {
 
 		article.save(function (err, response) {
 		  if(err){
-			/*res.render("article",{
-				"code":"1",
-				"msg":"数据新增失败"
-			})*/
-		  }
-		  else{
-              //that.getArticle(req, res, next);
+			throw err;
 		  }
 		});
 	}
@@ -299,10 +291,7 @@ class Article {
 	updateArticle(condition,param){
         ArticleModel.update(condition,param,{upsert:true},function (err, response) {
             if(err){
-                /*res.render("article",{
-                    "code":"1",
-                    "msg":"更新数据失败"
-                })*/
+                throw err;
             }
         });
 	}

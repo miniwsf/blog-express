@@ -56,7 +56,8 @@ function appendData(data) {
         "</div>"+
         "<div class='blog-author'>"+
         "<div class='blog-author-text'>Author</div>"+
-        "<div class='blog-author-name'>{{author}}</div>"+
+        "<div class='blog-author-avatar'><img src='\{{author.avatar}}\?imageView2/1/w/200/h/200'></div>"+
+        "<div class='blog-author-name'>{{author.nickName}}</div>"+
         "<div class='blog-read' title='阅读量'><img src='/images/Xmas_C-01.png' class='blog-icon'>{{readAmount}}</div>"+
         "<div class='blog-read' title='点赞量'><img src='/images/Xmas_C-03.png' class='blog-icon'>{{praiseNumber}}</div>"+
         "</div>"+

@@ -225,12 +225,14 @@ class Article {
 	updateAndSave(req,res,next){
 	    let that=this;
 	    if(!req.body.articleId){
+	        console.log("进来没")
 	        let code="0";
 	        let msg="成功";
             that.addArticle(req,res,next);
             res.send({code,msg});
         }
         else{
+	        console.log("haha")
             that.getArticleData(req, res, next).then(function (article,code,msg) {
                 if(!article||article.length<=0){
                     that.addArticle(req,res,next)

@@ -232,7 +232,6 @@ class Article {
         }
         else{
             that.getArticleData(req, res, next).then(function (article,code,msg) {
-                console.log(req.body.articleId);
                 if(!article||article.length<=0){
                     that.addArticle(req,res,next)
                 }
@@ -260,7 +259,7 @@ class Article {
             contentHtml:req.body.contentHAdd,
 			type: req.body.typeAdd,
 			create_time: new Date().getTime(),
-			author: res.cookie.userId,
+			author: req.cookie.userId,
 			keywords: req.body.keywordsAdd,
 			readAmount:0,
 			praiseNumber:0

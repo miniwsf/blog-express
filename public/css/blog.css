@@ -84,6 +84,14 @@
         width:20%;
         vertical-align: middle;
     }
+    .top-btn{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin-bottom:3%;
+        margin-right:20%;
+        border-radius: 100%;
+    }
 }
 
 @media (min-width: 768px)and (max-width: 1300px){
@@ -106,6 +114,14 @@
         width:30%;
         vertical-align: middle;
     }
+    .top-btn{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin-bottom:3%;
+        margin-right:4%;
+        border-radius: 100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -127,6 +143,14 @@
     .blog-icon{
         width:50%;
         vertical-align: middle;
+    }
+    .top-btn{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin-bottom:10%;
+        margin-right:4%;
+        border-radius: 100%;
     }
 }
 
@@ -217,4 +241,13 @@
     width:100%;
     display: block;
     border-radius: 100%;
+}
+
+.top-btn img{
+    width:2rem;
+    height: 2rem;
+}
+
+.top-btn:hover{
+    background: #9a9696;
 }

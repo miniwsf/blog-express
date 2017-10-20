@@ -73,3 +73,7 @@ function getTypeId(id) {
     lastScrollY=0;
     getBlogData();
 }
+
+function slideTop() {
+    $('html,body').animate({scrollTop: '0px'}, 800);
+}

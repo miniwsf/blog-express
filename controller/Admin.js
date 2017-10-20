@@ -2,7 +2,6 @@
 
 import AdminModel from '../models/Admin'
 let crypto = require('crypto');
-let hash = crypto.createHash("md5");
 let jwt = require('jsonwebtoken');
 
 class Admin {
@@ -22,8 +21,14 @@ class Admin {
             return;
         }
         /*获取加密密码*/
-        hash.update(new Buffer(password, "binary"));
-        let encodepsd = hash.digest('hex');
+        let encodepsd="";
+        try{
+            encodepsd=require('crypto').createHash("md5").update(new Buffer(password, "binary")).digest('hex');
+		}
+		catch ( e ){
+			console.log(e);
+		}
+
         AdminModel.find({userName: username},function(err, user){
 			if (err)
 				throw err;
@@ -93,8 +98,7 @@ class Admin {
         };
         let password=req.body.password;
         if(password){
-            hash.update(new Buffer(password, "binary"));
-            let encodepsd = hash.digest('hex');
+            let encodepsd =require('crypto').createHash("md5").update(new Buffer(password, "binary")).digest('hex');
             admin.password=encodepsd;
 		}
         AdminModel.update({_id:req.body.id},admin,{upsert:true},function (err, response) {

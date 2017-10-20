@@ -75,8 +75,9 @@ class Article {
 		let msg="数据查询失败";
 		let articleData=[];
 		return new Promise((resolve, reject) => {
-            ArticleModel.find(selectParam).skip(page*limit).limit(limit).sort({'create_time':'desc'}).populate({ path: 'type', select: { typeName: 1 }}).exec(function (err, article) {
+            ArticleModel.find(selectParam).skip(page*limit).limit(limit).sort({'create_time':'desc'}).populate(['type','author']).exec(function (err, article) {
                 if (err) {
+                    throw err;
                 }
                 else{
                     article.forEach(item => {
@@ -259,7 +260,7 @@ class Article {
             contentHtml:req.body.contentHAdd,
 			type: req.body.typeAdd,
 			create_time: new Date().getTime(),
-			author: "wsf",
+			author: res.cookie.userId,
 			keywords: req.body.keywordsAdd,
 			readAmount:0,
 			praiseNumber:0

@@ -103,21 +103,6 @@
                 if (!settings.imageUpload) {
                     return
                 }
-                /*获取token*/
-                /*$.ajax({
-                    type:"POST",
-                    url:"/token",
-                    data:{
-
-                    },
-                    success:function(res){
-
-                    },
-                    error:function(err) {
-
-                    }
-                })
-*/
                 var Qiniu_upload = function (files, length, i) {
                     if (length > i) {
                         var formdata = new FormData();

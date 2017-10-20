@@ -10,7 +10,7 @@ var articleSchema = new Schema({
 	contentHtml:String,
 	type: { type: Schema.Types.ObjectId, ref: 'ArticleType' },
 	create_time: String,
-	author:String,
+	author:{ type: Schema.Types.ObjectId, ref: 'Admin' },
 	keywords:String,
 	latestTime:String,
 	readAmount:{type: Number, default: 0},

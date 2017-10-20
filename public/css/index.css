@@ -9,6 +9,11 @@ ul li{
   list-style-type:none;
 }
 
+.content-article{
+  width: 96%;
+  margin: 0 auto;
+}
+
 /* 标题头部 */
 .head{
   background: #333333;

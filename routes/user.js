@@ -5,8 +5,7 @@ import CheckToken from '../middlewares/checkToken'
 var express = require('express');
 var router = express.Router();
 
-router.get('/', CheckToken,Qiniu.getFile);
-router.get('/token', CheckToken,Qiniu.getToken);
-router.post('/saveFile',CheckToken, Qiniu.saveFileInfo);
+router.get('/', CheckToken,Admin.getPersonal);
+router.post('/saveData', CheckToken,Admin.saveData);
 
 module.exports = router;

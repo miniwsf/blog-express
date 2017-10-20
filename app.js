@@ -11,6 +11,7 @@ var index = require('./dist/routes/index');
 var login = require('./dist/routes/login');
 var file = require('./dist/routes/file');
 var article=require('./dist/routes/article');
+var user=require('./dist/routes/user');
 var articleType=require('./dist/routes/articleType');
 // handlebars module
 var handlebars=require('express3-handlebars');
@@ -54,6 +55,7 @@ app.use('/demo', index);
 app.use('/aboutMe', index);
 app.use('/blogDeatil', index);
 app.use('/file', file);
+app.use('/user', user);
 
 /*检查路由是否存在*/
 app.use(function(req, res, next) {

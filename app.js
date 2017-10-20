@@ -66,7 +66,8 @@ app.use(function(req, res, next) {
 
 /*检测是否出错*/
 app.use(function(err, req, res, next) {
-    let status=err.status;
+    "use strict";
+    var status=err.status;
     if(status=="401"){    /*没有认证*/
         res.status(status);
         res.render('login',{layout:null});

@@ -24,7 +24,6 @@ class Admin {
         /*获取加密密码*/
         hash.update(new Buffer(password, "binary"));
         let encodepsd = hash.digest('hex');
-
         AdminModel.find({userName: username},function(err, user){
 			if (err)
 				throw err;
@@ -92,8 +91,11 @@ class Admin {
             nickName:  req.body.nickName,
             avatar:req.body.avatar
         };
-        if(req.body.password){
-            admin.password=req.body.password;
+        let password=req.body.password;
+        if(password){
+            hash.update(new Buffer(password, "binary"));
+            let encodepsd = hash.digest('hex');
+            admin.password=encodepsd;
 		}
         AdminModel.update({_id:req.body.id},admin,{upsert:true},function (err, response) {
             if(err){

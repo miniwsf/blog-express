@@ -56,7 +56,7 @@ function getBlogData(){
 
 /*追加数据*/
 function appendData(data) {
-    var source="\{{#each this}}\<tr> <td>#</td> <td>\{{title}}\</td> <td>\{{type.typeName}}\</td> <td>\{{keywords}}\</td> <td>\{{author}}\</td> <td>\{{create_time}}\</td> <td>\{{readAmount}}\</td>"+
+    var source="\{{#each this}}\<tr> <td>#</td> <td>\{{title}}\</td> <td>\{{type.typeName}}\</td> <td>\{{keywords}}\</td> <td>\{{author.nickName}}\</td> <td>\{{create_time}}\</td> <td>\{{readAmount}}\</td>"+
     "<td>\{{praiseNumber}}\</td> <td> <a type='button' class='btn btn-primary' href='/blogDetail?articleId={{_id}}'>查看详情</a>"+
         "<a type='button' class='btn btn-primary' href='/article/articleAdd?articleId={{_id}}'>编辑</a>"+
         "<a type='button' class='btn btn-danger' onclick=\"deleteArticle('{{_id}}')\">删除</a> </td> </tr>\{{/each}}";

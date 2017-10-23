@@ -90,7 +90,6 @@
         right: 0;
         margin-bottom:3%;
         margin-right:20%;
-        border-radius: 100%;
     }
 }
 
@@ -120,7 +119,6 @@
         right: 0;
         margin-bottom:3%;
         margin-right:4%;
-        border-radius: 100%;
     }
 }
 
@@ -150,7 +148,6 @@
         right: 0;
         margin-bottom:10%;
         margin-right:4%;
-        border-radius: 100%;
     }
 }
 
@@ -243,11 +240,23 @@
     border-radius: 100%;
 }
 
-.top-btn img{
-    width:2rem;
-    height: 2rem;
+.blog-read-font{
+    font-size: 1.6rem !important;
+    vertical-align: middle;
+    color: #1296db;
+}
+.blog-admire-font{
+    font-size: 1.5rem !important;
+    vertical-align: middle;
+    color: #eeb174;
 }
 
-.top-btn:hover{
-    background: #9a9696;
+.blog-top{
+    font-size: 2rem !important;
+    vertical-align: middle;
+    color: #f1f1f1;
+}
+
+.blog-top:hover{
+    color: #9a9696;
 }

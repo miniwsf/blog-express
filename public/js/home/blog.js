@@ -56,8 +56,10 @@ function appendData(data) {
         "<div class='blog-author-text'>Author</div>"+
         "<div class='blog-author-avatar'><img src='\{{author.avatar}}\?imageView2/1/w/200/h/200'></div>"+
         "<div class='blog-author-name'>{{author.nickName}}</div>"+
-        "<div class='blog-read' title='阅读量'><img src='/images/Xmas_C-01.png' class='blog-icon'>{{readAmount}}</div>"+
-        "<div class='blog-read' title='点赞量'><img src='/images/Xmas_C-03.png' class='blog-icon'>{{praiseNumber}}</div>"+
+        "<div class='blog-read' title='阅读量'>" +
+        "<span class='icon iconfont icon-yiyuedu blog-read-font'></span><span>&nbsp;&nbsp;\{{readAmount}}\</span></div>"+
+        "<div class='blog-read' title='点赞量'>" +
+        "<span class='icon iconfont icon-dianzan blog-admire-font'></span>&nbsp;&nbsp;\{{praiseNumber}}\</div>"+
         "</div>"+
         "</div>\{{/each}}";
     var myTemplate = Handlebars.compile(source);

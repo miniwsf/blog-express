@@ -3,7 +3,6 @@
 import ArticleModel from "../models/Article";
 import ArticleType from "../controller/ArticleType";
 
-
 class Article {
     constructor(){
         this.getArticle = this.getArticle.bind(this);
@@ -72,7 +71,7 @@ class Article {
         let status="1";
         let msg="数据查询失败";
         let articleData=[];
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
             ArticleModel.find(selectParam).skip(page*limit).limit(limit).sort({"create_time":"desc"}).populate(["type","author"]).exec(function (err, article) {
                 if (err) {
                     throw err;
@@ -85,7 +84,6 @@ class Article {
                         let month=time.getMonth()+1;
                         let hour=time.getHours();
                         let minute=time.getMinutes();
-                        let second=time.getSeconds();
                         let timeStr=year+"-"+month+"-"+day+" "+hour+":"+minute;
                         item.create_time=timeStr;
 
@@ -250,30 +248,8 @@ class Article {
         }
     }
 
-<<<<<<< HEAD
     addArticle(req,res,next){
-        let article = new ArticleModel({
-            title:  req.body.titleAdd,
-            content: req.body.contentAdd,
-            contentHtml:req.body.contentHAdd,
-            type: req.body.typeAdd,
-            create_time: new Date().getTime(),
-            author: req.cookie.userId,
-            keywords: req.body.keywordsAdd,
-            readAmount:0,
-            praiseNumber:0
-        });
-
-        article.save(function (err, response) {
-          if(err){
-            throw err;
-          }
-        });
-    }
-    getArticleDataById(req,res,next){
-=======
-	addArticle(req,res,next){
-	    try {
+        try {
             let article = new ArticleModel({
                 title: req.body.titleAdd,
                 content: req.body.contentAdd,
@@ -291,11 +267,10 @@ class Article {
                 }
             });
         }catch (e){
-	        console.log(e)
+            console.log(e)
         }
-	}
-	getArticleDataById(req,res,next){
->>>>>>> 39b7c2b1e617d84e460dae27f556777d6867b795
+    }
+    getArticleDataById(req,res,next){
         let that=this;
         ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
             let data={};

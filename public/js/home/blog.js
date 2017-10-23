@@ -2,9 +2,10 @@
 var currentPage=1;
 var lastScrollY=document.body.scrollTop;
 var typeId=0;
+var TIME=100;
 
 (function(){
-    setInterval(handleScroll, 100);
+    setInterval(handleScroll, TIME);
 })();
 
 /*监测滚动*/
@@ -16,9 +17,6 @@ function handleScroll () { // 如果时间间隔内，没有发生滚动，且�
     else {
         lastScrollY = scroll;
     }
-    scrollY =scroll;
-    innerHeight = window.innerHeight;        // 浏览器视口高度，包括滚动条
-   // console.log(lastScrollY+" "+innerHeight+" "+document.body.offsetHeight);
     if (lastScrollY + innerHeight + 200 > document.body.offsetHeight) {
         getBlogData();
     }
@@ -32,7 +30,7 @@ function getBlogData(){
         url:"/blogMore",
         data:{
             "page":currentPage,
-            "typeId":typeId==0?'':typeId
+            "typeId":typeId==0?"":typeId
         },
         success:function(res){
             appendData(res.article);
@@ -40,7 +38,7 @@ function getBlogData(){
         error:function(err) {
 
         }
-    })
+    });
 }
 
 /*追加数据*/
@@ -63,17 +61,17 @@ function appendData(data) {
         "</div>"+
         "</div>\{{/each}}";
     var myTemplate = Handlebars.compile(source);
-    $('#tableList').append(myTemplate(data));
+    $("#tableList").append(myTemplate(data));
 }
 
 function getTypeId(id) {
     typeId=id;
     currentPage=0;
-    $('#tableList').html("");
+    $("#tableList").html("");
     lastScrollY=0;
     getBlogData();
 }
 
 function slideTop() {
-    $('html,body').animate({scrollTop: '0px'}, 800);
+    $("html,body").animate({scrollTop: "0px"}, 800);
 }

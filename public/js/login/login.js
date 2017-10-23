@@ -29,5 +29,5 @@ function login(){
         error:function(err) {
             Tips.show(err);
         }
-    })
+    });
 }

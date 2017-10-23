@@ -3,43 +3,42 @@
         window.location.href="/login";
         return false;
     }
-   var $form=$("#articleTypeForm");
-     $("#saveArticleType").bind("click",saveArticleType);
+    var $form=$("#articleTypeForm");
+    $("#saveArticleType").bind("click",saveArticleType);
 
-     function saveArticleType(){
-       var form=$form[0];
-       var type=form.typeName.value;
-      if(!checkData()){
-        return;
-      }
+    function saveArticleType(){
+        var form=$form[0];
+        var type=form.typeName.value;
+        if(!checkData()){
+            return;
+        }
         $.ajax({
-          type:"POST",
-          url:"/articleType/articleTypeAddOk",
-          data:{
-            "type":type
-          },
-            headers: {
-                'x-access-token': tokenVal
+            type:"POST",
+            url:"/articleType/articleTypeAddOk",
+            data:{
+                "type":type
             },
-          success:function(res){
-            $('#articleTypeModel').modal('hide');
-            Tips.show("新增成功");
-          },
-          error:function(err) {
-            Tips.show("新增失败，请稍后重试");
-          }
-        })
-     }
+            headers: {
+                "x-access-token": tokenVal
+            },
+            success:function(res){
+                $("#articleTypeModel").modal("hide");
+                Tips.show("新增成功");
+            },
+            error:function(err) {
+                Tips.show("新增失败，请稍后重试");
+            }
+        });
+    }
 
-     //检查数据
-     function checkData(){
-       var form=$("#articleTypeForm")[0];
-       var type=form.typeName.value;
-       if(!type){
-         //alert("文章类别不可为空");
-         Confirm.show("文章类别不可为空");
-         return false;
-       }
-       return true;
-     }
+    //检查数据
+    function checkData(){
+        var form=$("#articleTypeForm")[0];
+        var type=form.typeName.value;
+        if(!type){
+            Confirm.show("文章类别不可为空");
+            return false;
+        }
+        return true;
+    }
 })();

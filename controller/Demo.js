@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
-import DemoModel from '../models/Demo'
+/*import DemoModel from "../models/Demo";*/
 
 class Demo {
-	constructor(){
+    constructor(){
 
-	}
+    }
 }
 
 export default new Demo()

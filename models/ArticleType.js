@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
-var mongoose = require('../mongodb/db.js');
-var Schema = mongoose.Schema;
+let mongoose = require("../mongodb/db.js");
+let Schema = mongoose.Schema;
 
-var articleTypeSchema = new Schema({
-	typeName: String
-})
+let articleTypeSchema = new Schema({
+    typeName: String
+});
 
-var ArticleType = mongoose.model('ArticleType', articleTypeSchema);
+let ArticleType = mongoose.model("ArticleType", articleTypeSchema);
 
-export default ArticleType
+export default ArticleType;

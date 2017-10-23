@@ -48,35 +48,35 @@ var inputElement = document.getElementById("file");
 inputElement.addEventListener("change", uploadAvatar, false);
 
 function uploadAvatar() {
-    var files = $('[name="file"]')[0].files;
+    var files = $("[name='file']")[0].files;
     if (files.length > 0) {
         uploadImg(files, files.length, 0);
     }
     else{
-       Tips.show("请先上传头像!");
+        Tips.show("请先上传头像!");
     }
 }
 
 function uploadImg(files, length, i){
     if (length > i) {
         var formdata = new FormData();
-        formdata.append('file', files[i]);
-        formdata.append('key', new Date().getTime() + '.jpg');
+        formdata.append("file", files[i]);
+        formdata.append("key", new Date().getTime() + ".jpg");
         //获取信息
         $.ajax({
             type:"get",
             url:"/file/token",
             success:function(res){
-                formdata.append('token', res.uploadToken);
+                formdata.append("token", res.uploadToken);
                 $.ajax({
-                    type: 'POST',
-                    url: 'http://up-z1.qiniu.com/',
+                    type: "POST",
+                    url: "http://up-z1.qiniu.com/",
                     data: formdata,
-                    dataType: 'json',
+                    dataType: "json",
                     contentType: false,
                     processData: false
                 }).then(function (json) {
-                    $("#avatar").attr("src",'http://oxyg3rfge.bkt.clouddn.com/' + json.key)
+                    $("#avatar").attr("src","http://oxyg3rfge.bkt.clouddn.com/" + json.key)
                 }, function (err) {
                     console.log(err)
                 })
@@ -86,6 +86,6 @@ function uploadImg(files, length, i){
             }
         });
     } else {
-        $('[name="file"]').val('');
+        $("[name='file']").val("");
     }
 }

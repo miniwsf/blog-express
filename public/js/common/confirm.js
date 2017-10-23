@@ -8,7 +8,7 @@ let Confirm={
         this.callback=callback;
         this.params=params;
         $("#confirmMsg").text(msg);
-        $('#myConfirmModal').modal('show');
+        $("#myConfirmModal").modal("show");
 
         $("#ok").on("click",this.ok);
     },
@@ -20,6 +20,6 @@ let Confirm={
         }
     },
     close:function () {
-        $('#myConfirmModal').modal('hide');
+        $("#myConfirmModal").modal("hide");
     }
 };

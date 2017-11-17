@@ -42,11 +42,12 @@ class Article {
         return new Promise((resolve, reject) => {
             ArticleModel.find(selectParam).exec(function (err, article) {
                 if (err) {
+                    throw err;
                 }
                 else{
                     resolve(article.length,status,msg);
                 }
-            })
+            });
         });
     }
 
@@ -151,7 +152,7 @@ class Article {
                 let articleLatest=[article1,article2,article3];
                 res.render("home",{code,msg,recommendArticle,articleLatest,type,layout:"index"});
             });
-        })
+        });
     }
 
     /*获取博客信息及其分类*/
@@ -161,7 +162,7 @@ class Article {
             ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
                 res.render("blog",{code,msg,article,type,layout:"index"});
             });
-        })
+        });
     }
 
     getBlogMore(req, res, next){
@@ -215,7 +216,7 @@ class Article {
                     res.send({code,msg,article});
                 });
             }
-        })
+        });
     }
     //更新或保存
     updateAndSave(req,res,next){
@@ -267,7 +268,7 @@ class Article {
                 }
             });
         }catch (e){
-            console.log(e)
+            console.log(e);
         }
     }
     getArticleDataById(req,res,next){
@@ -305,4 +306,4 @@ class Article {
     }
 }
 
-export default new Article()
+export default new Article();

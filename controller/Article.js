@@ -75,6 +75,7 @@ class Article {
         return new Promise((resolve, reject) => {
             ArticleModel.find(selectParam).skip(page*limit).limit(limit).sort({"create_time":"desc"}).populate(["type","author"]).exec(function (err, article) {
                 if (err) {
+                    reject();
                     throw err;
                 }
                 else{
@@ -134,7 +135,7 @@ class Article {
                     status="0";
                     resolve(articleData,status,msg);
                 }
-            })
+            });
         });
     }
 

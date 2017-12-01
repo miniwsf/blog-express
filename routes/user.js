@@ -6,6 +6,6 @@ let express = require("express");
 let router = express.Router();
 
 router.get("/", CheckToken,Admin.getPersonal);
-router.post("/saveData", CheckToken,Admin.saveData);
+router.post("/", CheckToken,Admin.saveData);
 
 module.exports = router;

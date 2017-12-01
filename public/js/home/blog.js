@@ -27,7 +27,7 @@ function getBlogData(){
     currentPage+=1;
     $.ajax({
         type:"post",
-        url:"/blogMore",
+        url:"/blog",
         data:{
             "page":currentPage,
             "typeId":typeId==0?"":typeId
@@ -77,3 +77,5 @@ function getTypeId(id) {
 function slideTop() {
     $("html,body").animate({scrollTop: "0px"}, 800);
 }
+
+

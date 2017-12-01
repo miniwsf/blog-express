@@ -55,7 +55,7 @@ class ArticleType {
 
     deleteArticleType(req,res,next){
         let that=this;
-        ArticleTypeModel.remove({"_id":req.query.articleTypeId}, function (err) {
+        ArticleTypeModel.remove({"_id":req.body.articleTypeId}, function (err) {
             if (err) {
                 res.send({
                     code:"1",

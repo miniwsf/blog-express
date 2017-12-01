@@ -53,7 +53,16 @@ class Article {
 
     //搜索数据  _id和title
     getArticleData(req, res, next){
-        let id=req.query.articleId?req.query.articleId:req.body.articleId;
+        let id="";
+        if(req.query.articleId){
+            id=req.query.articleId;
+        }
+        else if(req.body.articleId){
+            id=req.query.articleId;
+        }
+        else {
+            id=id=req.params.articleId;
+        }
         let typeId=req.body.typeId;
         let title=req.body.title;
         let page=req.body.page?req.body.page-1:0;
@@ -174,7 +183,7 @@ class Article {
     }
 
     getBlogDetail(req, res, next){
-        let id=req.query.articleId;
+        let id=req.params.articleId;
         if(!id){
             this.getBlog();
         }
@@ -297,7 +306,7 @@ class Article {
     }
     /*点赞*/
     praiseBlog(req,res,next){
-        let id=req.query.articleId;
+        let id=req.params.articleId;
         let condition={_id:id};
         let param={"$inc":{"praiseNumber":1}};
         this.updateArticle(condition,param);

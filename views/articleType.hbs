@@ -1,6 +1,7 @@
 {{#section 'head'}}
     <link rel='stylesheet' href='/css/article.css'/>
 {{/section}}
+{{> tips }}
 <div>
 	<ol class="breadcrumb">
 		<li><a href="#" class="active">类别管理</a></li>
@@ -26,7 +27,7 @@
 					<td>{{typeName}}</td>
 					<td>
 						<a type="button" class="btn btn-primary" href="/articleType/articleTypeEdit?articleTypeId={{_id}}">编辑</a>
-						<a type="button" class="btn btn-danger" href="/articleType/deleteArticleType?articleTypeId={{_id}}">删除</a>
+						<a type="button" class="btn btn-danger" onclick="deleteArticleType('{{_id}}')">删除</a>
 					</td>
 				</tr>
 				{{/each}}
@@ -61,5 +62,6 @@
 	</div>
 </div>
 {{#section 'footer'}}
+    <script src="/js/articleType/articleType.js"></script>
     <script src="/js/articleType/articleTypeAdd.js"></script>
 {{/section}}

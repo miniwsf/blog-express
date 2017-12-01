@@ -78,6 +78,7 @@
 .back-cover{
     background: url(../images/no-image.png) no-repeat;
     background-size: 100% 100%;
+    border: 1px solid #333333;
 }
 
 /*自适应屏幕大小*/

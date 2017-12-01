@@ -4,12 +4,14 @@
 <!--首页内容-->
 <div  class="homeContent">
     <div class="home-recommend  back-cover">
+    {{#if recommendArticle.image}}
         <img src="{{recommendArticle.image}}" class="home-recommend-back">
+    {{/if}}
         <div class="recommend-content">
             <div class="recommend-title">{{recommendArticle.title}}</div>
             <div class="recommend-detail">{{recommendArticle.txt}}</div>
         </div>
-        <div><a href="/blogDetail?articleId={{recommendArticle._id}}" class="read-more"></a></div>
+        <div><a href="/blog/{{recommendArticle._id}}" class="read-more"></a></div>
     </div>
     <div class="home-introduce">
         <div class="home-columns">
@@ -46,11 +48,15 @@
             {{#each articleLatest}}
                 {{#if _id}}
                 <div class="home-blog-columns">
-                    <div class="home-blog-image"><img src="{{image}}" class=""></div>
+                    <div class="home-blog-image">
+                        {{#if image}}
+                            <img src="{{image}}" class="">
+                        {{/if}}
+                    </div>
                     <div class="home-blog-title">{{title}}</div>
                     <div class="home-blog-time">{{create_time}}</div>
                     <div class="home-blog-content">{{{txt}}}</div>
-                    <div class="home-more"><a href="/blogDetail?articleId={{_id}}">Read More...</a></div>
+                    <div class="home-more"><a href="/blog/{{_id}}">Read More...</a></div>
                 </div>
                 {{/if}}
             {{/each}}

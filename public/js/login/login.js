@@ -11,7 +11,7 @@ function login(){
     }
     $.ajax({
         type:"POST",
-        url:"/login/loginCheck",
+        url:"/login",
         data:{
             "username":username,
             "password":password

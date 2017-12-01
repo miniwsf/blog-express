@@ -14,7 +14,7 @@
         }
         $.ajax({
             type:"POST",
-            url:"/articleType/articleTypeAddOk",
+            url:"/articleType",
             data:{
                 "type":type
             },
@@ -24,6 +24,7 @@
             success:function(res){
                 $("#articleTypeModel").modal("hide");
                 Tips.show("新增成功");
+                window.location.reload();
             },
             error:function(err) {
                 Tips.show("新增失败，请稍后重试");

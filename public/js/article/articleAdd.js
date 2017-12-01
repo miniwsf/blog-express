@@ -51,7 +51,7 @@ function saveArticle(){
     }
     $.ajax({
         type:"POST",
-        url:"/article/articleAddOk",
+        url:"/article",
         data:formData,
         headers: {
             "x-access-token": tokenVal

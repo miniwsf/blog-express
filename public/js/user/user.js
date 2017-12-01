@@ -27,7 +27,7 @@ function saveInfo(){
     }
     $.ajax({
         type:"POST",
-        url:"/user/saveData",
+        url:"/user",
         data:data,
         success:function(res){
             Tips.show("保存成功");

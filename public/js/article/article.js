@@ -32,7 +32,7 @@ function getBlogData(){
     currentPage+=1;
     $.ajax({
         type:"post",
-        url:"/blogMore",
+        url:"/blog",
         data:{
             "page":currentPage,
         },

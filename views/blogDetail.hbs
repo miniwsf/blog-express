@@ -11,10 +11,12 @@
         </div>
         <p>{{{contentHtml}}}</p>
         <div class="align-style heart-style">
-            <a href="/blogDetail/praiseBlog?articleId={{_id}}" class="btn btn-default btn-lg">
+            <a class="btn btn-default btn-lg" onclick="praiseData('{{_id}}')">
                 <span class="glyphicon glyphicon-heart"></span> {{praiseNumber}}
             </a>
         </div>
     {{/each}}
 </div>
-
+{{#section 'footer'}}
+    <script src="/js/home/blogDetail.js"></script>
+{{/section}}

@@ -11,6 +11,7 @@ var file = require("./dist/routes/file");
 var article=require("./dist/routes/article");
 var user=require("./dist/routes/user");
 var articleType=require("./dist/routes/articleType");
+var demo = require("./dist/routes/demo");
 // handlebars module
 var handlebars=require("express3-handlebars");
 var express_handlebars_sections = require("express-handlebars-sections");
@@ -46,7 +47,7 @@ app.use("/", index);
 app.use("/blog", index);
 app.use("/blogMore", index);
 app.use("/home", index);
-app.use("/demo", index);
+app.use("/demo", demo);
 app.use("/aboutMe", index);
 app.use("/blogDeatil", index);
 app.use("/file", file);

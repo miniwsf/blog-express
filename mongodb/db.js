@@ -9,17 +9,17 @@ mongoose.connect(DB_URL,{ useMongoClient: true });
 
 //连接成功后输出语句
 mongoose.connection.on("connected",function () {
-    console.log("Mongoose connect" + DB_URL + " success");
+    console.info("Mongoose connect" + DB_URL + " success");
 });
 
 //连接异常现实错误原因
 mongoose.connection.on("error",function (err) {
-    console.log('Mongoose connect Error:' + err);
+    console.error("Mongoose connect Error:" + err);
 });
 
 //连接断开后输出语句
-mongoose.connection.on('disconnected',function () {
-    console.log('Mongoose connect disconnected');
+mongoose.connection.on("disconnected",function () {
+    console.info("Mongoose connect disconnected");
 });
 
 //导出mongoose对象

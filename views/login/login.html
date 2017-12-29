@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+      <title>登录</title>
+      <meta charset='utf-8'>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="format-detection" content="telephone=no" />
+  </head>
+  <body>
+  <div class="backimg" id="login-main">
+      <div class="login-dialog bs-example bs-example-form">
+          <div class="login-title">wsf</div>
+          <div class="input-group group-style">
+              <span class="input-group-addon glyphicon glyphicon-user font-color"></span>
+              <input type="text" class="form-control" placeholder="用户名" required v-model="userName">
+          </div>
+          <div class="input-group group-style">
+              <span class="input-group-addon glyphicon glyphicon-lock font-color"></span>
+              <input type="password" class="form-control" placeholder="密码" required v-model="passWard">
+          </div>
+          <button class="btn btn-default btn-block group-style" @click="login()">登录</button>
+      </div>
+  </div>
+  </body>
+  <script src="../../public/js/util/vue.min.js"></script>
+    <script src="./login.js"></script>
+</html>

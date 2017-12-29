@@ -6,3 +6,13 @@ gulp.task("default", () =>{
     .pipe(babel())
     .pipe(gulp.dest("dist"));
 });
+
+gulp.task("dev", () =>{
+    return gulp.src(["views/**/*.html"])
+        .pipe(gulp.dest("dist"));
+});
+
+gulp.task("sass", () =>{
+    return gulp.src(["views/**/*.html"])
+        .pipe(gulp.dest("dist"));
+});

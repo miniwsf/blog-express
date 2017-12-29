@@ -3,18 +3,26 @@ const path = require("path");
 
 const ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
 const WebpackChunkHash = require("webpack-chunk-hash");
-const UglifyJsPlugin=require("uglifyjs-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 /* Shared Dev & Production */
 const config = {
-    context: path.resolve(__dirname, "routes"),
+    context: path.resolve(__dirname, "views"),
 
     entry: {
-        index: "./index.js"
+        index: "./login/login.js"
     },
 
     module: {
         rules: [
+            {
+                test: /\.html$/,
+                loader: "html"
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract("style-loader",["css-loader","autoprefixer","postcss-loader","sass-loader"])
+            },
             {
                 test: /\.js$/,
                 use: "babel-loader",
@@ -26,13 +34,13 @@ const config = {
                     loader: "file-loader",
                     options: { name: "[name].[hash].[ext]" },
                 },
-            },
+            }
         ],
     },
 
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "[name].bundle.js",
+        path: path.resolve(__dirname, "dist/login"),
+        filename: "[name].[chunkhash:8].js",
         publicPath: "/",
     },
 
@@ -54,6 +62,10 @@ const config = {
                 pure_funcs: ["console.log"]
             },
             sourceMap: false
+        }),
+        new webpack.ProvidePlugin({
+            Vue: path.join(__dirname, "public/js/util/vue.min.js"),
+            $: path.join(__dirname, "public/js/util/jquery.min.js")
         })
     ],
 
@@ -63,7 +75,7 @@ const config = {
 };
 
 if (process.env.NODE_ENV === "production") {
-    config.output.filename = "[name].[chunkhash].js";
+    config.output.filename = "[name].[chunkhash:8].js";
     config.plugins = [
         ...config.plugins,
         new webpack.HashedModuleIdsPlugin(),

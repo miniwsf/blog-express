@@ -18,7 +18,7 @@ var express_handlebars_sections = require("express-handlebars-sections");
 var app = express();
 
 // view engine setup
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "dist/views"));
 app.engine("hbs", handlebars({
     layoutsDir: "views",
     defaultLayout: "layout",

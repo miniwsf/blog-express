@@ -84,7 +84,7 @@ function slideTop() {
 (()={
     let vm=new Vue({
         el:"#blog-components",
-        
+
     })
 })()
 

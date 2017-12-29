@@ -4,9 +4,11 @@ var lastScrollY=document.body.scrollTop;
 var typeId=0;
 var TIME=100;
 
+/*
 (function(){
     setInterval(handleScroll, TIME);
 })();
+*/
 
 /*监测滚动*/
 function handleScroll () { // 如果时间间隔内，没有发生滚动，且并未强制触发加载，则do nothing，再次间隔100毫秒之后
@@ -78,4 +80,11 @@ function slideTop() {
     $("html,body").animate({scrollTop: "0px"}, 800);
 }
 
+
+(()={
+    let vm=new Vue({
+        el:"#blog-components",
+        
+    })
+})()
 

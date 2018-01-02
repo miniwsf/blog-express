@@ -1,0 +1,53 @@
+{{#section 'head'}}
+    <link rel='stylesheet' href='../../css/blog.css'/>
+    <link rel="stylesheet" type="text/css" href="../../css/iconfont.css">
+    <script src="/js/handlebars-v4.0.10.js"></script>
+    <script src="/js/vue.min.js"></script>
+{{/section}}
+<!--博客-->
+<div class="blog-content" id="blog">
+    <div class="homeContent top-style">
+        <div class="blog-left" id="tableList">
+            <div class="blog-article" v-for="(item,index) in blogList" v-if="blogList&&blogList.length>0">
+                <div class="blog-detail">
+                    <div class="blog-type">{{item.type.typeName}}&nbsp;&nbsp;&nbsp;{{item.create_time}}</div>
+                    <div class="blog-detail-title">{{item.title}}</div>
+                    <div class="blog-detail-image">
+                        <img src="{{item.image}}" v-if="item.image">
+                    </div>
+                    <div class="blog-detail-text">
+                        <div class="blog-detail-txt">
+                            {{{item.txt}}}
+                        </div>
+                        <div class=""><a href="/blog/{{item._id}}">Read More...</a></div>
+                    </div>
+                </div>
+                <div class="blog-author">
+                    <div class="blog-author-text">Author</div>
+                    <div class="blog-author-avatar">
+                        <img src="{{item.author.avatar}}?imageView2/1/w/200/h/200">
+                    </div>
+                    <div class="blog-author-name">{{item.author.nickName}}</div>
+                    <div class="blog-read" title="阅读量"><span class="icon iconfont icon-yiyuedu blog-read-font"></span><span>&nbsp;&nbsp;{{item.readAmount}}</span></div>
+                    <div class="blog-read" title="点赞量"><span class="icon iconfont icon-dianzan blog-admire-font"></span>&nbsp;&nbsp;{{item.praiseNumber}}</div>
+                </div>
+            </div>
+            <div class="blog-no-data" v-if="!blogList||blogList.length==0">暂时没有内容哦~</div>
+        </div>
+        <div class="blog-right">
+            <div class="blog-list-group">
+                <div class="blog-type-title">Blog Type</div>
+                <div class="blog-list-group-item pointer-style"><a href="/blog">全部</a></div>
+                {{#each type}}
+                    <div class="blog-list-group-item pointer-style"><a @click="getBlogData('{{_id}}')">{{typeName}}&nbsp;&nbsp;(<span class="blog-num">{{num}}</span>)</a></div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class="top-btn pointer-style" title="滑到顶部" @click="slideTop()">
+        <span class="icon iconfont icon-dingbu blog-top"></span>
+    </div>
+</div>
+{{#section 'footer'}}
+    <script src="../../js/home/blog.js"></script>
+{{/section}}

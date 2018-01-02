@@ -43,13 +43,13 @@ class ArticleType {
 
     getArticleType(req, res, next){
         this.getArticleTypeData(req, res, next).then(function (type,code,msg) {
-            res.render("articleType",{code,msg,type});
+            res.render("articleType/articleType",{code,msg,type});
         });
     }
 
     getArticleTypeOther(req, res, next){
         this.getArticleTypeData(req, res, next).then(function (type,code,msg) {
-            res.render("articleAdd",{code,msg,type});
+            res.render("article/articleAdd",{code,msg,type});
         });
     }
 

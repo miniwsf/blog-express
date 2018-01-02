@@ -25,7 +25,7 @@ class Admin {
             encodepsd=require("crypto").createHash("md5").update(new Buffer(password, "binary")).digest("hex");
         }
         catch ( e ){
-            //console.log(e);
+
         }
 
         AdminModel.find({userName: username},function(err, user){
@@ -69,7 +69,7 @@ class Admin {
         else{
             that.getData(req, res, next).then(function (data) {
                 let [user={}]=data;
-                res.render("user",{user:user});
+                res.render("user/user",{user:user});
             });
         }
     }
@@ -111,4 +111,4 @@ class Admin {
     }
 }
 
-export default new Admin()
+export default new Admin();

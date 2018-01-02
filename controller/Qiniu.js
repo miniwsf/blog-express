@@ -57,7 +57,7 @@ class Qiniu {
                 data=qiniu[0];
             }
             let {accessKey=null,secretKey=null,scope=null,deadline=null}=data;
-            res.render("file",{code,msg,accessKey,secretKey,scope,deadline});
+            res.render("file/file",{code,msg,accessKey,secretKey,scope,deadline});
         });
     }
     /*保存*/

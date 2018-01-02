@@ -23,7 +23,7 @@ app.engine("hbs", handlebars({
     layoutsDir: "./src/views",
     defaultLayout: "layout",
     extname: ".hbs",
-    partialsDir:__dirname + "./src/views/template/",
+    partialsDir:__dirname + "/src/views/template/",
     helpers:{
         section: express_handlebars_sections()
     }
@@ -57,7 +57,7 @@ app.use("/user", user);
 app.use(function(req, res, next) {
     var err = new Error("Not Found");
     err.status = 404;
-    res.render("404",{layout:null});
+    res.render("error/404",{layout:null});
 });
 
 /*检测是否出错*/
@@ -66,17 +66,17 @@ app.use(function(err, req, res, next) {
     var status=err.status;
     if(status=="401"){ /*没有认证*/
         res.status(status);
-        res.render("login",{layout:null});
+        res.render("login/login",{layout:null});
     }
     else{
         res.locals.message = err.message;
         res.locals.error = req.app.get("env") === "development" ? err : {};
 
         res.status(status || 500);
-        res.render("error",{layout:null,msg:err.message});
+        res.render("error/error",{layout:null,msg:err.message});
     }
 });
-/*app.listen(80);*/
+app.listen(80);
 
 process.on("uncaughtException", function (err) {
     //打印出错误

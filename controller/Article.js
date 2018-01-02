@@ -150,7 +150,7 @@ class Article {
 
     getArticle(req, res, next){
         this.getArticleData(req, res, next).then(function (article,code,msg) {
-            res.render("article",{code,msg,article});
+            res.render("article/article",{code,msg,article});
         });
     }
 
@@ -160,7 +160,7 @@ class Article {
             that.getArticleData(req, res, next).then(function (article,code,msg) {
                 let [recommendArticle,article1=null,article2=null,article3=null]=article;
                 let articleLatest=[article1,article2,article3];
-                res.render("home",{code,msg,recommendArticle,articleLatest,type,layout:"index"});
+                res.render("home/home",{code,msg,recommendArticle,articleLatest,type,layout:"index"});
             });
         });
     }
@@ -170,7 +170,7 @@ class Article {
         let that=this;
         that.getArticleData(req, res, next).then(function (article,code,msg) {
             ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
-                res.render("blog",{code,msg,article,type,layout:"index"});
+                res.render("home/blog",{code,msg,article,type,layout:"index"});
             });
         });
     }
@@ -178,6 +178,7 @@ class Article {
     getBlogMore(req, res, next){
         let that=this;
         that.getArticleData(req, res, next).then(function (article,code,msg) {
+            console.log(article);
             res.send({code,msg,article});
         });
     }
@@ -193,7 +194,7 @@ class Article {
             let param={"$inc":{"readAmount":1}};
             this.updateArticle(condition,param);
             this.getArticleData(req, res, next).then(function (article,code,msg) {
-                res.render("blogDetail",{code,msg,article,layout:"index"});
+                res.render("home/blogDetail",{code,msg,article,layout:"index"});
             });
         }
     }
@@ -207,7 +208,7 @@ class Article {
             let param={"$inc":{"readAmount":1}};
             this.updateArticle(condition,param);
             this.getArticleData(req, res, next).then(function (article,code,msg) {
-                res.render("article",{code,msg,article});
+                res.render("article/article",{code,msg,article});
             });
         }
     }
@@ -288,11 +289,11 @@ class Article {
             if(req.query.articleId){
                 that.getArticleData(req, res, next).then(function (article, code, msg) {
                     data=article.length>0?article[0]:null;
-                    res.render("articleAdd", {code, msg, data,type});
+                    res.render("article/articleAdd", {code, msg, data,type});
                 });
             }
             else{
-                res.render("articleAdd", {code, msg, data,type});
+                res.render("article/articleAdd", {code, msg, data,type});
             }
         });
     }
@@ -311,7 +312,7 @@ class Article {
         let param={"$inc":{"praiseNumber":1}};
         this.updateArticle(condition,param);
         this.getArticleData(req, res, next).then(function (article,code,msg) {
-            res.render("blogDetail",{code,msg,article,layout:"index"});
+            res.render("home/blogDetail",{code,msg,article,layout:"index"});
         });
     }
 }

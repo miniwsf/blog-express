@@ -19,7 +19,8 @@ gulp.task("sass",()=>{
 
 gulp.task("js",()=>{
     return gulp.src(["src/js/**/*.js"])
-        .pipe(jsmin())
+        .pipe(babel())
+       /* .pipe(jsmin())*/
         .pipe(gulp.dest("dist/public/js"));
 });
 
@@ -30,6 +31,6 @@ gulp.task("image",()=>{
 
 gulp.task("public",()=>{
     return gulp.src(["public/**"])
-        .pipe(gulp.dest("dist"));
+        .pipe(gulp.dest("dist/public"));
 });
 

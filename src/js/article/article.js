@@ -1,6 +1,6 @@
 var currentPage=1;
 
-/*删除文章*/
+/* 删除文章 */
 function deleteArticle(articleId){
     Confirm.show("您确定删除吗?",deleteArticleById,articleId);
 }

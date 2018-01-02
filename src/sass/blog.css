@@ -1,0 +1,260 @@
+
+.blog-back{
+    width:100%;
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.blog-left{
+    width:74%;
+    float: left;
+}
+
+.blog-article{
+    width:100%;
+    background: #ffffff;
+    border: 1px solid #d6d6d6;
+    margin-bottom:3%;
+    padding: 5% 0 7% 3%;
+}
+
+.blog-right{
+    width:26%;
+    float: right;
+    padding-left: 3%;
+}
+
+/*自适应屏幕大小*/
+.blog-detail{
+    width:83%;
+    float: left;
+}
+
+.blog-author{
+    width:17%;
+    float: left;
+    padding-top: 5%;
+    text-align: center;
+}
+
+.top-style{
+    padding-top: 3%;
+    margin-bottom:5%;
+}
+
+.blog-detail-image{
+    width:31%;
+    padding-top: 31%;
+    border: 5px solid #f0f0f0;
+    position: relative;
+    float: left;
+    background: url("../images/no-image.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.blog-detail-text{
+    width:65%;
+    float: left;
+    padding-left: 3%;
+    font-family: Arial;
+    position: relative;
+}
+
+@media (min-width: 1300px) {
+    .blog-detail-txt{
+        width:100%;
+        color: #636060;
+        font-size: 0.875rem;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+    }
+    .blog-author-avatar{
+        width:40%;
+        margin:16% auto 10% auto;
+        border-radius: 100%;
+    }
+    .blog-icon{
+        width:20%;
+        vertical-align: middle;
+    }
+    .top-btn{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin-bottom:3%;
+        margin-right:20%;
+    }
+}
+
+@media (min-width: 768px)and (max-width: 1300px){
+    .blog-detail-txt{
+        width:100%;
+        color: #636060;
+        font-size: 0.875rem;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+    }
+    .blog-author-avatar{
+        width:50%;
+        margin:24% auto 10% auto;
+        border-radius: 100%;
+    }
+    .blog-icon{
+        width:30%;
+        vertical-align: middle;
+    }
+    .top-btn{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin-bottom:3%;
+        margin-right:4%;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-detail-txt{
+        width:100%;
+        color: #636060;
+        font-size: 0.875rem;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    .blog-author-avatar{
+        width:86%;
+        margin:24% auto 10% auto;
+        border-radius: 100%;
+    }
+    .blog-icon{
+        width:50%;
+        vertical-align: middle;
+    }
+    .top-btn{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin-bottom:10%;
+        margin-right:4%;
+    }
+}
+
+
+
+.blog-detail-image img{
+    width:100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    object-fit: cover;
+}
+
+.blog-author-text{
+    font-size: 1.25rem;
+    color: #000000;
+    font-family: yan;
+}
+
+.blog-author-name{
+    color: #e6618c;
+    font-size: 0.75rem;
+    margin-bottom: 24%;
+}
+
+.blog-type{
+    color: #989b9f;
+    font-size: 0.875rem
+}
+
+.blog-type-title{
+    font-family: yan;
+    font-size: 1.25rem;
+    color: #000;
+    text-align: center;
+    padding: 10% 0 8% 0;
+}
+
+.blog-detail-title{
+    font-size: 1.75rem;
+    color: #000;
+    margin:1% 0 1% 0;
+    font-family: yan;
+}
+
+.blog-list-group{
+    background: #ffffff;
+    border: 1px solid #d6d6d6;
+    padding-bottom: 20%;
+}
+
+.blog-list-group-item{
+    padding:3% 0 3% 25%;
+}
+
+.blog-list-group-item a{
+    font-family: Arial;
+    font-size: 13px;
+    color: #000;
+}
+.blog-list-group-item a:hover{
+    opacity:0.8;
+}
+
+
+.blog-read{
+    color: #c8c8c8;
+    text-align: center;
+}
+
+.blog-num{
+    color: #e6618c;
+    text-decoration:underline
+}
+
+.blog-no-data{
+    text-align: center;
+    font-family: yan;
+    font-size: 1.75rem;
+    color: #000;
+    opacity: 0.8;
+    padding-top: 10%;
+}
+
+.blog-author-avatar img{
+    width:100%;
+    display: block;
+    border-radius: 100%;
+}
+
+.blog-read-font{
+    font-size: 1.6rem !important;
+    vertical-align: middle;
+    color: #1296db;
+}
+.blog-admire-font{
+    font-size: 1.5rem !important;
+    vertical-align: middle;
+    color: #eeb174;
+}
+
+.blog-top{
+    font-size: 2rem !important;
+    vertical-align: middle;
+    color: #f1f1f1;
+}
+
+.blog-top:hover{
+    color: #9a9696;
+}

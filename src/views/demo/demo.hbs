@@ -1,5 +1,5 @@
 {{#section 'head'}}
-    <link rel='stylesheet' href='../css/article.css'/>
+    <link rel='stylesheet' href='../../css/article.css'/>
 {{/section}}
 <div>
 	<ol class="breadcrumb">
@@ -8,22 +8,21 @@
 </div>
 <div class="content-article">
 	<div class="search-list">
-		<label for="title" class="control-label">文章标题</label>
-		<input type="text" class="form-control lable-width" placeholder="请输入名称" id="title">
+		<label for="title" class="control-label">演示标题</label>
+		<input type="text" class="form-control lable-width" placeholder="请输入演示标题名称" id="title">
 		<button type="button" class="btn btn-primary">搜索</button>
-		<a type="button" class="btn btn-primary" href="/article/articleAdd">新增文章</a>
+		<a type="button" class="btn btn-primary" href="/article/articleAdd">新增演示</a>
 	</div>
 	<div class="table-responsive table-content">
 		<table class="table">
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>文章标题</th>
-					<th>文章类别</th>
-					<th>关键字</th>
+					<th>演示标题</th>
+					<th>标签</th>
 					<th>作者</th>
 					<th>发布时间</th>
-					<th>阅读量</th>
+					<th>演示描述</th>
 					<th>点赞数</th>
 					<th>操作</th>
 				</tr>
@@ -40,7 +39,7 @@
 					<td>{{readAmount}}</td>
 					<td>{{praiseNumber}}</td>
 					<td>
-						<a type="button" class="btn btn-primary" href="/blog/{{_id}}">查看详情</a>
+						<a type="button" class="btn btn-primary" href="/blogDetail?articleId={{_id}}">查看详情</a>
 						<a type="button" class="btn btn-primary" href="/article/articleAdd?articleId={{_id}}">编辑</a>
 						<a type="button" class="btn btn-danger" onclick="deleteArticle('{{_id}}')">删除</a>
 					</td>
@@ -54,5 +53,5 @@
 </div>
 {{#section 'footer'}}
     <script src="/js/handlebars-v4.0.10.js"></script>
-    <script src="../js/article/article.js"></script>
+    <script src="../../js/article/article.js"></script>
 {{/section}}

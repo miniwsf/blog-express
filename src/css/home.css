@@ -194,17 +194,17 @@
 
 @font-face {
     font-family: book;
-    src:url('../fonts/Quicksand-Book-Regular.ttf'); /* IE9 */
+    src:url('../../public/fonts/Quicksand-Book-Regular.ttf'); /* IE9 */
 }
 
 @font-face {
     font-family: yan;
-    src:url('../fonts/YanoneKaffeesatz-Regular.ttf'); /* IE9 */
+    src:url('../../public/fonts/YanoneKaffeesatz-Regular.ttf'); /* IE9 */
 }
 
 @font-face {
     font-family: coco;
-    src:url('../fonts/Coco-Condensed.otf'); /* IE9 */
+    src:url('../../public/fonts/Coco-Condensed.otf'); /* IE9 */
 }
 
 .home-title{

@@ -2,6 +2,7 @@
 
 import ArticleModel from "../models/Article";
 import ArticleType from "../controller/ArticleType";
+import Common from "../controller/common";
 
 class Article {
     constructor(){
@@ -11,7 +12,6 @@ class Article {
         this.getBlog = this.getBlog.bind(this);
         this.getBlogMore = this.getBlogMore.bind(this);
         this.getArticleNum = this.getArticleNum.bind(this);
-        this.getHome = this.getHome.bind(this);
         this.getBlogDetail = this.getBlogDetail.bind(this);
         this.addArticle = this.addArticle.bind(this);
         this.updateArticle = this.updateArticle.bind(this);
@@ -90,42 +90,19 @@ class Article {
                 else{
                     article.forEach(item => {
                         let time = new Date(parseInt(item.create_time));
-                        let year=time.getFullYear();
-                        let day=time.getDate();
-                        let month=time.getMonth()+1;
-                        let hour=time.getHours();
-                        let minute=time.getMinutes();
-                        let timeStr=year+"-"+month+"-"+day+" "+hour+":"+minute;
-                        item.create_time=timeStr;
+                        item.create_time=Common.getTimeStr(time);
 
                         //获得纯文本
-                        let str=item.contentHtml;
-                        str = str.replace(/<\/?[^>]*>/g,""); //去除HTML tag
-                        str = str.replace(/[ | ]*\n/g,"\n"); //去除行尾空白
-                        str=str.replace(/&nbsp;/ig,"");//去掉&nbsp;
-                        str=str.replace(/\s/g,""); //将空格去掉
-                        item.txt=str;
+                        item.txt=Common.getHTMLToText(item.contentHtml);
 
                         //获取封面图
-                        let imgReg=/.*!\[.*?\]\(.*?\).*/;
-                        let arr=item.content.match(imgReg);
-                        let image="";
-                        if(arr&&arr.length>0){
-                            for(var info of arr){
-                                let imgInfo=info.split("(");
-                                if(imgInfo.length>=2){
-                                    image=imgInfo[1].split(")")[0];
-                                    break;
-                                }
-                                else{
-                                    break;
-                                }
-                            }
-                        }
-                        item.image=image;
+                        item.image=Common.getImage(item.content);
 
                         let itemNew={
-                            author:item.author,
+                            author:{
+                                nickName:item.author.nickName,
+                                avatar:item.author.avatar
+                            },
                             content:item.content,
                             contentHtml:item.contentHtml,
                             create_time:item.create_time,
@@ -154,17 +131,6 @@ class Article {
         });
     }
 
-    getHome(req, res, next){
-        let that=this;
-        ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
-            that.getArticleData(req, res, next).then(function (article,code,msg) {
-                let [recommendArticle,article1=null,article2=null,article3=null]=article;
-                let articleLatest=[article1,article2,article3];
-                res.render("home/home",{code,msg,recommendArticle,articleLatest,type,layout:"index"});
-            });
-        });
-    }
-
     /*获取博客信息及其分类*/
     getBlog(req, res, next){
         let that=this;
@@ -178,7 +144,6 @@ class Article {
     getBlogMore(req, res, next){
         let that=this;
         that.getArticleData(req, res, next).then(function (article,code,msg) {
-            console.log(article);
             res.send({code,msg,article});
         });
     }
@@ -241,7 +206,7 @@ class Article {
         else{
             that.getArticleData(req, res, next).then(function (article,code,msg) {
                 if(!article||article.length<=0){
-                    that.addArticle(req,res,next)
+                    that.addArticle(req,res,next);
                 }
                 else{
                     let condition={_id:req.body.articleId};

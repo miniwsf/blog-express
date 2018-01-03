@@ -2,16 +2,14 @@
     <title>sunshine wsf</title>
 {{/section}}
 <!--首页内容-->
-<div  class="homeContent">
-    <div class="home-recommend  back-cover">
-    {{#if recommendArticle.image}}
-        <img src="{{recommendArticle.image}}" class="home-recommend-back">
-    {{/if}}
+<div class="homeContent" id="home">
+    <div class="home-recommend back-cover">
+        <img :src="recommendArticle.image" class="home-recommend-back" v-if="recommendArticle.image">
         <div class="recommend-content">
-            <div class="recommend-title">{{recommendArticle.title}}</div>
-            <div class="recommend-detail">{{recommendArticle.txt}}</div>
+            <div class="recommend-title" v-text="recommendArticle.title"></div>
+            <div class="recommend-detail" v-text="recommendArticle.txt"></div>
         </div>
-        <div><a href="/blog/{{recommendArticle._id}}" class="read-more"></a></div>
+        <div><a @click="getBlogDetail(recommendArticle._id)" class="read-more pointer-style"></a></div>
     </div>
     <div class="home-introduce">
         <div class="home-columns">
@@ -45,21 +43,18 @@
     <div class="home-latest">
         <div class="home-latest-title">最近博客</div>
         <div class="home-blog-grid">
-            {{#each articleLatest}}
-                {{#if _id}}
-                <div class="home-blog-columns">
-                    <div class="home-blog-image">
-                        {{#if image}}
-                            <img src="{{image}}" class="">
-                        {{/if}}
-                    </div>
-                    <div class="home-blog-title">{{title}}</div>
-                    <div class="home-blog-time">{{create_time}}</div>
-                    <div class="home-blog-content">{{{txt}}}</div>
-                    <div class="home-more"><a href="/blog/{{_id}}">Read More...</a></div>
+            <div class="home-blog-columns" v-for="(item,index) in articleLatest" v-if="item._id">
+                <div class="home-blog-image">
+                    <img :src="item.image" class="" v-if="item.image">
                 </div>
-                {{/if}}
-            {{/each}}
+                <div class="home-blog-title" v-text="item.title"></div>
+                <div class="home-blog-time" v-text="item.create_time"></div>
+                <div class="home-blog-content" v-text="item.txt"></div>
+                <div class="home-more pointer-style"><a @click="getBlogDetail(item._id)">Read More...</a></div>
+            </div>
         </div>
     </div>
 </div>
+{{#section 'footer'}}
+    <script src="../../js/home/home.js"></script>
+{{/section}}

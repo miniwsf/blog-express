@@ -4,11 +4,16 @@ import Article from "../controller/Article";
 let express = require("express");
 let router = express.Router();
 
-router.get("/", Article.getHome);
+router.get("/",  function(req, res) {
+    res.render("home/home", {layout:"index"});
+});
 router.get("/blog", Article.getBlog);
+/*router.get("/blog", function(req, res, next) {
+    res.render("home/blog", {layout:"index"});
+})*/
 router.post("/blog", Article.getBlogMore);
 router.get("/blog/:articleId", Article.getBlogDetail);
-router.get("/aboutMe", function(req, res, next) {
+router.get("/aboutMe", function(req, res) {
     res.render("home/aboutMe", {layout:"index"});
 });
 /*router.get("/demo", function(req, res, next) {

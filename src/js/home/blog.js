@@ -1,20 +1,16 @@
 (function (){
-    var currentPage=0;
-    var lastScrollY=document.body.scrollTop;
-    var TIME=100;
-    //vm.getBlogData();
-
+    const TIME=100;
     setInterval(handleScroll, TIME);
 
     let handleScroll=()=>{
-        var scroll= document.body.scrollTop;
-        if (lastScrollY >=scroll) {
+        let scroll= document.body.scrollTop;
+        if (vm.lastScrollY >=scroll) {
             return;
         }
         else {
-            lastScrollY = scroll;
+            vm.lastScrollY = scroll;
         }
-        if (lastScrollY + innerHeight + 200 > document.body.offsetHeight) {
+        if (vm.lastScrollY + innerHeight + 200 > document.body.offsetHeight) {
             vm.getBlogData();
         }
     };
@@ -25,26 +21,27 @@
             blogList:null,
             typeList:null,
             currentPage:0,
-            typeId:0
+            typeId:0,
+            lastScrollY:document.body.scrollTop
         },
         methods:{
-            /*slide to top*/
+            /* slide to top */
             slideTop(){
                 $("html,body").animate({scrollTop: "0px"}, 800);
             },
-            /*get date of blog's articles*/
+            /* get date of blog's articles */
             getBlogData(typeId){
                 let that=this;
                 that.currentPage+=1;
-                if(typeId){
-                    currentPage=0;
-                    lastScrollY=0;
+                if(!(typeId === undefined)){
+                    that.currentPage=1;
+                    vm.lastScrollY=0;
                 }
                 $.ajax({
                     type:"post",
                     url:"/blog",
                     data:{
-                        "page":currentPage,
+                        "page":that.currentPage,
                         "typeId":!typeId?"":typeId
                     },
                     success:function(res){
@@ -54,6 +51,14 @@
 
                     }
                 });
+            },
+            /* get the detail of blog */
+            getBlogDetail(id){
+                window.location.href="/blog/"+id;
+            },
+            /* Get the blog category */
+            getType(){
+
             }
         },
         mounted(){

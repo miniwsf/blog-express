@@ -23,7 +23,7 @@ app.engine("hbs", handlebars({
     layoutsDir: "./src/views",
     defaultLayout: "layout",
     extname: ".hbs",
-    partialsDir:__dirname + "/src/views/template/",
+    partialsDir:__dirname + "src/views/template/",
     helpers:{
         section: express_handlebars_sections()
     }
@@ -31,7 +31,7 @@ app.engine("hbs", handlebars({
 app.set("jwtTokenSecret", "SECRET_TOKEN");
 app.set("view engine", "hbs");
 
-app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+app.use(favicon(path.join(__dirname, "dist/public", "favicon.ico")));
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

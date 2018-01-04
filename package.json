@@ -26,6 +26,7 @@
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.7",
     "express-session": "^1.15.6",
     "formidable": "^1.1.1",
     "gulp": "^3.9.1",
@@ -36,6 +37,8 @@
     "html-loader": "^0.5.1",
     "jsonwebtoken": "^8.1.0",
     "qiniu": "^7.0.9",
+    "vue-loader": "^13.6.2",
+    "vue-template-compiler": "^2.5.13",
     "webpack": "^3.8.1"
   }
 }

@@ -1,9 +1,12 @@
 require("html-loader");
+require("vue-loader");
+require("css-loader");
 const webpack = require("webpack");
 const path = require("path");
 
 const ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
 const WebpackChunkHash = require("webpack-chunk-hash");
+const compiler = require('vue-template-compiler')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
@@ -20,6 +23,10 @@ const config = {
             {
                 test: /\.html$/,
                 loader: "html-loader"
+            },
+            {
+                test:/\.vue$/,
+                loader:"vue-loader",
             },
             {
                 test: /\.scss$/,
@@ -57,14 +64,14 @@ const config = {
             name: "vendor",
         }),
         new webpack.optimize.ModuleConcatenationPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
+        /*new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
                 drop_console: true,
                 pure_funcs: ["console.log"]
             },
             sourceMap: false
-        }),
+        }),*/
         new webpack.ProvidePlugin({
             $: path.join(__dirname, "public/js/jquery.min.js")
         })

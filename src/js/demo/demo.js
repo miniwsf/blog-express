@@ -1,4 +1,5 @@
-
+import Tips from "../common/component/tips.vue";
+import confirm from "../common/component/confirm.vue";
 (()=>{
     var vm=new Vue({
         el:"#demo",
@@ -44,12 +45,21 @@
                             that.moreData=false;
                         }
                     },
-                    error:function(err) {
-
+                    error:function() {
+                        that.$refs.tips.show("请求出错啦，请稍后重试");
                     }
                 });
             },
             deleteDemo(id){
+                let that=this;
+                that.$refs.confirm.show({
+                    title:"删除演示",
+                    msg:"您确定要删除该条数据吗？",
+                    callback:this.methods.deleteDemoById,
+                    params:id
+                });
+            },
+            deleteDemoById(id){
                 let that=this;
                 $.ajax({
                     type:"DELETE",
@@ -59,11 +69,15 @@
                     },
                     success:function(res){
                         if(res.code==0){
+                            that.$refs.tips.show("删除成功~");
                             that.getData();
                         }
+                        else{
+                            that.$refs.tips.show("删除失败，请稍后重试~");
+                        }
                     },
-                    error:function(err) {
-
+                    error:function() {
+                        that.$refs.tips.show("请求出错啦，请稍后重试~");
                     }
                 });
             },
@@ -74,6 +88,10 @@
             addDemoData(){
 
             }
+        },
+        components:{
+            tips:Tips,
+            confirm
         },
         mounted(){
             let that=this;

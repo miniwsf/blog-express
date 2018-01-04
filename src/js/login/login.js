@@ -1,12 +1,11 @@
-import tips from "../common/component/tips.html";
+import Tips from "../common/component/tips.vue";
 
 (()=>{
     let vm=new Vue({
         el:"#login",
         data:{
             username:null,
-            password:null,
-            msg:"测试测试"
+            password:null
         },
         methods:{
             login(){
@@ -15,11 +14,11 @@ import tips from "../common/component/tips.html";
                 let password=that.password;
 
                 if(!username){
-                    //Tips.show("请输入用户名");
+                    that.$refs.tips.show("请输入用户名");
                     return;
                 }
                 if(!password){
-                    //Tips.show("请输入密码");
+                    that.$refs.tips.show("请输入密码");
                     return;
                 }
                 $.ajax({
@@ -34,17 +33,17 @@ import tips from "../common/component/tips.html";
                             window.location.href="/article";
                         }
                         else{
-                            //Tips.show(res.msg);
+                            that.$refs.tips.show(res.message);
                         }
                     },
-                    error:function(err) {
-                        //Tips.show(err);
+                    error:function() {
+                        that.$refs.tips.show("请求出错啦，请稍后重试");
                     }
                 });
             }
         },
         components:{
-            tips
+            tips:Tips
         },
         mounted(){
 

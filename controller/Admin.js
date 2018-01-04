@@ -25,7 +25,7 @@ class Admin {
             encodepsd=require("crypto").createHash("md5").update(new Buffer(password, "binary")).digest("hex");
         }
         catch ( e ){
-
+            throw e;
         }
 
         AdminModel.find({userName: username},function(err, user){
@@ -52,8 +52,7 @@ class Admin {
                     res.cookie("token",token);
                     res.send({
                         code: "0",
-                        message: "Enjoy your token!",
-                        token: token
+                        message: "Enjoy your token!"
                     });
                 }
             }
@@ -88,11 +87,12 @@ class Admin {
                     resolve(user);
                 }
             });
-        })
+        });
     }
+
     saveData(req, res, next){
         let admin = {
-            nickName:  req.body.nickName,
+            nickName:req.body.nickName,
             avatar:req.body.avatar
         };
         let password=req.body.password;

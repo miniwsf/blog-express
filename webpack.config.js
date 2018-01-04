@@ -1,9 +1,11 @@
+require("html-loader");
 const webpack = require("webpack");
 const path = require("path");
 
 const ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
 const WebpackChunkHash = require("webpack-chunk-hash");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 
 /* Shared Dev & Production */
 const config = {
@@ -17,7 +19,7 @@ const config = {
         rules: [
             {
                 test: /\.html$/,
-                loader: "html"
+                loader: "html-loader"
             },
             {
                 test: /\.scss$/,
@@ -39,8 +41,8 @@ const config = {
     },
 
     output: {
-        path: path.resolve(__dirname, "dist/login"),
-        filename: "[name].[chunkhash:8].js",
+        path: path.resolve(__dirname, "dist/public/js/login"),
+        filename: "[name].js",
         publicPath: "/",
     },
 
@@ -72,21 +74,5 @@ const config = {
         historyApiFallback: true,
     },
 };
-
-if (process.env.NODE_ENV === "production") {
-    config.output.filename = "[name].[chunkhash:8].js";
-    config.plugins = [
-        ...config.plugins,
-        new webpack.HashedModuleIdsPlugin(),
-        new WebpackChunkHash(),
-        new ChunkManifestPlugin({
-            filename: "chunk-manifest.json",
-            manifestVariable: "webpackManifest",
-            inlineManifest: true,
-        }),
-    ];
-}
-
-
 
 module.exports = config;

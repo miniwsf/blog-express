@@ -3,7 +3,7 @@ import babel from "gulp-babel";
 import cleanCSS from "gulp-clean-css";
 import jsmin from "gulp-jsmin";
 
-gulp.task("default", ["babel","public","sass","js","image"]);
+gulp.task("default", ["babel","public","sass","common","js","image"]);
 
 gulp.task("babel", () =>{
     return gulp.src(["**/*.js","!app.js","!dist/**/*.js","!gulpfile.babel.js","!public/**/*.js","!node_modules/**/*.js","!src/**/*.js"])
@@ -19,10 +19,18 @@ gulp.task("sass",()=>{
 
 gulp.task("js",()=>{
     return gulp.src(["src/js/**/*.js"])
-        .pipe(babel())
-        .pipe(jsmin())
+        .pipe(babel({presets:["env"]}))
+        /*.pipe(jsmin())*/
         .pipe(gulp.dest("dist/public/js"));
 });
+
+gulp.task("common",()=>{
+    return gulp.src(["src/common/**/**/*.js"])
+        .pipe(babel({presets:["env"]}))
+        /*.pipe(jsmin())*/
+        .pipe(gulp.dest("dist/public/common"));
+});
+
 
 gulp.task("image",()=>{
     return gulp.src(["src/images/**"])

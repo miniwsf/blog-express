@@ -1,14 +1,16 @@
 
-import Article from "../controller/Article";
+import Demo from "../controller/Demo";
 import CheckToken from "../middlewares/checkToken";
 
 let express = require("express");
 let router = express.Router();
 
-router.get("/",CheckToken,Article.getArticle);
-router.delete("/",CheckToken,Article.deleteArticle);
-router.put("/",CheckToken,Article.updateArticle);
-router.post("/",CheckToken,Article.updateAndSave);
-router.get("/articleAdd",CheckToken,Article.getArticleDataById);
+router.get("/",CheckToken,function (req, res) {
+    res.render("demo/demo", {layout:"layout"});
+});
+router.post("/demoData",CheckToken,Demo.getDemoMore);
+router.delete("/",CheckToken,Demo.deleteDemo);
+router.put("/",CheckToken,Demo.updateDemo);
+router.post("/",CheckToken,Demo.updateAndSave);
 
 module.exports = router;

@@ -18,7 +18,7 @@
     var vm=new Vue({
         el:"#blog",
         data:{
-            blogList:null,
+            blogList:[],
             typeList:null,
             currentPage:0,
             typeId:0,
@@ -45,7 +45,12 @@
                         "typeId":!typeId?"":typeId
                     },
                     success:function(res){
-                        that.blogList=res.article;
+                        if(that.currentPage==1){
+                            that.blogList=res.article;
+                        }
+                        else{
+                            that.blogList.push(...res.article);
+                        }
                     },
                     error:function(err) {
 

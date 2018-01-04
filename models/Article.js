@@ -19,4 +19,4 @@ let articleSchema = new Schema({
 
 let Article = mongoose.model("Article", articleSchema);
 
-export default Article
+export default Article;

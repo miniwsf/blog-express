@@ -5,9 +5,12 @@ let Schema = mongoose.Schema;
 
 var demoSchema = new Schema({
     demoTitle: String,
-    demoDescript: String,
+    demoDescription: String,
     create_time: String,
-    demoLink:String
+    demoLink:String,
+    demoImages:Array,
+    author:{ type: Schema.Types.ObjectId, ref: "Admin"},
+    codeUrl:String
 });
 
 var Demo = mongoose.model("Demo", demoSchema);

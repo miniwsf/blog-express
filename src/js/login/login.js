@@ -1,11 +1,11 @@
-import Tips from "../common/component/tips.vue";
+import Tips from "../../common/component/tips.vue";
 
 (()=>{
     let vm=new Vue({
         el:"#login",
         data:{
             username:null,
-            password:null
+            password:null,
         },
         methods:{
             login(){

@@ -48,6 +48,7 @@ app.use("/blog", index);
 app.use("/blogMore", index);
 app.use("/home", index);
 app.use("/demo", demo);
+app.use("/demos", index);
 app.use("/aboutMe", index);
 app.use("/blogDeatil", index);
 app.use("/file", file);

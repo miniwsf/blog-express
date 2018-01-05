@@ -8,6 +8,9 @@ router.get("/",  function(req, res) {
     res.render("home/home", {layout:"index"});
 });
 router.get("/blog", Article.getBlog);
+router.get("/demos", function(req, res) {
+    res.render("home/demo", {layout:"index"});
+});
 /*router.get("/blog", function(req, res, next) {
     res.render("home/blog", {layout:"index"});
 })*/

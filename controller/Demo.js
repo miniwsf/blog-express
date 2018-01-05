@@ -102,9 +102,9 @@ class Demo {
     //更新或保存
     updateAndSave(req,res,next){
         let that=this;
+        let code="0";
+        let msg="成功";
         if(!req.body.demoId){
-            let code="0";
-            let msg="成功";
             that.addDemo(req,res,next);
             res.send({code,msg});
         }
@@ -140,7 +140,7 @@ class Demo {
                 create_time: new Date().getTime(),
                 author: req.api_user.id
             });
-            article.save(function (err, response) {
+            article.save(function (err) {
                 if (err) {
                     throw err;
                 }

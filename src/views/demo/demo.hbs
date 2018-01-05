@@ -9,6 +9,8 @@
 <div class="content-article" id="demo">
     <tips ref="tips"></tips>
     <confirm ref="confirm"></confirm>
+    <dialogs :dialogForm="dialogData.dialogForm" ref="dialogs"></dialogs>
+
 	<div class="search-list">
 		<label for="title" class="control-label">演示标题</label>
 		<input type="text" class="form-control lable-width" placeholder="请输入演示标题名称" v-model="title">
@@ -30,17 +32,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for="(item,index) in demoList" v-if="item_id">
+				<tr v-for="(item,index) in demoList" v-if="item._id">
 					<td>#</td>
 					<td v-text="item.demoTitle"></td>
-					<td v-text="item.author.nickname"></td>
+					<td v-text="item.author.nickName"></td>
 					<td v-text="item.create_time"></td>
 					<td v-text="item.demoDescription"></td>
 					<td v-text="item.codeUrl"></td>
 					<td v-text="item.demoLink"></td>
 					<td>
-						<a type="button" class="btn btn-primary">查看详情</a>
-						<a type="button" class="btn btn-primary">编辑</a>
+						<a type="button" class="btn btn-primary" :href="item.demoLink">查看详情</a>
+						<a type="button" class="btn btn-primary" @click="addDemo(item)">编辑</a>
 						<a type="button" class="btn btn-danger" @click="deleteDemo(item._id)">删除</a>
 					</td>
 				</tr>

@@ -1,0 +1,82 @@
+
+.demo-content{
+    width:100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.each-demo{
+    width:30%;
+    margin:0 1.5%;
+}
+
+.demo-head{
+    width:100%;
+    background: #242424;
+    height: 13px;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.demo-mid{
+    position: relative;
+    border:1px #e1e4e8 solid;
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 2% 5%;
+}
+
+.demo-title{
+    font-size: 1rem;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+}
+
+.demo-des{
+    font-size: 0.5rem;
+    padding-bottom: 5%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.demo-txt{
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 0;
+    border-top: 1px solid #2F2F2F;
+}
+
+.demo-bottom{
+    text-align: right;
+}
+
+.demo-address img{
+    width:1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.demo-ad{
+    position: absolute;
+    width:80%;
+    left:50%;
+    top:50%;
+    height: 86%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content:center;
+}
+
+.demo-ad-each{
+    width:40%;
+    margin:0 5%;
+}
+
+.demo-code{
+    background: #ffffff;
+    color: #333333;
+}
+
+.demo-url{
+    background: #333333;
+    color: #ffffff;
+}

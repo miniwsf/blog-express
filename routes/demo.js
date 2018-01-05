@@ -8,7 +8,7 @@ let router = express.Router();
 router.get("/",CheckToken,function (req, res) {
     res.render("demo/demo", {layout:"layout"});
 });
-router.post("/demoData",CheckToken,Demo.getDemoMore);
+router.post("/demoData",Demo.getDemoMore);
 router.delete("/",CheckToken,Demo.deleteDemo);
 router.put("/",CheckToken,Demo.updateDemo);
 router.post("/",CheckToken,Demo.updateAndSave);

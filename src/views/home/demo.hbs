@@ -1,0 +1,31 @@
+{{#section 'head'}}
+    <link rel='stylesheet' href='../../css/demo.css'/>
+{{/section}}
+<!--博客-->
+<div class="blog-content" id="blog">
+    <div class="homeContent top-style">
+        <div class="demo-content">
+            <div class="each-demo" v-for="(item,index) in demoList" v-if="demoList&&demoList.length>0">
+                <div class="demo-head"></div>
+                <div class="demo-mid">
+                    <div v-text="item.demoTitle" class="demo-title"></div>
+                    <div v-text="item.demoDescription" class="demo-des"></div>
+                    <div class="demo-txt">
+                        <div class="demo-address">
+                            <img src="../../images/github.png" @click="getUrl(item.codeUrl)">
+                            <img src="../../images/demo.png" @click="getUrl(item.demoLink)">
+                        </div>
+                        <div v-text="item.create_time" class="demo-time"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="blog-no-data" v-if="!demoList||demoList.length==0">暂时没有内容哦~</div>
+    </div>
+    <div class="top-btn pointer-style" title="滑到顶部" @click="slideTop()" v-show="lastScrollY>0">
+        <span class="icon iconfont icon-dingbu blog-top"></span>
+    </div>
+</div>
+{{#section 'footer'}}
+    <script src="../../js/home/demos.js"></script>
+{{/section}}

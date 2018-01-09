@@ -36,9 +36,9 @@
             <div class="blog-list-group">
                 <div class="blog-type-title">Blog Type</div>
                 <div class="blog-list-group-item pointer-style"><a @click="getBlogData(0)" class="pointer-style">全部</a></div>
-                {{#each type}}
-                    <div class="blog-list-group-item pointer-style"><a @click="getBlogData('{{_id}}')" class="pointer-style">{{typeName}}&nbsp;&nbsp;(<span class="blog-num">{{num}}</span>)</a></div>
-                {{/each}}
+                    <div class="blog-list-group-item pointer-style" v-for="(item,index) in typeList">
+                        <a @click="getBlogData(item._id)" class="pointer-style" v-text="item.typeName"><!--<span class="blog-num" v-text="item.num||'0'"></span>)--></a>
+                    </div>
             </div>
         </div>
     </div>

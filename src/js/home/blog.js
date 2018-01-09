@@ -63,11 +63,27 @@
             },
             /* Get the blog category */
             getType(){
+                let that=this;
+                $.ajax({
+                    type:"get",
+                    url:"/articleType/typeData",
+                    data:{
 
+                    },
+                    success:function(res){
+                        if(res.code==0){
+                            that.typeList=res.type;
+                        }
+                    },
+                    error:function(err) {
+
+                    }
+                });
             }
         },
         mounted(){
             this.getBlogData();
+            this.getType();
         }
     });
 })();

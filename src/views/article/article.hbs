@@ -6,11 +6,13 @@
 		<li><a href="#" class="active">文章管理</a></li>
 	</ol>
 </div>
-<div class="content-article">
+<div class="content-article" id="article">
+    <tips ref="tips"></tips>
+    <confirm ref="confirm"></confirm>
 	<div class="search-list">
 		<label for="title" class="control-label">文章标题</label>
-		<input type="text" class="form-control lable-width" placeholder="请输入名称" id="title">
-		<button type="button" class="btn btn-primary">搜索</button>
+		<input type="text" class="form-control lable-width" placeholder="请输入名称" v-model="title">
+		<button type="button" class="btn btn-primary" @click="getData(1)">搜索</button>
 		<a type="button" class="btn btn-primary" href="/article/articleAdd">新增文章</a>
 	</div>
 	<div class="table-responsive table-content">
@@ -29,27 +31,25 @@
 				</tr>
 			</thead>
 			<tbody id="tableList">
-				{{#each article}}
-				<tr>
+				<tr v-for="(item,index) in articleList">
 					<td>#</td>
-					<td>{{title}}</td>
-					<td>{{type.typeName}}</td>
-					<td>{{keywords}}</td>
-					<td>{{author.nickName}}</td>
-					<td>{{create_time}}</td>
-					<td>{{readAmount}}</td>
-					<td>{{praiseNumber}}</td>
+					<td v-text="item.title"></td>
+					<td v-text="item.type.typeName"></td>
+					<td v-text="item.keywords"></td>
+					<td v-text="item.author.nickName"></td>
+					<td v-text="item.create_time"></td>
+					<td v-text="item.readAmount"></td>
+					<td v-text="item.praiseNumber"></td>
 					<td>
-						<a type="button" class="btn btn-primary" href="/blog/{{_id}}">查看详情</a>
-						<a type="button" class="btn btn-primary" href="/article/articleAdd?articleId={{_id}}">编辑</a>
-						<a type="button" class="btn btn-danger" onclick="deleteArticle('{{_id}}')">删除</a>
+						<a type="button" class="btn btn-primary" @click="getBlogDetail(item._id)">查看详情</a>
+						<a type="button" class="btn btn-primary" @click="editArticle(item._id)">编辑</a>
+						<a type="button" class="btn btn-danger" @click="deleteArticle(item._id)">删除</a>
 					</td>
 				</tr>
-				{{/each}}
 			</tbody>
 		</table>
-        <div class="more-btn" onclick="getBlogData()" id="moreData">点击查看更多>></div>
-        <div class="more-btn" id="noData" style="display: none">没有更多数据了哦~</div>
+        <div class="more-btn" @click="getData()" v-show="moreData">点击查看更多>></div>
+        <div class="more-btn" v-show="!moreData">没有更多数据了哦~</div>
 	</div>
 </div>
 {{#section 'footer'}}

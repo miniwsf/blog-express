@@ -42,6 +42,7 @@ app.use("/login", login);
 app.use("/article", article);
 app.use("/articleAdd", article);
 app.use("/articleType", articleType);
+app.use("/typeData", articleType);
 app.use("/uploadFile", file);
 app.use("/", index);
 app.use("/blog", index);

@@ -9,7 +9,6 @@ class Article {
         this.getArticle = this.getArticle.bind(this);
         this.getArticleData = this.getArticleData.bind(this);
         this.deleteArticle = this.deleteArticle.bind(this);
-        this.getBlog = this.getBlog.bind(this);
         this.getBlogMore = this.getBlogMore.bind(this);
         this.getArticleNum = this.getArticleNum.bind(this);
         this.getBlogDetail = this.getBlogDetail.bind(this);
@@ -45,7 +44,7 @@ class Article {
                     throw err;
                 }
                 else{
-                    resolve(article.length,status,msg);
+                    resolve(article.length);
                 }
             });
         });
@@ -66,13 +65,13 @@ class Article {
         let typeId=req.body.typeId;
         let title=req.body.title;
         let page=req.body.page?req.body.page-1:0;
-        let limit=req.body.limit?req.body.limit:5;
+        let limit=req.body.limit?parseInt(req.body.limit):5;
         let selectParam={};
         if(id){
             selectParam._id=id;
         }
         if(title){
-            selectParam.title=title;
+            selectParam.title=/.title.*/;
         }
         if(typeId){
             selectParam.type=typeId;
@@ -131,16 +130,6 @@ class Article {
         });
     }
 
-    /*获取博客信息及其分类*/
-    getBlog(req, res, next){
-        let that=this;
-        that.getArticleData(req, res, next).then(function (article,code,msg) {
-            ArticleType.getArticleTypeData(req, res, next).then(function (type,code,msg) {
-                res.render("home/blog",{code,msg,article,type,layout:"index"});
-            });
-        });
-    }
-
     getBlogMore(req, res, next){
         let that=this;
         that.getArticleData(req, res, next).then(function (article,code,msg) {
@@ -179,17 +168,17 @@ class Article {
     }
 
     deleteArticle(req,res,next){
-        let that=this;
-        ArticleModel.remove({"_id":req.body.articleId}, function (err, article) {
+        ArticleModel.remove({"_id":req.body.articleId}, function (err) {
             if (err) {
                 res.send({
                     code:"1",
                     msg:err
-                })
+                });
             }
             else{
-                that.getArticleData(req, res, next).then(function (article,code,msg) {
-                    res.send({code,msg,article});
+                res.send({
+                    code:"0",
+                    msg:"成功"
                 });
             }
         });

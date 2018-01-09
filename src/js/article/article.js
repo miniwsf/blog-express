@@ -1,73 +1,103 @@
-var currentPage=1;
+import Tips from "../../common/component/tips.vue";
+import confirm from "../../common/component/confirm.vue";
 
-/* 删除文章 */
-function deleteArticle(articleId){
-    Confirm.show("您确定删除吗?",deleteArticleById,articleId);
-}
-
-/*删除数据*/
-function deleteArticleById(articleId) {
-    $.ajax({
-        type:"DELETE",
-        url:"/article",
+(()=>{
+    var vm=new Vue({
+        el:"#article",
         data:{
-            "articleId":articleId
+            articleList:[],
+            currentPage:0,
+            limit:30,
+            moreData:true,
+            title:"",
+            demoAdd:false
         },
-        success:function(res){
-            window.location.reload();
-            Tips.show("删除成功");
+        methods:{
+            getData(page){
+                let that=this;
+                if(page===undefined){
+                    that.currentPage+=1;
+                }
+                else{
+                    that.currentPage=page;
+                }
+
+                $.ajax({
+                    type:"post",
+                    url:"/blog",
+                    data:{
+                        "page":that.currentPage,
+                        "limit":that.limit,
+                        "title":that.title
+                    },
+                    success:function(res){
+                        if(that.currentPage==1){
+                            that.articleList=[];
+                        }
+                        if(res.article.length>0){
+                            that.articleList.push(...res.article);
+                            if(res.article.length<that.limit){
+                                that.moreData=false;
+                            }
+                            else{
+                                that.moreData=true;
+                            }
+                        }
+                        else{
+                            that.moreData=false;
+                        }
+                    },
+                    error:function() {
+                        that.$refs.tips.show("请求出错啦，请稍后重试");
+                    }
+                });
+            },
+            deleteArticle(id){
+                let that=this;
+                that.$refs.confirm.show({
+                    title:"删除文章",
+                    msg:"您确定要删除该条数据吗？",
+                    callback:this.deleteArticleById,
+                    params:id
+                });
+            },
+            deleteArticleById(id){
+                let that=this;
+                $.ajax({
+                    type:"DELETE",
+                    url:"/article",
+                    data:{
+                        "articleId":id
+                    },
+                    success:function(res){
+                        if(res.code==0){
+                            that.$refs.tips.show("删除成功~");
+                            that.getData(1);
+                        }
+                        else{
+                            that.$refs.tips.show("删除失败，请稍后重试~");
+                        }
+                    },
+                    error:function() {
+                        that.$refs.tips.show("请求出错啦，请稍后重试~");
+                    }
+                });
+            },
+            /* get the detail of blog */
+            getBlogDetail(id){
+                window.location.href="/blog/"+id;
+            },
+            editArticle(id){
+                window.location.href="/article/articleAdd?articleId="+id;
+            }
         },
-        error:function(err) {
-            Tips.show("删除失败");
+        components:{
+            tips:Tips,
+            confirm
+        },
+        mounted(){
+            let that=this;
+            that.getData();
         }
     });
-}
-
-/*获取更多数据*/
-function getBlogData(){
-    if(!tokenVal){
-        window.location.href="/login";
-        return false;
-    }
-    currentPage+=1;
-    $.ajax({
-        type:"post",
-        url:"/blog",
-        data:{
-            "page":currentPage,
-        },
-        headers: {
-            "x-access-token": tokenVal
-        },
-        success:function(res){
-            if(res.article.length>0){
-                appendData(res.article);
-            }
-            else{
-                $("#noData").css("display","block");
-                $("#moreData").css("display","none");
-            }
-        },
-        error:function(err) {
-
-        }
-    })
-}
-
-/*追加数据*/
-function appendData(data) {
-    var source="\{{#each this}}\<tr> <td>#</td> <td>\{{title}}\</td> <td>\{{type.typeName}}\</td> <td>\{{keywords}}\</td> <td>\{{author.nickName}}\</td> <td>\{{create_time}}\</td> <td>\{{readAmount}}\</td>"+
-    "<td>\{{praiseNumber}}\</td> <td> <a type='button' class='btn btn-primary' href='/blogDetail?articleId={{_id}}'>查看详情</a>"+
-        "<a type='button' class='btn btn-primary' href='/article/articleAdd?articleId={{_id}}'>编辑</a>"+
-        "<a type='button' class='btn btn-danger' onclick=\"deleteArticle('{{_id}}')\">删除</a> </td> </tr>\{{/each}}";
-    var myTemplate = Handlebars.compile(source);
-    $("#tableList").append(myTemplate(data));
-}
-
-function getTypeId(id) {
-    typeId=id;
-    currentPage=0;
-    $("#tableList").html("");
-    lastScrollY=0;
-    getBlogData();
-}
+})();

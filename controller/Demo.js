@@ -84,7 +84,7 @@ class Demo {
 
     /*删除*/
     deleteDemo(req,res){
-        DemoModel.remove({"_id":req.body.demoId}, function (err, data) {
+        DemoModel.remove({"_id":req.body.demoId}, function (err) {
             if (err) {
                 res.send({
                     code:"1",

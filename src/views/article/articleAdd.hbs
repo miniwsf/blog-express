@@ -6,7 +6,8 @@
 		<li><a href="/article" class="active">返回</a></li>
 	</ol>
 </div>
-<div class="content-article">
+<div class="content-article" id="articleAdd">
+    <tips ref="tips"></tips>
   <div class="bs-example bs-example-form" id="acticleForm">
       <input class="form-control" id="articleId" value="{{data._id}}" type="hidden"/>
     <div class="input-group">
@@ -30,14 +31,16 @@
     </div>
 		</br>
 		<div id="articleEditormd" name="content"></div>
-      <textarea style="width: 100%;">{{data.content}}</textarea>
+        <textarea style="width: 100%;">{{data.content}}</textarea>
 		<div class="btn-control">
-			<button class="btn btn-primary btn-margin" id="saveArticle" onclick="saveArticle()">保存</button>
+			<button class="btn btn-primary btn-margin" id="saveArticle" @click="saveArticle()">保存</button>
 			<a type="button" class="btn btn-primary" href="/article">取消</a>
 		</div>
   </div>
 </div>
 {{#section 'footer'}}
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script src="/plugins/editor/editormd.js"></script>
-    <script src="../../js/article/articleAdd.js"></script>
+    <script src="../../js/articleAdd/articleAdd.js"></script>
 {{/section}}

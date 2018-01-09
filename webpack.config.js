@@ -22,7 +22,10 @@ const config = {
         blog: "./js/home/blog.js",
         blogDetail: "./js/home/blogDetail.js",
         demos: "./js/home/demos.js",
-        home: "./js/home/home.js"
+        home: "./js/home/home.js",
+        article: "./js/article/article.js",
+        articleAdd: "./js/article/articleAdd.js",
+        articleType: "./js/articleType/articleType.js"
     },
 
     module: {
@@ -72,9 +75,6 @@ const config = {
             name: "vendor",
             filename: isProduction ? "[name]/vendor.[hash:8].js":"[name]/vendor.js",
         }),
-       /* new HtmlWebpackPlugin({
-            hash: true
-        }),*/
         new webpack.optimize.ModuleConcatenationPlugin(),
         /*new webpack.optimize.UglifyJsPlugin({
             compress: {

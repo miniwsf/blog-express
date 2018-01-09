@@ -6,7 +6,8 @@
         <li><a href="#" class="active">我的信息</a></li>
     </ol>
 </div>
-<div class="content-article">
+<div class="content-article" id="user">
+    <!--展示-->
     <div class="bs-example bs-example-form" id="userInfo">
         <div class="avatar-border">
             {{#if user.avatar}}
@@ -28,6 +29,7 @@
             <button class="btn btn-primary btn-margin" onclick="editInfo()">修改信息</button>
         </div>
     </div>
+    <!--修改-->
     <div class="bs-example bs-example-form" id="userInfoEdit" style="display: none">
         <input type="text" id="userId" hidden value="{{user._id}}">
         <div class="avatar-border">

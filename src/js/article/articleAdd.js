@@ -1,5 +1,5 @@
 
-var articleEditormd;
+
 var formData={
     titleAdd:"",
     typeAdd:"",
@@ -10,7 +10,10 @@ var formData={
     page:""
 };
 
-(function(){
+import Tips from "../../common/component/tips.vue";
+
+(()=>{
+    let articleEditormd;
     /*markdown编辑器*/
     $.get("../plugins/editor/example.md", function(md){
         articleEditormd = editormd("articleEditormd", {
@@ -39,55 +42,67 @@ var formData={
             }
         });
     });
-})();
 
-function saveArticle(){
-    if(!tokenVal){
-        window.location.href="/login";
-        return false;
-    }
-    if(!checkData()){
-        return false;
-    }
-    $.ajax({
-        type:"POST",
-        url:"/article",
-        data:formData,
-        headers: {
-            "x-access-token": tokenVal
+    var vm=new Vue({
+        el:"#articleAdd",
+        data:{
+
         },
-        success:function(res){
-            Tips.show("新增成功");
-            window.location.href="/article";
+        methods:{
+            saveArticle(){
+                let that=this;
+                if(!that.checkData()){
+                    return false;
+                }
+                $.ajax({
+                    type:"POST",
+                    url:"/article",
+                    data:formData,
+                    success:function(res){
+                        if(res.code=="0"){
+                            that.$refs.tips.show("新增成功~");
+                            window.location.href="/article";
+                        }
+                        else{
+                            that.$refs.tips.show("新增失败~");
+                        }
+                    },
+                    error:function() {
+                        that.$refs.tips.show("请求出错，请稍后重试~");
+                    }
+                });
+            },
+            checkData(){
+                let that=this;
+                formData={
+                    titleAdd:$("#title").val(),
+                    typeAdd:$("#disabledSelect option:selected").val(),
+                    keywordsAdd:$("#keywords").val(),
+                    articleId:$("#articleId").val(),
+                    contentAdd:articleEditormd.getMarkdown(),
+                    contentHAdd:articleEditormd.getHTML(),
+                    page:""
+                };
+                if(!formData.titleAdd){
+                    that.$refs.tips.show("请输入文章标题~");
+                    return false;
+                }
+                else if(!formData.keywordsAdd){
+                    that.$refs.tips.show("请输入文章关键字~");
+                    return false;
+                }
+                else if(!formData.contentAdd){
+                    that.$refs.tips.show("请输入文章内容~");
+                    return false;
+                }
+                return true;
+            }
         },
-        error:function(err) {
-            Tips.show("新增失败");
+        components:{
+            tips:Tips
+        },
+        mounted(){
+
         }
-    })
-}
-
-//检查数据
-function checkData(){
-    formData={
-        titleAdd:$("#title").val(),
-        typeAdd:$("#disabledSelect option:selected").val(),
-        keywordsAdd:$("#keywords").val(),
-        articleId:$("#articleId").val(),
-        contentAdd:articleEditormd.getMarkdown(),
-        contentHAdd:articleEditormd.getHTML(),
-        page:""
-    };
-    if(!formData.titleAdd){
-        Confirm.show("请输入文章标题");
-        return false;
-    }
-    else if(!formData.keywordsAdd){
-        Confirm.show("请输入文章关键字");
-        return false;
-    }
-    else if(!formData.contentAdd){
-        Confirm.show("请输入文章内容");
-        return false;
-    }
-    return true;
-}
+    });
+})();

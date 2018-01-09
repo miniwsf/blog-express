@@ -5,18 +5,17 @@ import Article from "../controller/Article";
 
 class ArticleType {
     constructor(){
-        this.getArticleType = this.getArticleType.bind(this);
         this.deleteArticleType = this.deleteArticleType.bind(this);
         this.addArticleType = this.addArticleType.bind(this);
         this.getArticleTypeData=this.getArticleTypeData.bind(this);
-        this.getArticleTypeOther=this.getArticleTypeOther.bind(this);
+        this.getArticleTypeMore=this.getArticleTypeMore.bind(this);
     }
 
     /*获取类别*/
     getArticleTypeData(req, res, next){
-        let status="1";
-        let msg="数据查询失败";
         return new Promise((resolve) => {
+            let status="1";
+            let msg="数据查询失败";
             ArticleTypeModel.find({}, function (err, type) {
                 if (err) {
                     status="-1";
@@ -24,15 +23,6 @@ class ArticleType {
                     resolve(type,status,msg);
                 }
                 else {
-                    //查询文章数目
-                    type.forEach(item=>{
-                        let typeid=item._id;
-                        req.body.typeId=typeid;
-                        Article.getArticleNum(req, res, next).then(function (article,code,msg) {
-                            item.num=article;
-                        });
-                    });
-                    req.body.typeId="";
                     status="0";
                     msg="数据查询成功";
                     resolve(type,status,msg);
@@ -41,20 +31,35 @@ class ArticleType {
         });
     }
 
-    getArticleType(req, res, next){
-        this.getArticleTypeData(req, res, next).then(function (type,code,msg) {
-            res.render("articleType/articleType",{code,msg,type});
-        });
-    }
+    getArticleTypeMore(req, res, next){
+        let that=this;
+        that.getArticleTypeData(req, res, next).then(function (type,code,msg) {
+            /*try{
+                /!*type.forEach(async function(item){
 
-    getArticleTypeOther(req, res, next){
-        this.getArticleTypeData(req, res, next).then(function (type,code,msg) {
-            res.render("article/articleAdd",{code,msg,type});
+                });*!/
+                let getNum=async (type) =>{
+                    for(let item of type){
+                        let typeid=item._id;
+                        req.body.typeId=typeid;
+                        /!* Article.getArticleNum(req, res, next).then(function (article,code,msg) {
+                         item.num=article;
+                         });*!/
+                        item.num=await Article.getArticleNum(req, res, next);
+                        console.log(item.num+"测试")
+                    }
+                }
+                getNum(type);
+            }
+            catch (e){
+                throw e;
+            }
+            req.body.typeId="";*/
+            res.send({code,msg,type});
         });
     }
 
     deleteArticleType(req,res,next){
-        let that=this;
         ArticleTypeModel.remove({"_id":req.body.articleTypeId}, function (err) {
             if (err) {
                 res.send({
@@ -63,7 +68,10 @@ class ArticleType {
                 });
             }
             else{
-                that.getArticleType(req, res, next);
+                res.send({
+                    code:"0",
+                    msg:"成功"
+                });
             }
         });
     }
@@ -72,16 +80,18 @@ class ArticleType {
         let articleType = new ArticleTypeModel({
             typeName:  req.body.type
         });
-        let that=this;
         articleType.save(function (err, response) {
             if(err){
-                res.render("articleType",{
-                    "code":"1",
-                    "msg":"数据新增失败"
+                res.send({
+                    code:"1",
+                    msg:err
                 });
             }
             else{
-                that.getArticleType(req, res, next);
+                res.send({
+                    code:"0",
+                    msg:"成功"
+                });
             }
         });
     }

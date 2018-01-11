@@ -45,7 +45,6 @@ class Demo {
             DemoModel.find(selectParam).skip(page*limit).limit(parseInt(limit)).sort({"create_time":"desc"}).populate(["author"]).exec(function (err, data) {
                 if (err) {
                     reject();
-                    throw err;
                 }
                 else{
                     data.forEach(item => {

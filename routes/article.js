@@ -5,7 +5,9 @@ import CheckToken from "../middlewares/checkToken";
 let express = require("express");
 let router = express.Router();
 
-router.get("/",CheckToken,Article.getArticle);
+router.get("/",CheckToken,function(req, res) {
+    res.render("article/article");
+});
 router.delete("/",CheckToken,Article.deleteArticle);
 router.put("/",CheckToken,Article.updateArticle);
 router.post("/",CheckToken,Article.updateAndSave);

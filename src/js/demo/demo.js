@@ -21,28 +21,28 @@ import dialogs from "../../common/component/dialog.vue";
             demoAdd:false,
             dialogData:{
                 dialogForm:[{
-                    title:"演示标题",
+                    title:"演示标题:",
                     cols:1,
                     holder:"请输入演示标题",
                     required:true,
                     val:"",
                     field:"titleAdd"
                 },{
-                    title:"源码地址",
+                    title:"源码地址:",
                     cols:1,
                     holder:"请输入源码地址",
                     required:true,
                     val:"",
                     field:"codeUrlAdd"
                 },{
-                    title:"演示地址",
+                    title:"演示地址:",
                     cols:1,
                     holder:"请输入演示地址",
                     required:true,
                     val:"",
                     field:"demoLinkAdd"
                 },{
-                    title:"描述",
+                    title:"描述:",
                     cols:3,
                     holder:"请填写演示相关信息描述",
                     required:true,
@@ -70,10 +70,10 @@ import dialogs from "../../common/component/dialog.vue";
                         "title":that.title
                     },
                     success:function(res){
+                        if(that.currentPage==1){
+                            that.demoList=[];
+                        }
                         if(res.demo.length>0){
-                            if(that.currentPage==1){
-                                that.demoList=[];
-                            }
                             that.demoList.push(...res.demo);
                             if(res.demo.length<that.limit){
                                 that.moreData=false;

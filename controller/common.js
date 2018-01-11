@@ -1,6 +1,6 @@
 
 /*
-* public method
+* 公共方法
 * author: wsf
 * */
 let Common={
@@ -29,13 +29,10 @@ let Common={
         let arr=content.match(imgReg);
         let image="";
         if(arr&&arr.length>0){
-            for(var info of arr){
+            for(let info of arr){
                 let imgInfo=info.split("(");
                 if(imgInfo.length>=2){
                     image=imgInfo[1].split(")")[0];
-                    break;
-                }
-                else{
                     break;
                 }
             }

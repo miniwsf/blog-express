@@ -1,6 +1,7 @@
 "use strict";
 
 import AdminModel from "../models/Admin";
+import * as errorStatus from "./errorStatus";
 let jwt = require("jsonwebtoken");
 
 class Admin {
@@ -52,7 +53,7 @@ class Admin {
                     res.cookie("token",token);
                     res.send({
                         code: "0",
-                        message: "Enjoy your token!"
+                        message: "登录成功"
                     });
                 }
             }
@@ -68,7 +69,8 @@ class Admin {
         else{
             that.getData(req, res, next).then(function (data) {
                 let [user={}]=data;
-                res.render("user/user",{user:user});
+                /*res.render("user/user",{user:user});*/
+                res.send({code:errorStatus.SUCCESS_CODE,user:user});
             });
         }
     }

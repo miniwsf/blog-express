@@ -25,7 +25,9 @@ const config = {
         home: "./js/home/home.js",
         article: "./js/article/article.js",
         articleAdd: "./js/article/articleAdd.js",
-        articleType: "./js/articleType/articleType.js"
+        articleType: "./js/articleType/articleType.js",
+        user: "./js/user/user.js",
+        file: "./js/file/file.js"
     },
 
     module: {

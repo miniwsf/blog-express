@@ -3,21 +3,21 @@
 import ArticleModel from "../models/Article";
 import ArticleType from "../controller/ArticleType";
 import Common from "../controller/common";
+import * as errorStatus from "../controller/ErrorStatus";
 
 class Article {
     constructor(){
-        this.getArticle = this.getArticle.bind(this);
-        this.getArticleData = this.getArticleData.bind(this);
-        this.deleteArticle = this.deleteArticle.bind(this);
+        this.getArticleData = this.getArticleData.bind(this);   /*查询*/
+        this.deleteArticle = this.deleteArticle.bind(this);  /*删除*/
         this.getBlogMore = this.getBlogMore.bind(this);
-        this.getArticleNum = this.getArticleNum.bind(this);
-        this.getBlogDetail = this.getBlogDetail.bind(this);
-        this.addArticle = this.addArticle.bind(this);
-        this.updateArticle = this.updateArticle.bind(this);
+        this.getArticleNum = this.getArticleNum.bind(this);  /*获得文章数量*/
+        this.getBlogDetail = this.getBlogDetail.bind(this);   /*获得具体文章信息*/
+        this.addArticle = this.addArticle.bind(this);  /*新增*/
+        this.updateArticle = this.updateArticle.bind(this);  /*更新*/
         this.updateArticleNew = this.updateArticleNew.bind(this);
-        this.praiseBlog = this.praiseBlog.bind(this);
+        this.praiseBlog = this.praiseBlog.bind(this);   /*点赞*/
         this.getArticleDataById=this.getArticleDataById.bind(this);
-        this.updateAndSave=this.updateAndSave.bind(this);
+        this.updateAndSave=this.updateAndSave.bind(this);  /*判断是更新还是新增*/
     }
 
     /*查询文章数量*/
@@ -36,12 +36,10 @@ class Article {
             selectParam.type=typeId;
         }
         //获取分页数据
-        let status="1";
-        let msg="数据查询失败";
         return new Promise((resolve, reject) => {
             ArticleModel.find(selectParam).exec(function (err, article) {
                 if (err) {
-                    throw err;
+                    reject();
                 }
                 else{
                     resolve(article.length);
@@ -71,20 +69,17 @@ class Article {
             selectParam._id=id;
         }
         if(title){
-            selectParam.title=/.title.*/;
+            selectParam.title=title;
         }
         if(typeId){
             selectParam.type=typeId;
         }
         //获取分页数据
-        let status="1";
-        let msg="数据查询失败";
         let articleData=[];
         return new Promise((resolve, reject) => {
             ArticleModel.find(selectParam).skip(page*limit).limit(limit).sort({"create_time":"desc"}).populate(["type","author"]).exec(function (err, article) {
                 if (err) {
                     reject();
-                    throw err;
                 }
                 else{
                     article.forEach(item => {
@@ -116,17 +111,9 @@ class Article {
                         };
                         articleData.push(itemNew);
                     });
-                    msg="成功";
-                    status="0";
-                    resolve(articleData,status,msg);
+                    resolve(articleData,errorStatus.SUCCESS_CODE,errorStatus.SUCCESS_MSG);
                 }
             });
-        });
-    }
-
-    getArticle(req, res, next){
-        this.getArticleData(req, res, next).then(function (article,code,msg) {
-            res.render("article/article",{code,msg,article});
         });
     }
 
@@ -171,14 +158,14 @@ class Article {
         ArticleModel.remove({"_id":req.body.articleId}, function (err) {
             if (err) {
                 res.send({
-                    code:"1",
-                    msg:err
+                    code:errorStatus.Fail_CODE,
+                    msg:errorStatus.Fail_MSG
                 });
             }
             else{
                 res.send({
-                    code:"0",
-                    msg:"成功"
+                    code:errorStatus.SUCCESS_CODE,
+                    msg:errorStatus.SUCCESS_MSG
                 });
             }
         });
@@ -187,10 +174,8 @@ class Article {
     updateAndSave(req,res,next){
         let that=this;
         if(!req.body.articleId){
-            let code="0";
-            let msg="成功";
             that.addArticle(req,res,next);
-            res.send({code,msg});
+            res.send({code:errorStatus.SUCCESS_CODE,msg:errorStatus.SUCCESS_MSG});
         }
         else{
             that.getArticleData(req, res, next).then(function (article,code,msg) {
@@ -209,7 +194,7 @@ class Article {
                     };
                     that.updateArticle(condition,param);
                 }
-                res.send({code,msg});
+                res.send({code:errorStatus.SUCCESS_CODE,msg:errorStatus.SUCCESS_MSG});
             });
         }
     }
@@ -233,7 +218,7 @@ class Article {
                 }
             });
         }catch (e){
-            console.log(e);
+
         }
     }
     getArticleDataById(req,res,next){

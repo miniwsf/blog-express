@@ -28,6 +28,9 @@
     font-size: 1rem;
     font-weight: bold;
     padding-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .demo-des{

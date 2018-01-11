@@ -6,33 +6,34 @@
         <li><a href="#" class="active">图片上传设置</a></li>
     </ol>
 </div>
-<div class="content-article">
-    <form class="bs-example bs-example-form" id="fileForm">
+<div class="content-article" id="file">
+    <tips ref="tips"></tips>
+    <div class="bs-example bs-example-form">
         <div class="input-group">
             <span class="input-group-addon" for="accessKey">AccessKey</span>
-            <input type="text" class="form-control" placeholder="请填写您七牛账户的AccessKey" name="accessKey" value="{{accessKey}}"/>
+            <input type="text" class="form-control" placeholder="请填写您七牛账户的AccessKey" name="accessKey" v-model="accessKey"/>
         </div>
         </br>
         <div class="input-group">
             <span class="input-group-addon" for="secretKey">SecretKey</span>
-            <input type="text" class="form-control" placeholder="请填写您七牛账户的SecretKey" name="secretKey" value="{{secretKey}}"/>
+            <input type="text" class="form-control" placeholder="请填写您七牛账户的SecretKey" name="secretKey" v-model="secretKey"/>
         </div>
         </br>
         <div class="input-group">
             <span class="input-group-addon" for="scope">Scope</span>
-            <input type="text" class="form-control" placeholder="上传策略中的scope,即上传的目标空间名" name="scope" value="{{scope}}"/>
+            <input type="text" class="form-control" placeholder="上传策略中的scope,即上传的目标空间名" name="scope" v-model="scope"/>
         </div>
         </br>
         <div class="input-group">
             <span class="input-group-addon" for="deadline">有效时间</span>
-            <input type="text" class="form-control" placeholder="token有效时间,一般为当前时间+3600s,1970年时间戳" name="deadline" value="{{deadline}}"/>
+            <input type="text" class="form-control" placeholder="token有效时间,一般为当前时间+3600s,1970年时间戳" name="deadline" v-model="deadline"/>
         </div>
         </br>
         <div class="btn-control">
-            <button class="btn btn-primary btn-margin" onclick="saveFile()">保存</button>
+            <button class="btn btn-primary btn-margin" @click="saveFile()">保存</button>
         </div>
         </br>
-    </form>
+    </div>
     <div>
         <p>注意：</p>
         <p>项目的图片均上传在七牛云服务器存储</p>

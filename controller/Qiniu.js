@@ -1,6 +1,7 @@
 "use strict";
 
 import QiniuModel from "../models/Qiniu";
+import * as errorStatus from "../controller/ErrorStatus";
 const qinius = require("qiniu");
 
 class Qiniu {
@@ -57,7 +58,7 @@ class Qiniu {
                 data=qiniu[0];
             }
             let {accessKey=null,secretKey=null,scope=null,deadline=null}=data;
-            res.render("file/file",{code,msg,accessKey,secretKey,scope,deadline});
+            res.send({code:errorStatus.SUCCESS_CODE,msg:errorStatus.SUCCESS_MSG,data:{accessKey,secretKey,scope,deadline}});
         });
     }
     /*保存*/
@@ -70,7 +71,7 @@ class Qiniu {
             else{
                 that.updateInfo(req, res, next,qiniu[0]._id);
             }
-            res.send("0","保存成功");
+            res.send({code:errorStatus.SUCCESS_CODE,msg:errorStatus.SUCCESS_MSG});
         });
     }
     /*更新数据*/
@@ -93,7 +94,6 @@ class Qiniu {
     }
     /*保存数据*/
     saveInfo(req, res, next){
-        let that=this;
         let qiuniu = new QiniuModel({
             accessKey:  req.body.accessKey,
             secretKey: req.body.secretKey,
@@ -102,13 +102,10 @@ class Qiniu {
         });
         qiuniu.save(function (err) {
             if(err){
-                res.render("file",{
-                    "code":"1",
-                    "msg":"数据新增失败"
-                });
+                res.send({code:errorStatus.Fail_CODE,msg:errorStatus.Fail_MSG});
             }
             else{
-                that.getFile(req, res, next);
+                res.send({code:errorStatus.SUCCESS_CODE,msg:errorStatus.SUCCESS_MSG});
             }
         });
     }

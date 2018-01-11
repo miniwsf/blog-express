@@ -1,7 +1,7 @@
 "use strict";
 
 import ArticleTypeModel from "../models/ArticleType";
-import Article from "../controller/Article";
+import * as errorStatus from "../controller/ErrorStatus";
 
 class ArticleType {
     constructor(){
@@ -13,19 +13,13 @@ class ArticleType {
 
     /*获取类别*/
     getArticleTypeData(req, res, next){
-        return new Promise((resolve) => {
-            let status="1";
-            let msg="数据查询失败";
+        return new Promise((resolve,reject) => {
             ArticleTypeModel.find({}, function (err, type) {
                 if (err) {
-                    status="-1";
-                    msg="数据查询失败";
-                    resolve(type,status,msg);
+                    reject();
                 }
                 else {
-                    status="0";
-                    msg="数据查询成功";
-                    resolve(type,status,msg);
+                    resolve(type);
                 }
             });
         });
@@ -33,7 +27,7 @@ class ArticleType {
 
     getArticleTypeMore(req, res, next){
         let that=this;
-        that.getArticleTypeData(req, res, next).then(function (type,code,msg) {
+        that.getArticleTypeData(req, res, next).then(function (type) {
             /*try{
                 /!*type.forEach(async function(item){
 
@@ -55,7 +49,7 @@ class ArticleType {
                 throw e;
             }
             req.body.typeId="";*/
-            res.send({code,msg,type});
+            res.send({code:errorStatus.SUCCESS_CODE,msg:errorStatus.SUCCESS_MSG,type});
         });
     }
 
@@ -63,14 +57,14 @@ class ArticleType {
         ArticleTypeModel.remove({"_id":req.body.articleTypeId}, function (err) {
             if (err) {
                 res.send({
-                    code:"1",
-                    msg:err
+                    code:errorStatus.Fail_CODE,
+                    msg:errorStatus.Fail_MSG
                 });
             }
             else{
                 res.send({
-                    code:"0",
-                    msg:"成功"
+                    code:errorStatus.SUCCESS_CODE,
+                    msg:errorStatus.SUCCESS_MSG
                 });
             }
         });
@@ -83,14 +77,14 @@ class ArticleType {
         articleType.save(function (err, response) {
             if(err){
                 res.send({
-                    code:"1",
-                    msg:err
+                    code:errorStatus.Fail_CODE,
+                    msg:errorStatus.Fail_MSG
                 });
             }
             else{
                 res.send({
-                    code:"0",
-                    msg:"成功"
+                    code:errorStatus.SUCCESS_CODE,
+                    msg:errorStatus.SUCCESS_MSG
                 });
             }
         });

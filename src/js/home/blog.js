@@ -71,9 +71,7 @@
 
                     },
                     success:function(res){
-                        if(res.code==0){
-                            that.typeList=res.type;
-                        }
+                        that.typeList=res.type;
                     },
                     error:function(err) {
 

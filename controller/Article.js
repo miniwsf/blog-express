@@ -111,7 +111,7 @@ class Article {
                         };
                         articleData.push(itemNew);
                     });
-                    resolve(articleData,errorStatus.SUCCESS_CODE,errorStatus.SUCCESS_MSG);
+                    resolve(articleData);
                 }
             });
         });
@@ -119,8 +119,8 @@ class Article {
 
     getBlogMore(req, res, next){
         let that=this;
-        that.getArticleData(req, res, next).then(function (article,code,msg) {
-            res.send({code,msg,article});
+        that.getArticleData(req, res, next).then(function (article) {
+            res.send({code:errorStatus.SUCCESS_CODE,msg:errorStatus.SUCCESS_MSG,article});
         });
     }
 
@@ -178,7 +178,7 @@ class Article {
             res.send({code:errorStatus.SUCCESS_CODE,msg:errorStatus.SUCCESS_MSG});
         }
         else{
-            that.getArticleData(req, res, next).then(function (article,code,msg) {
+            that.getArticleData(req, res, next).then(function (article) {
                 if(!article||article.length<=0){
                     that.addArticle(req,res,next);
                 }
@@ -218,7 +218,7 @@ class Article {
                 }
             });
         }catch (e){
-
+            throw e;
         }
     }
     getArticleDataById(req,res,next){

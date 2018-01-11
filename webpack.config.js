@@ -78,14 +78,14 @@ const config = {
             filename: isProduction ? "[name]/vendor.[hash:8].js":"[name]/vendor.js",
         }),
         new webpack.optimize.ModuleConcatenationPlugin(),
-        /*new webpack.optimize.UglifyJsPlugin({
+        new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
                 drop_console: true,
                 pure_funcs: ["console.log"]
             },
             sourceMap: false
-        }),*/
+        }),
         new webpack.ProvidePlugin({
             $: path.join(__dirname, "public/js/jquery.min.js"),
             Vue: path.join(__dirname, "public/js/vue.min.js")

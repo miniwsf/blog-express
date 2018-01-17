@@ -15,7 +15,7 @@ router.get("/blog", function(req, res, next) {
 })
 router.post("/blog", Article.getBlogMore);
 router.get("/blog/:articleId", Article.getBlogDetail);
-router.get("/aboutMe", function(req, res) {
+router.get("/about", function(req, res) {
     res.render("home/aboutMe", {layout:"index"});
 });
 /*router.get("/demo", function(req, res, next) {

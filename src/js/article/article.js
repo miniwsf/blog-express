@@ -1,4 +1,4 @@
-import Tips from "../../common/component/tips.vue";
+import tips from "../../common/component/tips.vue";
 import confirm from "../../common/component/confirm.vue";
 
 (()=>{
@@ -15,12 +15,7 @@ import confirm from "../../common/component/confirm.vue";
         methods:{
             getData(page){
                 let that=this;
-                if(page===undefined){
-                    that.currentPage+=1;
-                }
-                else{
-                    that.currentPage=page;
-                }
+                that.currentPage=page === undefined ? that.currentPage++ : page;
 
                 $.ajax({
                     type:"post",
@@ -34,14 +29,12 @@ import confirm from "../../common/component/confirm.vue";
                         if(that.currentPage==1){
                             that.articleList=[];
                         }
-                        if(res.article.length>0){
+
+                        let articleLength=res.article.length >>> 0;
+
+                        if(articleLength>0){
                             that.articleList.push(...res.article);
-                            if(res.article.length<that.limit){
-                                that.moreData=false;
-                            }
-                            else{
-                                that.moreData=true;
-                            }
+                            that.moreData=articleLength<that.limit ? false : true;
                         }
                         else{
                             that.moreData=false;
@@ -92,7 +85,7 @@ import confirm from "../../common/component/confirm.vue";
             }
         },
         components:{
-            tips:Tips,
+            tips,
             confirm
         },
         mounted(){

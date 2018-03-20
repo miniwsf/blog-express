@@ -1,6 +1,5 @@
 
-
-var formData={
+let formData={
     titleAdd:"",
     typeAdd:"",
     keywordsAdd:"",

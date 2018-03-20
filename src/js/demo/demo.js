@@ -54,12 +54,7 @@ import dialogs from "../../common/component/dialog.vue";
         methods:{
             getData(page){
                 let that=this;
-                if(page===undefined){
-                    that.currentPage+=1;
-                }
-               else{
-                    that.currentPage=page;
-                }
+                that.currentPage=page === undefined ? that.currentPage++ : page;
 
                 $.ajax({
                     type:"post",
@@ -73,14 +68,12 @@ import dialogs from "../../common/component/dialog.vue";
                         if(that.currentPage==1){
                             that.demoList=[];
                         }
-                        if(res.demo.length>0){
+
+                        let demoLength=res.demo.length >>> 0;
+
+                        if(demoLength>0){
                             that.demoList.push(...res.demo);
-                            if(res.demo.length<that.limit){
-                                that.moreData=false;
-                            }
-                            else{
-                                that.moreData=true;
-                            }
+                            that.moreData=demoLength<that.limit ? false : true;
                         }
                         else{
                             that.moreData=false;
@@ -153,10 +146,7 @@ import dialogs from "../../common/component/dialog.vue";
             addDemoData(params,id){
                 let that=this;
                 params.demoId=id||"";
-                let tipMsg="修改";
-                if(id===undefined){
-                    tipMsg="新增";
-                }
+                let tipMsg = id === undefined ? "新增": "修改";
                 $.ajax({
                     type:"post",
                     url:"/demo",

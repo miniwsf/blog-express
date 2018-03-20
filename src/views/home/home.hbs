@@ -43,7 +43,7 @@
     <div class="home-latest">
         <div class="home-latest-title">最近博客</div>
         <div class="home-blog-grid">
-            <div class="home-blog-columns" v-for="(item,index) in articleLatest" v-if="item._id">
+            <div class="home-blog-columns" v-for="(item,index) in articleLatest" v-if="item._id&&index<3">
                 <div class="home-blog-image">
                     <img :src="item.image" class="" v-if="item.image">
                 </div>

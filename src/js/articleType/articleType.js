@@ -1,4 +1,4 @@
-import Tips from "../../common/component/tips.vue";
+import tips from "../../common/component/tips.vue";
 import confirm from "../../common/component/confirm.vue";
 import dialogs from "../../common/component/dialog.vue";
 
@@ -101,10 +101,7 @@ import dialogs from "../../common/component/dialog.vue";
             addDemoData(params,id){
                 let that=this;
                 params.demoId=id||"";
-                let tipMsg="修改";
-                if(id===undefined){
-                    tipMsg="新增";
-                }
+                let tipMsg = id === undefined ? "新增": "修改";
                 $.ajax({
                     type:"POST",
                     url:"/articleType",
@@ -126,7 +123,7 @@ import dialogs from "../../common/component/dialog.vue";
             }
         },
         components:{
-            tips:Tips,
+            tips,
             confirm,
             dialogs
         },

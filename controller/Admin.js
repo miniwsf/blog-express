@@ -14,14 +14,13 @@ class Admin {
 
     /*登录*/
     login(req, res, next){
-        let username=req.body.username;
-        let password=req.body.password;
+        let {username=null,password=null}=req.body||{};
         if(!username||!password){
             res.send({code:"1003",msg:"请输入用户名或密码"});
             return;
         }
         /*获取加密密码*/
-        let encodepsd="";
+        let encodepsd=null;
         try{
             encodepsd=require("crypto").createHash("md5").update(new Buffer(password, "binary")).digest("hex");
         }
@@ -36,7 +35,7 @@ class Admin {
                 res.send({ code: "1000", message: "认证失败，用户名找不到" });
             }
             else if (user.length>0) {
-                let userNew=user[0];
+                let [userNew]=user;
                 // 检查密码
                 if (userNew.password != encodepsd) {
                     res.send({ code: "1001", message: "认证失败，密码错误" });
@@ -69,7 +68,6 @@ class Admin {
         else{
             that.getData(req, res, next).then(function (data) {
                 let [user={}]=data;
-                /*res.render("user/user",{user:user});*/
                 res.send({code:errorStatus.SUCCESS_CODE,user:user});
             });
         }

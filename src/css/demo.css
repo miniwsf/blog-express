@@ -4,7 +4,8 @@
         width:100%;
         display: flex;
         justify-content: flex-start;
-        margin:0 1.5%;
+        flex-wrap:wrap;
+        margin:1.5% 1.5%;
     }
     .each-demo{
         width:30%;
@@ -15,10 +16,10 @@
 @media (max-width: 768px) {
     .demo-content{
         width:100%;
-        margin:0 1.5%;
     }
     .each-demo{
         width:100%;
+        margin:1.5% 0;
     }
 }
 

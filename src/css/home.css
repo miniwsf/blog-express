@@ -136,7 +136,7 @@
     .recommend-detail{
         color: #ece2e0;
         font-size: 0.875rem;
-        width:40%;
+        width:79%;
         overflow : hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -145,8 +145,8 @@
     }
     .recommend-title{
         color: #eceae0;
-        font-size: 2.8125rem;
-        width: 60%;
+        font-size: 1.6125rem;
+        width: 72%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -326,7 +326,7 @@
     left:0;
     top:50%;
     transform: translateY(-50%);
-    width:40%;
+    width:34%;
 }
 
 .home-latest-title:after{
@@ -338,7 +338,7 @@
     right:0;
     top:50%;
     transform: translateY(-50%);
-    width:40%;
+    width:34%;
 }
 
 

@@ -15,12 +15,13 @@
                     url:"/blog",
                     data:{
                         "page":that.currentPage,
+                        "limit":4,
                         "typeId":""
                     },
                     success:function(res){
                         let [recommendArticle ,...articleLatest]=res.article;
                         that.recommendArticle=recommendArticle;
-                        that.articleLatest=articleLatest;
+                        that.articleLatest=Array.prototype.splice.call(articleLatest,0,3);
                     },
                     error:function(err) {
 

@@ -149,8 +149,17 @@
         margin-bottom:10%;
         margin-right:4%;
     }
-}
+    .blog-author{
+        display: none;
+    }
+    .blog-detail{
+        width: 100% !important;
+    }
 
+    .blog-detail-title{
+        font-size: 1.25rem !important;
+    }
+}
 
 
 .blog-detail-image img{
@@ -193,6 +202,9 @@
     color: #000;
     margin:1% 0 1% 0;
     font-family: yan;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .blog-list-group{

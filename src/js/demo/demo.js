@@ -54,7 +54,7 @@ import dialogs from "../../common/component/dialog.vue";
         methods:{
             getData(page){
                 let that=this;
-                that.currentPage=page === undefined ? that.currentPage++ : page;
+                that.currentPage=page === undefined ? ++that.currentPage : page;
 
                 $.ajax({
                     type:"post",

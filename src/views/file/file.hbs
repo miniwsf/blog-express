@@ -1,5 +1,5 @@
 {{#section 'head'}}
-    <link rel='stylesheet' href='/css/article.css'/>
+    <link rel="stylesheet" href="/css/article.css">
 {{/section}}
 <div>
     <ol class="breadcrumb">
@@ -11,28 +11,28 @@
     <div class="bs-example bs-example-form">
         <div class="input-group">
             <span class="input-group-addon" for="accessKey">AccessKey</span>
-            <input type="text" class="form-control" placeholder="请填写您七牛账户的AccessKey" name="accessKey" v-model="accessKey"/>
+            <input type="text" class="form-control" placeholder="请填写您七牛账户的AccessKey" name="accessKey" v-model="accessKey">
         </div>
-        </br>
+        <br>
         <div class="input-group">
             <span class="input-group-addon" for="secretKey">SecretKey</span>
-            <input type="text" class="form-control" placeholder="请填写您七牛账户的SecretKey" name="secretKey" v-model="secretKey"/>
+            <input type="text" class="form-control" placeholder="请填写您七牛账户的SecretKey" name="secretKey" v-model="secretKey">
         </div>
-        </br>
+        <br>
         <div class="input-group">
             <span class="input-group-addon" for="scope">Scope</span>
-            <input type="text" class="form-control" placeholder="上传策略中的scope,即上传的目标空间名" name="scope" v-model="scope"/>
+            <input type="text" class="form-control" placeholder="上传策略中的scope,即上传的目标空间名" name="scope" v-model="scope">
         </div>
-        </br>
+        <br>
         <div class="input-group">
             <span class="input-group-addon" for="deadline">有效时间</span>
-            <input type="text" class="form-control" placeholder="token有效时间,一般为当前时间+3600s,1970年时间戳" name="deadline" v-model="deadline"/>
+            <input type="text" class="form-control" placeholder="token有效时间,一般为当前时间+3600s,1970年时间戳" name="deadline" v-model="deadline">
         </div>
-        </br>
+        <br>
         <div class="btn-control">
             <button class="btn btn-primary btn-margin" @click="saveFile()">保存</button>
         </div>
-        </br>
+        <br>
     </div>
     <div>
         <p>注意：</p>
@@ -41,6 +41,3 @@
         <p>否则会导致token验证失败，图片无法上传</p>
     </div>
 </div>
-{{#section 'footer'}}
-    <script src="../../js/file/file.js"></script>
-{{/section}}

@@ -1,9 +1,9 @@
 {{#section 'head'}}
-    <link rel='stylesheet' href='../../css/blog.css'/>
+    <link rel="stylesheet" href="../../css/blog.css">
     <link rel="stylesheet" type="text/css" href="../../css/iconfont.css">
     <script src="/js/handlebars-v4.0.10.js"></script>
 {{/section}}
-<!--博客-->
+
 <div class="blog-content" id="blog">
     <div class="homeContent top-style">
         <div class="blog-left" id="tableList">
@@ -37,7 +37,7 @@
                 <div class="blog-type-title">Blog Type</div>
                 <div class="blog-list-group-item pointer-style"><a @click="getBlogData(0)" class="pointer-style">全部</a></div>
                     <div class="blog-list-group-item pointer-style" v-for="(item,index) in typeList">
-                        <a @click="getBlogData(item._id)" class="pointer-style" v-text="item.typeName"><!--<span class="blog-num" v-text="item.num||'0'"></span>)--></a>
+                        <a @click="getBlogData(item._id)" class="pointer-style" v-text="item.typeName"></a>
                     </div>
             </div>
         </div>
@@ -46,6 +46,3 @@
         <span class="icon iconfont icon-dingbu blog-top"></span>
     </div>
 </div>
-{{#section 'footer'}}
-    <script src="../../js/home/blog.js"></script>
-{{/section}}

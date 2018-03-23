@@ -1,5 +1,6 @@
 {{#section 'head'}}
-    <link rel='stylesheet' href='../../css/article.css'/>
+    <link rel="stylesheet" href="../../css/article.css">
+    <title>Sunshine wsf</title>
 {{/section}}
 <div>
 	<ol class="breadcrumb">
@@ -9,7 +10,7 @@
 <div class="content-article" id="articleType">
     <tips ref="tips"></tips>
     <confirm ref="confirm"></confirm>
-    <dialogs :dialogForm="dialogData.dialogForm" ref="dialogs"></dialogs>
+    <dialogs :dialogform="dialogData.dialogForm" ref="dialogs"></dialogs>
 	<div class="search-list">
 		<a type="button" class="btn btn-primary" @click="addDemo()">新增类别</a>
 	</div>
@@ -35,6 +36,3 @@
 		</table>
 	</div>
 </div>
-{{#section 'footer'}}
-    <script src="../../js/articleType/articleType.js"></script>
-{{/section}}

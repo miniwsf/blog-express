@@ -18,12 +18,12 @@ var express_handlebars_sections = require("express-handlebars-sections");
 var app = express();
 
 // view engine setup
-app.set("views", path.join(__dirname, "./src/views"));
+app.set("views", path.join(__dirname, "./dist/app/src/views"));
 app.engine("hbs", handlebars({
-    layoutsDir: "./src/views",
+    layoutsDir: "./dist/app/src/views",
     defaultLayout: "layout",
     extname: ".hbs",
-    partialsDir:__dirname + "src/views/template/",
+    partialsDir:__dirname + "dist/app/src/views/template/",
     helpers:{
         section: express_handlebars_sections()
     }
@@ -31,12 +31,12 @@ app.engine("hbs", handlebars({
 app.set("jwtTokenSecret", "SECRET_TOKEN");
 app.set("view engine", "hbs");
 
-app.use(favicon(path.join(__dirname, "dist/public", "favicon.ico")));
+app.use(favicon(path.join(__dirname, "dist/app", "favicon.ico")));
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "dist/public")));
+app.use(express.static(path.join(__dirname, "dist/app")));
 
 app.use("/login", login);
 app.use("/article", article);

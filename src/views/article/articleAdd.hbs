@@ -1,5 +1,5 @@
 {{#section 'head'}}
-    <link rel='stylesheet' href='/css/editormd.min.css'/>
+    <link rel="stylesheet" href="/css/editormd.min.css">
 {{/section}}
 <div>
 	<ol class="breadcrumb">
@@ -9,12 +9,12 @@
 <div class="content-article" id="articleAdd">
     <tips ref="tips"></tips>
   <div class="bs-example bs-example-form" id="acticleForm">
-      <input class="form-control" id="articleId" value="{{data._id}}" type="hidden"/>
+      <input class="form-control" id="articleId" value="{{data._id}}" type="hidden">
     <div class="input-group">
       <span class="input-group-addon">标题</span>
-      <input type="text" class="form-control" placeholder="请输入文章标题" id="title" value="{{data.title}}"/>
+      <input type="text" class="form-control" placeholder="请输入文章标题" id="title" value="{{data.title}}">
     </div>
-	  </br>
+	  <br>
     <div class="input-group">
       <span class="input-group-addon">分类</span>
 			<select id="disabledSelect" class="form-control">
@@ -23,13 +23,13 @@
 				{{/each}}
 			</select>
     </div>
-	  </br>
+	  <br>
     <div class="input-group">
       <span class="input-group-addon">关键字</span>
-      <input type="text" class="form-control" placeholder="请输入关键字" id="keywords" value="{{data.keywords}}"/>
+      <input type="text" class="form-control" placeholder="请输入关键字" id="keywords" value="{{data.keywords}}">
       <span class="input-group-addon">（多个关键字之间用“,”间隔）</span>
     </div>
-		</br>
+		<br>
 		<div id="articleEditormd" name="content"></div>
         <textarea style="width: 100%;">{{data.content}}</textarea>
 		<div class="btn-control">
@@ -39,8 +39,6 @@
   </div>
 </div>
 {{#section 'footer'}}
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
     <script src="/plugins/editor/editormd.js"></script>
-    <script src="../../js/articleAdd/articleAdd.js"></script>
 {{/section}}

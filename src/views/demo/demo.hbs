@@ -1,5 +1,5 @@
 {{#section 'head'}}
-    <link rel='stylesheet' href='../../css/article.css'/>
+    <link rel="stylesheet" href="../../css/article.css">
 {{/section}}
 <div>
 	<ol class="breadcrumb">
@@ -9,7 +9,7 @@
 <div class="content-article" id="demo">
     <tips ref="tips"></tips>
     <confirm ref="confirm"></confirm>
-    <dialogs :dialogForm="dialogData.dialogForm" ref="dialogs"></dialogs>
+    <dialogs :dialogform="dialogData.dialogForm" ref="dialogs"></dialogs>
 
 	<div class="search-list">
 		<label for="title" class="control-label">演示标题</label>
@@ -52,6 +52,3 @@
         <div class="more-btn" v-show="!moreData">没有更多数据了哦~</div>
 	</div>
 </div>
-{{#section 'footer'}}
-    <script src="../../js/demo/demo.js"></script>
-{{/section}}

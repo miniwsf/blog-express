@@ -27,6 +27,7 @@
     "babel-core": "^6.25.0",
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.7",
+    "del": "^3.0.0",
     "express-session": "^1.15.6",
     "formidable": "^1.1.1",
     "gulp": "^3.9.1",
@@ -43,5 +44,13 @@
     "vue-loader": "^13.6.2",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.8.1"
+  },
+  "scripts":{
+    "clean:dist": "rimraf dist/*",
+    "clean:dev": "rimraf dev/*",
+    "build":"set NODE_ENV=production && gulp",
+    "dev":"set NODE_ENV=dev && gulp",
+    "start:dev":"set NODE_ENV=dev && node app.js",
+    "start:build":"set NODE_ENV=production && node app.js"
   }
 }

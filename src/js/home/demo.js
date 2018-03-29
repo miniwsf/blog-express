@@ -1,3 +1,5 @@
+import bottom from "../../common/component/bottom.vue";
+
 (function (){
     const TIME=100;
     setInterval(handleScroll, TIME);
@@ -55,6 +57,9 @@
             getUrl(url){
                 window.location.href=url;
             }
+        },
+        components:{
+            bottom
         },
         mounted(){
             this.getBlogData();

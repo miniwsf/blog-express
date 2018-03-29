@@ -18,4 +18,12 @@
 |--|--js       与模块相关的js
 |--|--views    具体页面
 
+#### 构建工具
+主要使用了gulp+webpack自动化构建。
+下面是常用的命令:
+1. npm start:dev或npm run start:build,发布项目"
+2. npm run clean:dev,删除本地编译文件"
+3. npm run clean:dist,删除生产环境项目"
+4. npm run build,编译正式发布文件"
+5. npm run dev,编译本地测试环境文件"
 

@@ -1,3 +1,5 @@
+import bottom from "../../common/component/bottom.vue";
+
 /*赞赏*/
 function praiseData(id){
     $.ajax({
@@ -14,3 +16,17 @@ function praiseData(id){
         }
     });
 }
+
+(function (){
+    var vm=new Vue({
+        el:"#detail",
+        data:{
+        },
+        methods:{
+
+        },
+        components:{
+            bottom
+        }
+    });
+})();

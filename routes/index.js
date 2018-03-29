@@ -18,9 +18,6 @@ router.get("/blog/:articleId", Article.getBlogDetail);
 router.get("/about", function(req, res) {
     res.render("home/aboutMe", {layout:"index"});
 });
-/*router.get("/demo", function(req, res, next) {
-    res.render("demo", {layout:"index"});
-});*/
 router.put("/blog/:articleId", Article.praiseBlog);
 
 module.exports = router;

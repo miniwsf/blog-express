@@ -5,25 +5,26 @@ var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 
-var index = require("./dist/routes/index");
-var login = require("./dist/routes/login");
-var file = require("./dist/routes/file");
-var article=require("./dist/routes/article");
-var user=require("./dist/routes/user");
-var articleType=require("./dist/routes/articleType");
-var demo = require("./dist/routes/demo");
+var pathFile=process.env.NODE_ENV.trim() == "production"?"dist":"dev";
+var index = require("./"+pathFile+"/routes/index");
+var login = require("./"+pathFile+"/routes/login");
+var file = require("./"+pathFile+"/routes/file");
+var article=require("./"+pathFile+"/routes/article");
+var user=require("./"+pathFile+"/routes/user");
+var articleType=require("./"+pathFile+"/routes/articleType");
+var demo = require("./"+pathFile+"/routes/demo");
 // handlebars module
 var handlebars=require("express3-handlebars");
 var express_handlebars_sections = require("express-handlebars-sections");
 var app = express();
 
 // view engine setup
-app.set("views", path.join(__dirname, "./dist/app/src/views"));
+app.set("views", path.join(__dirname, "./"+pathFile+"/app/src/views"));
 app.engine("hbs", handlebars({
-    layoutsDir: "./dist/app/src/views",
+    layoutsDir: "./"+pathFile+"/app/src/views",
     defaultLayout: "layout",
     extname: ".hbs",
-    partialsDir:__dirname + "dist/app/src/views/template/",
+    partialsDir:__dirname + pathFile+"/app/src/views/template/",
     helpers:{
         section: express_handlebars_sections()
     }
@@ -31,12 +32,12 @@ app.engine("hbs", handlebars({
 app.set("jwtTokenSecret", "SECRET_TOKEN");
 app.set("view engine", "hbs");
 
-app.use(favicon(path.join(__dirname, "dist/app", "favicon.ico")));
+app.use(favicon(path.join(__dirname, pathFile+"/app", "favicon.ico")));
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "dist/app")));
+app.use(express.static(path.join(__dirname, pathFile+"/app")));
 
 app.use("/login", login);
 app.use("/article", article);

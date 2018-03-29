@@ -2,8 +2,8 @@
     <link rel="stylesheet" href="../../css/demo.css">
 {{/section}}
 
-<div class="blog-content" id="blog">
-    <div class="homeContent top-style">
+<div class="blog-content homeContent" id="blog">
+    <div class="top-style">
         <div class="demo-content">
             <div class="each-demo" v-for="(item,index) in demoList" v-if="demoList&&demoList.length>0">
                 <div class="demo-head"></div>
@@ -25,4 +25,5 @@
     <div class="top-btn pointer-style" title="滑到顶部" @click="slideTop()" v-show="lastScrollY>0">
         <span class="icon iconfont icon-dingbu blog-top"></span>
     </div>
+    <bottom></bottom>
 </div>

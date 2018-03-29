@@ -171,7 +171,7 @@
     .recommend-detail{
         color: #ece2e0;
         font-size: 0.875rem;
-        width:36%;
+        width:67%;
         overflow : hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -180,8 +180,8 @@
     }
     .recommend-title{
         color: #eceae0;
-        font-size: 2.8125rem;
-        width: 60%;
+        font-size: 1.6125rem;
+        width: 74%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -370,9 +370,7 @@
 .home-blog-title{
     overflow : hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    white-space: nowrap;
     font-size: 1.25rem;
     color: #000;
     margin:6% 0 2% 0;
@@ -381,6 +379,7 @@
 .home-blog-time{
     color: #969494;
     font-size: 0.8125rem;
+    white-space: nowrap;
 }
 
 .home-blog-columns{

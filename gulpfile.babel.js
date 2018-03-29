@@ -7,19 +7,20 @@ const gutil = require("gulp-util"),
     webpackConfig = require("./webpack.config.js"),
     myDevConfig = Object.create(webpackConfig),
     devCompiler = webpack(myDevConfig);
+let path=process.env.NODE_ENV.trim() == "production"?"dist":"dev";
 
 gulp.task("default", ["babel","public","sass","image","buildJs"]);
 
 gulp.task("babel", () =>{
-    return gulp.src(["**/*.js","!app.js","!dist/**/*.js","!gulpfile.babel.js","!public/**/*.js","!node_modules/**/*.js","!src/**/*.js"])
+    return gulp.src(["**/*.js","!app.js","!dist/**/*.js","!gulpfile.babel.js","!public/**/*.js","!node_modules/**/*.js","!src/**/*.js","!dev/**/*.js"])
         .pipe(babel())
-        .pipe(gulp.dest("dist"));
+        .pipe(gulp.dest(path));
 });
 
 gulp.task("sass",()=>{
     return gulp.src(["src/css/*.css"])
         .pipe(cleanCSS({compatibility: "ie8"}))
-        .pipe(gulp.dest("dist/app/css"));
+        .pipe(gulp.dest(path+"/app/css"));
 });
 
 //用gulp执行webpack.config.js
@@ -33,20 +34,21 @@ gulp.task("buildJs", function (callback) {
     });
 });
 
-gulp.task("js",()=>{
-    return gulp.src(["src/js/**/*.js"])
-        .pipe(babel({presets:["env"]}))
-        .pipe(jsmin())
-        .pipe(gulp.dest("dist/app/js"));
-});
-
 gulp.task("image",()=>{
     return gulp.src(["src/images/**"])
-        .pipe(gulp.dest("dist/app/images"));
+        .pipe(gulp.dest(path+"/app/images"));
 });
 
 gulp.task("public",()=>{
     return gulp.src(["public/**"])
-        .pipe(gulp.dest("dist/app"));
+        .pipe(gulp.dest(path+"/app"));
 });
 
+gulp.task("help",()=>{
+    console.log("以下显示该项目常用命令:");
+    console.log("1. npm run start:dev(发布dev本地）或npm run start:build（发布dist线上）");
+    console.log("2. npm run clean:dev,删除本地编译文件");
+    console.log("3. npm run clean:dist,删除生产环境项目");
+    console.log("4. npm run build,编译正式发布文件");
+    console.log("5. npm run dev,编译本地测试环境文件");
+});

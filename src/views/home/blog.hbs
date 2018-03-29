@@ -4,8 +4,8 @@
     <script src="/js/handlebars-v4.0.10.js"></script>
 {{/section}}
 
-<div class="blog-content" id="blog">
-    <div class="homeContent top-style">
+<div class="blog-content homeContent" id="blog">
+    <div class="top-style">
         <div class="blog-left" id="tableList">
             <div class="blog-article" v-for="(item,index) in blogList" v-if="blogList&&blogList.length>0">
                 <div class="blog-detail">
@@ -45,4 +45,6 @@
     <div class="top-btn pointer-style" title="滑到顶部" @click="slideTop()" v-show="lastScrollY>0">
         <span class="icon iconfont icon-dingbu blog-top"></span>
     </div>
+    <bottom></bottom>
 </div>
+

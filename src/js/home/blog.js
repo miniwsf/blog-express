@@ -1,3 +1,5 @@
+import bottom from "../../common/component/bottom.vue";
+
 (function (){
     const TIME=100;
     setInterval(handleScroll, TIME);
@@ -78,6 +80,9 @@
                     }
                 });
             }
+        },
+        components:{
+            bottom
         },
         mounted(){
             this.getBlogData();

@@ -1,3 +1,4 @@
+import bottom from "../../common/component/bottom.vue";
 (function (){
     var vm=new Vue({
         el:"#home",
@@ -32,6 +33,9 @@
             getBlogDetail(id){
                 window.location.href="/blog/"+id;
             }
+        },
+        components:{
+            bottom
         },
         mounted(){
             this.getBlogData();

@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "clean:dist": "rimraf dist/*",
+    "clean:dev": "rimraf dev/*",
+    "build": "set NODE_ENV=production && gulp",
+    "dev": "set NODE_ENV=dev && gulp",
+    "start:dev": "set NODE_ENV=dev && node app.js",
+    "start:build": "set NODE_ENV=production && node app.js"
   },
   "dependencies": {
     "babel": "^6.23.0",
@@ -33,6 +38,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-clean-css": "^3.9.2",
+    "gulp-imagemin": "^4.1.0",
     "gulp-jsmin": "^0.1.5",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
@@ -44,13 +50,5 @@
     "vue-loader": "^13.6.2",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.8.1"
-  },
-  "scripts":{
-    "clean:dist": "rimraf dist/*",
-    "clean:dev": "rimraf dev/*",
-    "build":"set NODE_ENV=production && gulp",
-    "dev":"set NODE_ENV=dev && gulp",
-    "start:dev":"set NODE_ENV=dev && node app.js",
-    "start:build":"set NODE_ENV=production && node app.js"
   }
 }

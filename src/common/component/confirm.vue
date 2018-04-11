@@ -121,7 +121,7 @@
         width:100%;
         margin: 0 auto;
         display: flex;
-        justify-content: flex-end
+        justify-content: flex-end;
     }
     .confirm-btn{
         width:16%;

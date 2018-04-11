@@ -1,9 +1,9 @@
 import gulp from "gulp";
 import babel from "gulp-babel";
 import cleanCSS from "gulp-clean-css";
-import jsmin from "gulp-jsmin";
 import webpack from "webpack";
 const gutil = require("gulp-util"),
+    imagemin = require("gulp-imagemin"),
     webpackConfig = require("./webpack.config.js"),
     myDevConfig = Object.create(webpackConfig),
     devCompiler = webpack(myDevConfig);
@@ -35,7 +35,10 @@ gulp.task("buildJs", function (callback) {
 });
 
 gulp.task("image",()=>{
-    return gulp.src(["src/images/**"])
+    return gulp.src(["src/images/*.{png,jpg,gif,ico}"])
+        .pipe(imagemin({
+            progressive: true
+        }))
         .pipe(gulp.dest(path+"/app/images"));
 });
 

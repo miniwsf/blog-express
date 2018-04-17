@@ -40,8 +40,11 @@
                 that.showConfirm=false;
             },
             callbackEvent(){
-                if(this.callback){
+                if(this.callback&&typeof this.callback === 'function'){
                     this.callback.call(this,this.params);
+                }
+                else{
+                    throw Error("callback is not a function");
                 }
                 this.close();
             }

@@ -64,8 +64,11 @@
                         data[field]=value;
                     }
                 }
-                if(that.callEvent){
+                if(that.callEvent&&typeof this.callback === 'function'){
                     that.callEvent.call(this,data,that.params);
+                }
+                else{
+                    throw Error("callback is not a function");
                 }
             }
         },

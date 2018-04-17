@@ -79,7 +79,7 @@ app.use(function(err, req, res, next) {
         res.render("error/error",{layout:null,msg:err.message});
     }
 });
-app.listen(80);
+app.listen(3000);
 
 process.on("uncaughtException", function (err) {
     //打印出错误

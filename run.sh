@@ -1,5 +1,4 @@
 #!/bin/bash
-npm ru
 npm run clean:dist
 npm run build
 npm run start:build

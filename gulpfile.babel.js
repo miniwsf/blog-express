@@ -6,6 +6,7 @@ const gutil = require("gulp-util"),
     imagemin = require("gulp-imagemin"),
     webpackConfig = require("./webpack.config.js"),
     myDevConfig = Object.create(webpackConfig),
+    es2015 = require("babel-preset-es2015"),
     devCompiler = webpack(myDevConfig);
 let path=process.env.NODE_ENV.trim() == "production"?"dist":"dev";
 
@@ -13,7 +14,9 @@ gulp.task("default", ["babel","public","sass","image","buildJs"]);
 
 gulp.task("babel", () =>{
     return gulp.src(["**/*.js","!app.js","!dist/**/*.js","!gulpfile.babel.js","!public/**/*.js","!node_modules/**/*.js","!src/**/*.js","!dev/**/*.js"])
-        .pipe(babel())
+        .pipe(babel({
+            presets: [es2015]
+        }))
         .pipe(gulp.dest(path));
 });
 

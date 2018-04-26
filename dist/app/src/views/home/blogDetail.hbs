@@ -1,0 +1,21 @@
+{{#section 'head'}}
+    <title>{{title}} sunshine wsf</title>
+{{/section}}
+<div class="homeContent" id="detail">
+    {{#each article}}
+        <div class="page-header">
+            <h2 class="blog-title">{{title}}</h2>
+            <div class="detail-info">
+                {{create_time}}&nbsp;阅读({{readAmount}})
+            </div>
+        </div>
+        <p>{{{contentHtml}}}</p>
+        <div class="align-style heart-style">
+            <a class="btn btn-default btn-lg" onclick="praiseData('{{_id}}')">
+                <span class="glyphicon glyphicon-heart"></span> {{praiseNumber}}
+            </a>
+        </div>
+    {{/each}}
+    <bottom></bottom>
+</div>
+<script type="text/javascript" src="/js/home/blogDetail.15c85853.js"></script>

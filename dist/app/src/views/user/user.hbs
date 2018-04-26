@@ -1,0 +1,48 @@
+{{#section 'head'}}
+    <link rel="stylesheet" href="/css/user.css">
+{{/section}}
+<div>
+    <ol class="breadcrumb">
+        <li><a href="#" class="active">我的信息</a></li>
+    </ol>
+</div>
+<div class="content-article" id="user">
+    <tips ref="tips"></tips>
+    
+    <div class="bs-example bs-example-form">
+        <div class="avatar-border">
+            <img :src="avatar" class="avatar">
+        </div>
+        <br>
+        <div class="file-input" v-if="isEdit">
+            <input type="file" id="file" name="file" accept="image/*" multiple="multiple" class="btn btn-primary" v-on:change="uploadAvatar()">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon" for="accessKey">登录账号</span>
+            <input type="text" class="form-control" name="accessKey" v-model="userName" disabled="disabled">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon" for="accessKey">用户昵称</span>
+            <input type="text" class="form-control" placeholder="请填写您的用户昵称" name="accessKey" v-model="nickName">
+        </div>
+        <br>
+        <div class="input-group" v-if="isEdit">
+            <span class="input-group-addon" for="accessKey">密码</span>
+            <input type="password" class="form-control" placeholder="******" v-model="psd1" name="accessKey">
+        </div>
+        <br>
+        <div class="input-group" v-if="isEdit">
+            <span class="input-group-addon" for="accessKey">再次确认密码</span>
+            <input type="password" class="form-control" placeholder="******" v-model="psd2" name="accessKey">
+        </div>
+        <br>
+        <div class="btn-control">
+            <button class="btn btn-primary btn-margin" @click="editInfo()" v-show="!isEdit">修改信息</button>
+            <button class="btn btn-primary btn-margin" @click="saveInfo()" v-show="isEdit">保存信息</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/user/user.15c85853.js"></script>

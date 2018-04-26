@@ -1,0 +1,59 @@
+{{#section 'head'}}
+    <title>sunshine wsf</title>
+{{/section}}
+
+<div class="homeContent" id="home">
+    <div class="home-recommend back-cover">
+        <img :src="recommendArticle.image" class="home-recommend-back" v-if="recommendArticle.image">
+        <div class="recommend-content">
+            <div class="recommend-title" v-text="recommendArticle.title"></div>
+            <div class="recommend-detail" v-text="recommendArticle.txt"></div>
+        </div>
+        <div><a @click="getBlogDetail(recommendArticle._id)" class="read-more pointer-style"></a></div>
+    </div>
+    <div class="home-introduce">
+        <div class="home-columns">
+            <div class="home-columns-icon">
+                <img src="../../images/Xmas_C-04.png">
+            </div>
+            <div class="home-columns-title">Blogs</div>
+            <div class="home-columns-detail">
+                不定期更新关于前端技术、关于旅行、关于日常的小“美文”哦,还会有各种小推荐，小推荐每周五更新哦~表错过
+            </div>
+        </div>
+        <div class="home-columns">
+            <div class="home-columns-icon">
+                <img src="../../images/Xmas_C-06.png">
+            </div>
+            <div class="home-columns-title">Demo</div>
+            <div class="home-columns-detail">
+                这里，会有各种小东西小案例哦，很多好玩的东西哦~
+            </div>
+        </div>
+        <div class="home-columns">
+            <div class="home-columns-icon">
+                <img src="../../images/Xmas_C-07.png">
+            </div>
+            <div class="home-columns-title">Other</div>
+            <div class="home-columns-detail">
+                暂时还没想好哦~先等等
+            </div>
+        </div>
+    </div>
+    <div class="home-latest">
+        <div class="home-latest-title">最近博客</div>
+        <div class="home-blog-grid">
+            <div class="home-blog-columns" v-for="(item,index) in articleLatest" v-if="item._id&&index<3">
+                <div class="home-blog-image">
+                    <img :src="item.image" class="" v-if="item.image">
+                </div>
+                <div class="home-blog-title" v-text="item.title"></div>
+                <div class="home-blog-time" v-text="item.create_time"></div>
+                <div class="home-blog-content" v-text="item.txt"></div>
+                <div class="home-more pointer-style"><a @click="getBlogDetail(item._id)">Read More...</a></div>
+            </div>
+        </div>
+    </div>
+    <bottom></bottom>
+</div>
+<script type="text/javascript" src="/js/home/home.15c85853.js"></script>

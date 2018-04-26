@@ -1,0 +1,51 @@
+{{#section 'head'}}
+    <link rel="stylesheet" href="../../css/blog.css">
+    <link rel="stylesheet" type="text/css" href="../../css/iconfont.css">
+    <script src="/js/handlebars-v4.0.10.js"></script>
+{{/section}}
+
+<div class="blog-content homeContent" id="blog">
+    <div class="top-style">
+        <div class="blog-left" id="tableList">
+            <div class="blog-article" v-for="(item,index) in blogList" v-if="blogList&&blogList.length>0">
+                <div class="blog-detail">
+                    <div class="blog-type"><span v-text="item.type&&item.type.typeName"></span>&nbsp;&nbsp;&nbsp;<span v-text="item.create_time"></span></div>
+                    <div class="blog-detail-title" v-text="item.title"></div>
+                    <div class="blog-detail-image">
+                        <img :src="item.image" v-if="item.image">
+                    </div>
+                    <div class="blog-detail-text">
+                        <div class="blog-detail-txt" v-text="item.txt"></div>
+                        <div class=""><a @click="getBlogDetail(item._id)" class="pointer-style">Read More...</a></div>
+                    </div>
+                </div>
+                <div class="blog-author">
+                    <div class="blog-author-text">Author</div>
+                    <div class="blog-author-avatar">
+                        <img :src="item.author.avatar">
+                    </div>
+                    <div class="blog-author-name" v-text="item.author&&item.author.nickName"></div>
+                    <div class="blog-read" title="阅读量"><span class="icon iconfont icon-yiyuedu blog-read-font"></span>&nbsp;&nbsp;<span v-text="item.readAmount"></span></div>
+                    <div class="blog-read" title="点赞量"><span class="icon iconfont icon-dianzan blog-admire-font"></span>&nbsp;&nbsp;<span v-text="item.praiseNumber"></span></div>
+                </div>
+            </div>
+            <div class="blog-no-data" v-if="!blogList||blogList.length==0">暂时没有内容哦~</div>
+        </div>
+
+        <div class="blog-right">
+            <div class="blog-list-group">
+                <div class="blog-type-title">Blog Type</div>
+                <div class="blog-list-group-item pointer-style"><a @click="getBlogData(0)" class="pointer-style">全部</a></div>
+                    <div class="blog-list-group-item pointer-style" v-for="(item,index) in typeList">
+                        <a @click="getBlogData(item._id)" class="pointer-style" v-text="item.typeName"></a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="top-btn pointer-style" title="滑到顶部" @click="slideTop()" v-show="lastScrollY>0">
+        <span class="icon iconfont icon-dingbu blog-top"></span>
+    </div>
+    <bottom></bottom>
+</div>
+
+<script type="text/javascript" src="/js/home/blog.15c85853.js"></script>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <title>wsf</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    {{{_sections.head}}}
+  <script type="text/javascript" src="/js/vendor/vendor.15c85853.js"></script></head>
+  <body class="blog-body">
+    <div class="head">wsf</div>
+    <div class="content-index">
+      <div class="left-nav">
+        <div class="panel-group" id="accordion">
+          <div>
+            <div class="panel-heading">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="panel-btn" aria-expanded="true">
+                <span class="glyphicon glyphicon-book font-style"></span>内容管理
+              </a>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body panel-btn panel-btn-detail">
+                <a href="/article">文章管理</a>
+              </div>
+                <div class="panel-body panel-btn panel-btn-detail">
+                    <a href="/demo">演示内容管理</a>
+                </div>
+            </div>
+          </div>
+          <div>
+            <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="panel-btn">
+                  <span class="glyphicon glyphicon-cog font-style"></span>基础数据
+                </a>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse in" aria-expanded="true">
+              <div class="panel-body panel-btn panel-btn-detail">
+                <a href="/articleType">类别管理</a>
+            </div>
+            </div>
+          </div>
+            <div>
+                <div class="panel-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="panel-btn">
+                        <span class="glyphicon glyphicon-cog font-style"></span>系统设置
+                    </a>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse in" aria-expanded="true">
+                    <div class="panel-body panel-btn panel-btn-detail">
+                        <a href="/file">图片上传设置</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="panel-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="panel-btn">
+                        <span class="glyphicon glyphicon-cog font-style"></span>个人中心
+                    </a>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse in" aria-expanded="true">
+                    <div class="panel-body panel-btn panel-btn-detail">
+                        <a href="/user">我的信息</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="right-nav">
+          {{{body}}}
+      </div>
+    </div>
+    <script type="text/javascript">
+        var tokenVal=window.localStorage.getItem("token");
+    </script>
+    {{{_sections.footer}}}
+  </body>
+</html>

@@ -1,7 +1,7 @@
 "use strict";
 
 import AdminModel from "../models/Admin";
-import * as errorStatus from "./errorStatus";
+import * as errorStatus from "../controller/ErrorStatus";
 let jwt = require("jsonwebtoken");
 
 class Admin {
